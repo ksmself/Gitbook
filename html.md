@@ -189,3 +189,9 @@ input은 사용자에게 어떤 정보나 데이터를 받을 때, 필드를 생
 </form>
 ```
 
+### Checkbox
+
+Radio와 동일하게 코드를 작성하되, input type만 checkbox로 변경해주면 된다. 
+
+## 
+
