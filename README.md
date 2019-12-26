@@ -8,7 +8,7 @@ description: Today I Learned
 
 ## 2019.12
 
-* 김버그의 버그 없는 HTML 튜토리얼 듣고 복
+* 김버그의 버그 없는 HTML 튜토리얼 듣고 복습
 * 생활코딩 Data Structure 튜토리얼 듣고 복습
 
 
