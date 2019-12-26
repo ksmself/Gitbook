@@ -165,5 +165,27 @@ input은 사용자에게 어떤 정보나 데이터를 받을 때, 필드를 생
 //특이하게, label의 id에는 #을 붙이지 않음 
 ```
 
+## Form\(4\) - Radio & Checkbox
 
+라디오 박스는 둘 중 하나만 선택 가능, 체크박스는 여러개 선택 가능한 Input
+
+### Radio
+
+* input의 type은 radio
+* name은 두 가지 버튼이 같은 카테고리임을 알려주는 역할을 함. 즉, 구독중과 미구독은 모두 subscription이라는 카테고리 아래에 있음을 알려줌. 
+* value는 구독중과 미구독을 구별해주는 역할을 함. 
+
+```markup
+<form action="" method="GET">
+  <input type="radio" name="subscription" value="1" 
+  id="subscribed"/>
+  <label for="subscribed">구독중</label>
+  <input type="radio" name="subscription" value="0" 
+  id="unsubscribed"/>
+  <label for="unsubscribed">미구독</label>
+  <button type="submit">
+  Submit
+  </button>
+</form>
+```
 
