@@ -23,7 +23,7 @@ description: 생활코딩의 Data Structure 강의 듣고 정리.
 * 반복문을 사용해서 배열에 있는 데이터를 하나 하나 꺼내서 각각의 값에 대한 처리를 할 수 있도록 함. 
 * 장점이자 단점: 크기가 정해져 있다, 기능이 없다 &lt;= 배열을 좋은 부품\(작고, 단\)으로 만들기 위해
 
-![\*index: &#xACE0;&#xC720;&#xD55C; &#xBC88;&#xD638;, &#xC804;&#xCCB4; &#xC9D1;&#xB2E8;&#xC5D0;&#xC11C; &#xB370;&#xC774;&#xD130;&#xB97C; &#xC2DD;&#xBCC4;&#xD574;&#xC8FC;&#xB294; &#xC911;&#xC694;&#xD55C; &#xC5ED;&#xD560; ](.gitbook/assets/image%20%281%29.png)
+![\*index: &#xACE0;&#xC720;&#xD55C; &#xBC88;&#xD638;, &#xC804;&#xCCB4; &#xC9D1;&#xB2E8;&#xC5D0;&#xC11C; &#xB370;&#xC774;&#xD130;&#xB97C; &#xC2DD;&#xBCC4;&#xD574;&#xC8FC;&#xB294; &#xC911;&#xC694;&#xD55C; &#xC5ED;&#xD560; ](.gitbook/assets/image%20%286%29.png)
 
 ## List
 
@@ -35,17 +35,17 @@ array는 데이터가 저장되어 있는 위치, 주소가 중요하다면 list
 
 * 데이터를 추가할 때: 세 번째 인덱스에 50이라는 값을 추가한다고 할 때, array는 기존의 세 번째 인덱스의 40이라는 값이 50으로 바뀐다. 반면, list는 2번째 인덱스와 4번째 인덱스 사이에 50이라는 값이 들어간다. 
 
-![&#xC6D0;&#xBCF8; data](.gitbook/assets/image%20%282%29.png)
+![&#xC6D0;&#xBCF8; data](.gitbook/assets/image%20%287%29.png)
 
-![array](.gitbook/assets/image%20%283%29.png)
+![array](.gitbook/assets/image.png)
 
-![list](.gitbook/assets/image%20%284%29.png)
+![list](.gitbook/assets/image%20%285%29.png)
 
 * 데이터를 삭제할 때: 0번째 인덱스에 10, 1번째 인덱스에 20, 2번째 인덱스에 30, 3번째 인덱스에 40, 4번째 인덱스에 50이 들어있는 데이터가 있었다고 하자. 여기서 3번째 인덱스의 40이라는 값을 지우면, array는 40이 없어진 자리가 빈자리로 남아 있지만, list는 4번째 인덱스에 있던 값이 3번째 인덱스로 옮겨 오게 된다. 즉, **array에서는 인덱스**가 주민등록번호처럼 변하지 않는 **고유한 값을 가질 수 있게** 하는 역할을 해주지만, **list**는 데이터 밀도를 촘촘하게 유지하게 하기 위해, **인덱스를 식별자로 사용하지 않는다**. 
 
-![array](.gitbook/assets/image%20%286%29.png)
+![array](.gitbook/assets/image%20%282%29.png)
 
-![list](.gitbook/assets/image%20%287%29.png)
+![list](.gitbook/assets/image%20%283%29.png)
 
 ### list의 기능
 
@@ -176,4 +176,70 @@ public class Main {
     
 }
 ```
+
+#### ArrayList 구현 2 - addLast
+
+데이터를 마지막 위치에 추가하는 메소드의 구현은 아래와 같다. 
+
+```java
+public boolean addLast(Object element) {
+//현재 elementData에 저장되어 있는 데이터의 개수 뒤 인덱스에 element가 추가된다. 
+//즉, 리스트의 마지막 위치에 데이터를 추가하는 과정이다. 
+    elementData[size] = element;
+//데이터를 추가한 후에는 size를 1 증가해준다. 
+    size++;
+    return true;
+}
+```
+
+Main.java에서 위의 메소드를 사용해보자.
+
+```java
+public static void main(String[] args) {
+    ArrayList numbers = new ArrayList();
+    numbers.addLast(10);
+    numbers.addLast(20);
+    numbers.addLast(30);
+    numbers.addLast(40);
+}
+```
+
+#### ArrayList 구현 3 - add
+
+데이터를 중간에 추가하는 로직은 조금 더 복잡하다. 데이터를 추가할 빈공간을 확보해야 하기 때문이다. 엘리먼트의 이동을 코드로 표현하는 것이 처음에는 쉽지 않다. 아래 그림을 보도록 하자. 
+
+그림에 표시된 숫자의 순서대로 엘리먼트를 왼쪽에서 오른쪽으로 옮겨야 한다. 이때 가장 중요한 것은 반복조건을 헷갈리지 않는 것이다. 반복문을 만들때는 시작과 끝을 잘 파악하는 것이 중요하다.
+
+* 시작: 반복작업이 시작되는 인덱스, size - 1이다.
+* 끝: 반복작업이 끝나는 인덱스, 중간 추가를 하려고 했던 인덱스 값이다. 
+* 반복작업: i--
+
+![](.gitbook/assets/image%20%284%29.png)
+
+그럼 이제 전체 코드를 보자.
+
+```java
+public boolean add(int index, Object element) {
+// 엘리먼트 중간에 데이터를 추가하기 위해서는 끝의 엘리먼트부터
+//index의 노드까지 뒤로 한칸씩 이동시켜야 합니다.
+    for (int i = size - 1; i >= index; i--) {
+        elementData[i + 1] = elementData[i];
+    }
+    // index에 노드를 추가합니다.
+    elementData[index] = element;
+    // 엘리먼트의 숫자를 1 증가 시킵니다.
+    size++;
+    return true;
+}
+```
+
+데이터를 처음에 추가하는 메소드의 구현은 아래와 같다. 
+
+```java
+public boolean addFirst(Object element){
+    return add(0, element);
+}
+```
+
+#### 
 
