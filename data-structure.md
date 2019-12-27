@@ -68,7 +68,79 @@ array는 데이터가 저장되어 있는 위치, 주소가 중요하다면 list
 * 배열의 특성상 데이터를 리스트의 처음이나 간에 저장하면,  이후의 데이터들이 한칸씩 뒤로 물러나야 한다. 따라서 시간이 많이 소요된다는 것이 단점
 * 하지만, 데이터를 가져올 때, 인덱스를 이용하여 접근하기 때문에 빠르게 가져올 수 있다는 것이 장점. 
 
-###  
+#### Java에서 ArrayList 사용법
 
- 
+java에는 기본적으로 ArrayList가 내장되어 있다. 그래서 사용법을 아는 것이 중요하다. 
+
+* 생성
+
+ArrayList를 사용하기 위해서는 먼저 ArrayList 객를 만들어야 한다.  또, ArrayList는 java.util.ArrayList에 포함되어 있기 때문에 import를 해줘야 한다. 
+
+```java
+import java.util.ArrayList; 
+ArrayList<Integer> numbers = new ArrayList<>(); 
+```
+
+* 추가
+
+add 메소드를 사용한다. 또, 특정 위치에 추가하고 싶다면 add의 첫번째 인자로 인덱스를 지정하면 된다.
+
+```java
+numbers.add(10);
+numbers.add(20);
+...
+numbers.add(1, 50); //1번째 인덱스에 50을 추가하겠다는 
+```
+
+\*자바의 배열은 크기가 고정되어 있다. 데이터를 추가하는 과정에서 내부적으로 사용하는 배열이 꽉차면 기존의 배열 대비 크기가 2배 큰 새로운 배열을 만들고, 기존의 데이터를 새로운 배열로 복제한다. 덕분에 프로그래머는 ArrayList의 크기에 신경쓰지 않고 편리하게 프로그램을 만들 수 있다. 
+
+* 삭제
+
+특정 인덱스에 위치하는 엘리먼트를 삭제할때는 remove를 사용한다.
+
+```java
+numbers.remove(2); //2번째 인덱스 엘리먼트를 삭제한다는 뜻 
+```
+
+* 가져오기
+
+엘리먼트를 가져올 때는 get을 사용한다. 
+
+```java
+numbers.get(2); //2번째 인덱스의 엘리먼트를 가져온다는 뜻 
+```
+
+* 반
+
+자바에서는 ArrayList를 탐색하기 위한 방법으로 iterator를 제공한다. 이는 주로 객체지향 프로그래밍에서 사용하는 기법이다. 우선 iterator 객체를 만들어야 한다. 
+
+```java
+Iterator it<Integer> = numbers.iterator();
+```
+
+ Iterator 객체는 numbers 객체 내부에 저장된 값을 하나씩 순회하면서 탐색할 수 있도록 돕는 객체이다.  it.next\(\) 메소드를 호출할 때마다 엘리먼트를 순서대로 리턴한다. 만약, 더 이상 순회할 엘리먼트가 없다면 it.hasNext\(\)의 값은 false가 되면서 while문이 종료된다. 
+
+```java
+while(it.hasNext()){
+ System.out.println(it.next());
+}
+
+//조금 더 편리한 방법도 있다
+for(int value : numbers){
+ System.out.println(value);
+}
+
+```
+
+ 단순 출력을 위해서만 순회를 하지는 않는다. 순회 과정에서 필요에 따라서는 엘리먼트를 삭제, 추가 하는 작업을 해야할 것이다. 그런 경우 아래와 같이 처리할 수 있다. 
+
+```java
+while(it.hasNext()){
+ int value = it.next();
+ if(value == 30){
+//it.next()를 통해서 반환된 numbers의 엘리먼트를 삭제하라는 명령 
+    it.remove(); 
+  }
+}
+```
 
