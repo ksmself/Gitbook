@@ -144,3 +144,36 @@ while(it.hasNext()){
 }
 ```
 
+#### ArrayList 구현 1 - 객체 생성 
+
+우선, ArrayList라는 이름의 객체를 만든다. 
+
+* ArrayList.java
+
+```java
+package list.arraylist.implementation;
+ 
+public class ArrayList {
+//현 리스트에 장되어 있는 데이터의 개수, size가 0이라는 뜻 
+    private int size = 0;
+//object 타입의 private한 배열 elementData는 최대 100개까지 수용 가능하다 
+    private Object[] elementData = new Object[100];
+}
+```
+
+* Main.java
+
+```java
+package list.arraylist.implementation;
+ 
+public class Main {
+
+    public static void main(String[] args) {
+    
+        ArrayList numbers = new ArrayList();
+        
+    }
+    
+}
+```
+
