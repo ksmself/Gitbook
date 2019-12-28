@@ -193,5 +193,28 @@ input은 사용자에게 어떤 정보나 데이터를 받을 때, 필드를 생
 
 Radio와 동일하게 코드를 작성하되, input type만 checkbox로 변경해주면 된다. 
 
-## 
+## Form\(5\) - Select & Option
+
+![Select&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; tool-down box&#xB97C; &#xB9CC;&#xB4E4;&#xC5B4;&#xB0B4;&#xB294; &#xD0DC;&#xADF8;](.gitbook/assets/362.png)
+
+```markup
+<form action="" method="GET">
+//skill이라는 id를 위한 라벨임을 알려주는 코드 
+  <label for="skill">스킬</label>
+//select의 name과 value는 서버에게 전달을 하기 위해 나타내는 정보 
+  <select name="skill" id="skill">
+  //HTML을 선택할 경우, skill=html이라고, url 뒷 부분에 표시된다. 
+    <option value="html">HTML</option>
+  //CSS을 선택할 경우, skill=css이라고, url 뒷 부분에 표시된다.
+    <option value="css">CSS</option>
+  //JavaScript을 선택할 경우, skill=js이라고, url 뒷 부분에 표시된다.
+    <option value="js">JavaScript</option>
+  </select>
+  <button type="submit">
+    Submit
+  </button>
+</form>
+```
+
+ 
 
