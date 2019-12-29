@@ -161,8 +161,8 @@ input은 사용자에게 어떤 정보나 데이터를 받을 때, 필드를 생
 ```markup
 <label for="user-name"> 이 </label>
 <input type="text" id="user-name"/>
-//user-name의 인풋에 '이름'이라는 라벨을 붙이는 코드 
-//특이하게, label의 id에는 #을 붙이지 않음 
+<!--user-name의 인풋에 '이름'이라는 라벨을 붙이는 코드 
+특이하게, label의 id에는 #을 붙이지 않음 -->
 ```
 
 ## Form\(4\) - Radio & Checkbox
@@ -199,15 +199,15 @@ Radio와 동일하게 코드를 작성하되, input type만 checkbox로 변경�
 
 ```markup
 <form action="" method="GET">
-//skill이라는 id를 위한 라벨임을 알려주는 코드 
+<!--skill이라는 id를 위한 라벨임을 알려주는 코드 -->
   <label for="skill">스킬</label>
-//select의 name과 value는 서버에게 전달을 하기 위해 나타내는 정보 
+<!--select의 name과 value는 서버에게 전달을 하기 위해 나타내는 정보 -->
   <select name="skill" id="skill">
-  //HTML을 선택할 경우, skill=html이라고, url 뒷 부분에 표시된다. 
+  <!--HTML을 선택할 경우, skill=html이라고, url 뒷 부분에 표시된다. -->
     <option value="html">HTML</option>
-  //CSS을 선택할 경우, skill=css이라고, url 뒷 부분에 표시된다.
+  <!--CSS을 선택할 경우, skill=css이라고, url 뒷 부분에 표시된다.-->
     <option value="css">CSS</option>
-  //JavaScript을 선택할 경우, skill=js이라고, url 뒷 부분에 표시된다.
+  <!--JavaScript을 선택할 경우, skill=js이라고, url 뒷 부분에 표시된다.-->
     <option value="js">JavaScript</option>
   </select>
   <button type="submit">
@@ -222,9 +222,21 @@ text는 많은 양의 텍스트를 입력할 수 없지만, textarea는 여러 �
 
 ```markup
 <label for="introduction">자기소개</label>
-//가로, 세로 길이도 설정 가능, placeholder도 설정할 수 있다. 
+<!-- 가로, 세로 길이도 설정 가능, placeholder도 설정할 수 있다. -->
 <textarea id="introduction" rows="30" cols="50"
  placeholder="자기소개를 입력하세요."></textarea>
+```
+
+## Form\(7\) - Button
+
+말 그대로 클릭하는 버튼, type이라는 attribute이 꼭 들어가야 한다!
+
+```markup
+<!--총 세가지 타입이 있다. submit은 서버에 정보를 넘겨줄 때, 
+reset은 유저가 기입한 내용을 리셋하고 싶을때, button은 그 -->
+<button type="button">Click!</button>
+<button type="submit">Submit</button>
+<button type="reset">Reset</button>
 ```
 
 ## 
