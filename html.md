@@ -216,5 +216,16 @@ Radio와 동일하게 코드를 작성하되, input type만 checkbox로 변경�
 </form>
 ```
 
- 
+##  Form\(6\) - TextArea
+
+text는 많은 양의 텍스트를 입력할 수 없지만, textarea는 여러 줄을 입력 가능! 
+
+```markup
+<label for="introduction">자기소</label>
+//가로, 세로 길이도 설정 가능, placeholder도 설정할 수 있다. 
+<textarea id="introduction" rows="30" cols="50"
+ placeholder="자기소개를 입력하세요."></textarea>
+```
+
+## 
 
