@@ -241,5 +241,46 @@ public boolean addFirst(Object element){
 }
 ```
 
-#### 
+#### ArrayList 구현 4 - toString
+
+데이터를 확인하기 위해서 toString 객체를 상속해서 구현해보도록 하자. 
+
+```java
+public String toString(){
+    String str = "[";
+    for(int i=0; i < size; i++){
+        str += elementData[i];
+        //마지막 엘리먼트 뒤에는 ,를 추가하지 않기 위해 
+        if(i < size-1){
+            str += ",";
+        }
+    }
+    return str + "]";
+}
+```
+
+이제, Main.java에서 아래와 같은 코드를 실행하면 리스트의 엘리먼트를 쉽게 파악할 수 있다. 
+
+```java
+public static void main(String[] args) {
+    ArrayList numbers = new ArrayList();
+    numbers.addLast(10);
+    numbers.addLast(20);
+    numbers.addLast(30);
+    numbers.addLast(40);
+    numbers.add(1, 15);
+    numbers.addFirst(5);
+    System.out.println(numbers);
+}
+```
+
+출력값은 아래와 같다.
+
+```java
+[5,10,15,20,30,40]
+```
+
+#### ArrayList 구현 5 - remove
+
+
 
