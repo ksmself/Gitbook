@@ -239,9 +239,9 @@ reset은 유저가 기입한 내용을 리셋하고 싶을때, button은 그 -->
 <button type="reset">Reset</button>
 ```
 
-## 표 Table\(1\) - 기본 구
+## 표 Table\(1\) - 기본 구조
 
-table은 데이터를 담은 표를 만들 때 사
+table은 데이터를 담은 표를 만들 때 사용
 
 ```markup
 <!-- table을 만드는 기본 원리 -->
