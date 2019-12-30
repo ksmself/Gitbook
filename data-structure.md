@@ -23,7 +23,7 @@ description: 생활코딩의 Data Structure 강의 듣고 정리.
 * 반복문을 사용해서 배열에 있는 데이터를 하나 하나 꺼내서 각각의 값에 대한 처리를 할 수 있도록 함. 
 * 장점이자 단점: 크기가 정해져 있다, 기능이 없다 &lt;= 배열을 좋은 부품\(작고, 단\)으로 만들기 위해
 
-![\*index: &#xACE0;&#xC720;&#xD55C; &#xBC88;&#xD638;, &#xC804;&#xCCB4; &#xC9D1;&#xB2E8;&#xC5D0;&#xC11C; &#xB370;&#xC774;&#xD130;&#xB97C; &#xC2DD;&#xBCC4;&#xD574;&#xC8FC;&#xB294; &#xC911;&#xC694;&#xD55C; &#xC5ED;&#xD560; ](.gitbook/assets/image%20%286%29.png)
+![\*index: &#xACE0;&#xC720;&#xD55C; &#xBC88;&#xD638;, &#xC804;&#xCCB4; &#xC9D1;&#xB2E8;&#xC5D0;&#xC11C; &#xB370;&#xC774;&#xD130;&#xB97C; &#xC2DD;&#xBCC4;&#xD574;&#xC8FC;&#xB294; &#xC911;&#xC694;&#xD55C; &#xC5ED;&#xD560; ](.gitbook/assets/image%20%287%29.png)
 
 ## List
 
@@ -35,11 +35,11 @@ array는 데이터가 저장되어 있는 위치, 주소가 중요하다면 list
 
 * 데이터를 추가할 때: 세 번째 인덱스에 50이라는 값을 추가한다고 할 때, array는 기존의 세 번째 인덱스의 40이라는 값이 50으로 바뀐다. 반면, list는 2번째 인덱스와 4번째 인덱스 사이에 50이라는 값이 들어간다. 
 
-![&#xC6D0;&#xBCF8; data](.gitbook/assets/image%20%287%29.png)
+![&#xC6D0;&#xBCF8; data](.gitbook/assets/image%20%288%29.png)
 
 ![array](.gitbook/assets/image.png)
 
-![list](.gitbook/assets/image%20%285%29.png)
+![list](.gitbook/assets/image%20%286%29.png)
 
 * 데이터를 삭제할 때: 0번째 인덱스에 10, 1번째 인덱스에 20, 2번째 인덱스에 30, 3번째 인덱스에 40, 4번째 인덱스에 50이 들어있는 데이터가 있었다고 하자. 여기서 3번째 인덱스의 40이라는 값을 지우면, array는 40이 없어진 자리가 빈자리로 남아 있지만, list는 4번째 인덱스에 있던 값이 3번째 인덱스로 옮겨 오게 된다. 즉, **array에서는 인덱스**가 주민등록번호처럼 변하지 않는 **고유한 값을 가질 수 있게** 하는 역할을 해주지만, **list**는 데이터 밀도를 촘촘하게 유지하게 하기 위해, **인덱스를 식별자로 사용하지 않는다**. 
 
@@ -282,5 +282,46 @@ public static void main(String[] args) {
 
 #### ArrayList 구현 5 - remove
 
+데이터를 삭제하는 것은 중간에 추가하는 것과 유사하다. 다음 그림을 보도록 하자. 그림에 나타난것처럼 엘리먼트를 삭제할 때는 뒤에 있는 엘리먼트를 한칸씩 전진시킨다. 이때, 시작과 끝을 잘 파악하는 것이 중요한데, 시작은 삭제할 인덱스의 다음 인덱스이며, 끝은 size - 1이다. 그리고 엘리먼트를 옮기는 작업이 끝난 후에는 size의 값을 1 감소시키고, 마지막 엘리먼트도 삭제해다. 
 
+![](.gitbook/assets/image%20%285%29.png)
+
+코드를 보도록 하자.
+
+```java
+public Object remove(int index) {
+// 엘리먼트를 삭제하기 전에 삭제할 데이터를 removed 변수에 저
+    Object removed = elementData[index];
+// 삭제된 엘리먼트 다음 엘리먼트부터 마지막 엘리먼트까지 
+// 순차적으로 이동해서 빈자리를 채다.
+    for (int i = index + 1; i <= size - 1; i++) {
+        elementData[i - 1] = elementData[i];
+    }
+    // 크기를 줄다.
+    size--;
+    // 마지막 위치의 엘리먼트를 명시적으로 삭제해다. 
+    elementData[size] = null;
+    return removed;
+}   
+```
+
+Main.java 코드는 다음과 같을 때, 
+
+```java
+ArrayList numbers = new ArrayList();
+numbers.addLast(10);
+numbers.addLast(15);
+numbers.addLast(20);
+numbers.addLast(30);
+numbers.remove(1);
+System.out.println(numbers);
+```
+
+결과는 다음과 같다. 
+
+```java
+[10,20,30]
+```
+
+#### 
 
