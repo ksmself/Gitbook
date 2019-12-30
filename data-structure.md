@@ -323,5 +323,37 @@ System.out.println(numbers);
 [10,20,30]
 ```
 
-#### 
+#### ArrayList 구현 6 - remove first last
+
+처음과 끝 엘리먼트를 지우는 것은 간단하다. remove 메소드를 이용하면 된다. 아래 코드를 보자.
+
+```java
+public Object removeFirst(){
+    return remove(0);
+}
+ 
+public Object removeLast(){
+    return remove(size-1);
+}
+```
+
+Main.java 코드가 아래와 같을 때,
+
+```java
+ArrayList numbers = new ArrayList();
+numbers.addLast(5);
+numbers.addLast(10);
+numbers.addLast(20);
+numbers.addLast(30);
+numbers.addLast(40);
+numbers.removeFirst();
+numbers.removeLast();
+System.out.println(numbers);
+```
+
+결과는 다음과 같다. 
+
+```java
+[10,20,30]
+```
 
