@@ -239,5 +239,47 @@ reset은 유저가 기입한 내용을 리셋하고 싶을때, button은 그 -->
 <button type="reset">Reset</button>
 ```
 
-## 
+## 표 Table\(1\) - 기본 구
+
+table은 데이터를 담은 표를 만들 때 사
+
+```markup
+<!-- table을 만드는 기본 원리 -->
+<table>
+ <!-- tr은 table row, 즉, 가로를 뜻함 -->
+ <tr>
+  <th>테이블헤더</th>
+  <td>테이블데이터</td>
+ </tr>
+</table>
+
+<table>
+  <!--브라우저에게 구조를 잘 알려주기 위해 thead와 tbody를
+  사용하는 것을 권-->
+  <thead>
+   <!--th는 볼드체로 표시된다, 제목이라고 보면-->
+    <th>아이디</th>
+    <th>이름</th>
+    <th>개발분야</th>
+    <th>기타</th>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>00001</td>
+      <td>김버그</td>
+      <td>프론트엔드</td>
+      <!-- 기타라는 thead가 만들어졌으므로 빈칸이더라도
+      td는 생성해두는 것이 좋-->
+      <td></td>
+    </tr>
+    <tr>
+      <td>00002</td>
+      <td>홍길동</td>
+      <td>풀스택</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+```
 
