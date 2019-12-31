@@ -246,7 +246,7 @@ table은 데이터를 담은 표를 만들 때 사용
 ```markup
 <!-- table을 만드는 기본 원리 -->
 <table>
- <!-- tr은 table row, 즉, 가로를 뜻함 -->
+ <!-- tr은 table row, 즉, 행 뜻함 -->
  <tr>
   <th>테이블헤더</th>
   <td>테이블데이터</td>
@@ -281,5 +281,84 @@ table은 데이터를 담은 표를 만들 때 사용
     </tr>
   </tbody>
 </table>
+```
+
+## 표 Table\(2\) - 심화
+
+style은 고려하지 않는다고 했을 때, 아래 사진과 같은 table을 어떻게 만들 수 있을까?  
+
+![](.gitbook/assets/363.png)
+
+```markup
+<table>
+  <thead>
+    <tr>
+      <!--텍스트가 들어가지 않아도 칸은 만들어주어-->
+      <th></th>
+      <!--브라우저에게 열의 header라는 것을 알려주는게 scope="col"-->
+      <th scope="col">월</th>
+      <th scope="col">화</th>
+      <th scope="col">수</th>
+      <th scope="col">목</th>
+      <th scope="col">금</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+     <!--브라우저에게 의 header라는 것을 알려주는게 scope="row"-->
+      <th scope="row">1교시</th>
+      <!--2개의 행을 차지할때, rowspan="2"라고 -->
+      <td rowspan="2">왕초보 HTML &amp; CSS</td>
+      <td>모각코</td>
+      <td rowspan="2">왕초보 HTML &amp; CSS</td>
+      <td>모각코</td>
+      <td rowspan="2">왕초보 HTML &amp; CSS</td>
+    </tr>
+
+    <tr>
+      <th scope="row">2교시</th>
+      <!--이미 위의 table row에서 2칸을 차지했기때문에 굳이 써주지 않아도 ok-->
+      <!--<td rowspan="2">왕초보 HTML &amp; CSS</td>-->
+      <td rowspan="2">JavaScript스킬업</td>
+      <!--<td rowspan="2">왕초보 HTML &amp; CSS</td>-->
+      <td rowspan="2">JavaScript스킬업</td>
+      <!--<td rowspan="2">왕초보 HTML &amp; CSS</td>-->
+    </tr>
+
+    <tr>
+      <th scope="row">3교시</th>
+      <td>JavaScript시작반</td>
+      <!--<td rowspan="2">JavaScript스킬업</td>-->
+      <td>JavaScript시작반</td>
+      <!--<td rowspan="2">JavaScript스킬업</td>-->
+      <td>JavaScript시작반</td>
+    </tr>
+
+    <tr>
+      <!--6개의 열을 차지할때, colspan="6"라고 표현-->
+      <td colspan="6" scope="row">점심시간</td>
+    </tr>
+
+    <tr>
+      <th scope="row">4교시</th>
+      <td>SASS 기초반</td>
+      <td rowspan="2">HTML &amp; CSS 포트폴리오반</td>
+      <td rowspan="2">Open Seminar</td>
+      <td rowspan="2">HTML &amp; CSS 포트폴리오반</td>
+      <td>SASS 기초반</td>
+    </tr>
+
+    <tr>
+      <th scope="row">5교시</th>
+      <td>모각코</td>
+      <!--<td rowspan="2">HTML &amp; CSS 포트폴리오반</td>-->
+      <!--<td rowspan="2">Open Seminar</td>-->
+      <!--<td rowspan="2">HTML &amp; CSS 포트폴리오반</td>-->
+      <td>모각코</td>
+    </tr>
+  </tbody>
+</table>
+
 ```
 
