@@ -420,7 +420,7 @@ picture-in-picture" allowfullscreen></iframe>
 
 ## Etc 기타
 
-### abbreviation 약자, 약
+### abbreviation 약자, 약어
 
 해당 단어 위에 마우스를 올리면 설명이 나오도록 하는 태그, title은 설명을 적어주는 attribute이기 때문에 꼭 포함해주어야함
 
@@ -430,7 +430,7 @@ picture-in-picture" allowfullscreen></iframe>
 </p>
 ```
 
-### address 주
+### address 주소
 
 연락처에 관한 정보를 마크업할때 사용하는 태그. 물리적 주소, URL, email 주소, 전화번호, SNS가 이에 해당.
 
@@ -443,7 +443,7 @@ picture-in-picture" allowfullscreen></iframe>
 </address>
 ```
 
-### Pre, code 코
+### Pre, code 코드
 
 html 문서 상에서 코드를 작성하고 싶을 때 사용. p태그는 엔터를 쳐도 화면 상에서는 엔터로 표현되지 않지만, pre태그를 사용하면 표현이 가능하다. 
 
@@ -464,5 +464,75 @@ html 문서 상에서 코드를 작성하고 싶을 때 사용. p태그는 엔�
 
 ```
 
-## 
+## Doctype & Document Structure
+
+* 모든 html 문서를 작성할 때 가장 먼저 해줘야 하는 것이 Doctype 선언! Doctype이란 document type, 즉, 문서 형식 선언이다. &lt;!DOCTYPE html&gt;이란 브라우저에 이 문서는 HTML5 버전으로 작성된 문서라는 것을 알려주는 코드이다. 즉, 브라우저에 오류 없이 잘 렌더링해달라는 선언이기도 함. 
+* 이제 html 태그를 쓰면 되는데, head와 body만을 포함할 수 있다. 
+* head 태그는 웹 문서에 관한 메타 데이터를 담으면 된다. 
+* body 태그는 웹 상에서 보여질 내용, 콘텐츠 그 자체를 담으면 된다. 
+
+![](.gitbook/assets/364.png)
+
+## Title, Link, Style & Script
+
+### Title 문서의 대제목 
+
+&lt;title&gt;문서의 대제&lt;/title&gt;. 검색 최적화에 매우 중요. 
+
+title 잘 쓰는 방
+
+* 키워드 단순 나열은 비
+* 페이지마다 그에 맞게 변경
+* 무엇에 관한 내용인지 센스있게 잘 작성하는 게 중
+
+### Link
+
+css 스타일시트를 첨부하는 태그 
+
+```markup
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>김버그의 버그없는 HTML과 CSS</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <h1>kimbug</h1>
+  </body>
+</html>
+```
+
+### Style & Script
+
+style 태그는 html 문서 내에 css 코드를 작성할 때. script 태그는 html 문서 내에 JavaScript 파일을 첨부할  때 사용. 
+
+* style 태그는 웬만하면 사용하는 것을 비추. 왜냐하면 아무리 열심히 styles.css에 스타일 관련 코드를 작성해두어도, style 태그를 쓰는 순간 style 태그가 그걸 다 덮어버리기 때문이다. 
+* script 태그 내에 source를 포함해서 쓰거나, style 태그처럼 그 즉시도 구현 가능하다. 
+* script 태그는 렌더가 다 될때까지 기다리기 때문에, 중간에 넣을 경우 비효율적일수있다. 그래서 항상 body 마지막 부분에 쓴다. 
+
+```markup
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>김버그의 버그없는 HTML과 CSS</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <h1>kimbug</h1>
+    <script src="./app.js"></script>
+    <script>
+      var h1 = document.querySelector('h1');
+      h1.addEventListener('click', function(event){
+        this.textContent = 'hi';
+      })
+    </script>
+  </body>
+</html>
+```
+
+ 
+
+### 
 
