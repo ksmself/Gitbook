@@ -362,7 +362,7 @@ style은 고려하지 않는다고 했을 때, 아래 사진과 같은 table을 
 
 ```
 
-## 미디어 파일
+## Media 미디어 파일
 
 ### audio/video
 
@@ -418,7 +418,51 @@ frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;
 picture-in-picture" allowfullscreen></iframe>
 ```
 
+## Etc 기타
+
+### abbreviation 약자, 약
+
+해당 단어 위에 마우스를 올리면 설명이 나오도록 하는 태그, title은 설명을 적어주는 attribute이기 때문에 꼭 포함해주어야함
+
+```markup
+<p>
+  너... 혹시 <abbr title="Attention Deficit Hyperactivity Disorder">ADHD</abbr>니?
+</p>
+```
+
+### address 주
+
+연락처에 관한 정보를 마크업할때 사용하는 태그. 물리적 주소, URL, email 주소, 전화번호, SNS가 이에 해당.
+
+```markup
+<address>
+  <h1>
+  김버그
+  </h1>
+  <a href="https://youtube.com/c/kimbug">https://youtube.com/c/kimbug</a>
+</address>
+```
+
+### Pre, code 코
+
+html 문서 상에서 코드를 작성하고 싶을 때 사용. p태그는 엔터를 쳐도 화면 상에서는 엔터로 표현되지 않지만, pre태그를 사용하면 표현이 가능하다. 
+
+```markup
+<!--여러 줄의 코드를 작성할때는 pre태그 사용-->
+<pre>
+<code>
+ console.log('hello kimbug');
+ <!--한 칸 띄어쓴 것도 출력 화면에는 그대로 반영된다-->
+  var kimbug = 'kimbug';
+</code>
+</pre>
+
+<!--한 줄의 코드만 작성할때는 code태그만 사용 가능-->
+<code>
+  console.log('hello kimbug');
+</code>
+
+```
+
 ## 
-
-
 
