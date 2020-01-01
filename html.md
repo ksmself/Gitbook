@@ -41,10 +41,10 @@ description: 김버그의 버그 없는 HTML 강의 듣고 정리
 
 ## Img
 
-이미지 태그. attribut로는 src, alt가 있음. 
+이미지 태그. attribute로는 src, alt가 있음. 
 
 * src: source
-* alt: alternative text, 대체 텍스트, 네트워크가 느려서 이미지가 안 뜨는 상황을 대비해 래 어떤 이미지인지에 대한 대체 텍스트를 넣어주는 것 
+* alt: alternative text, 대체 텍스트, 네트워크가 느려서 이미지가 안 뜨는 상황을 대비해 본래 어떤 이미지인지에 대한 대체 텍스트를 넣어주는 것 
 
 ## List
 
@@ -361,4 +361,64 @@ style은 고려하지 않는다고 했을 때, 아래 사진과 같은 table을 
 </table>
 
 ```
+
+## 미디어 파일
+
+### audio/video
+
+* src는 항상 있어야 한다. 
+* controls라는 attribute을 적어주어야만 재생 버튼과 음량 조절 버튼을  화면에서  확인할 수 있다. 
+* autoplay라는 attribute을 적어주면, 해당 웹페이지를 열자마자 자동 재생이 가능하다.
+* loop라는 attribute을 통해 반복 재생이 가능하다. 
+* src를 따로 쓰는 경우가 있는데, 브라우저에 따라 \(audio\)mp3/ogg/wav \| \(video\)mp4/mov 등 각각 지원하지 않는 파일이 있을수 있으므로 이때를 대비해 파일을 여러 개 써준다. 
+
+```markup
+<!--화면에 재생버튼과 음량조절버튼이 뜬다-->
+<audio src="../assets/audios/kimbug.mp3" controls>
+</audio>
+<!-- 열자마자 자동재생 그리고 반복되기를 원할때-->
+<audio src="../assets/audios/kimbug.mp3" loop autoplay>
+</audio>
+<!--src를 따로 빼주는 경우-->
+<audio controls>
+  <source src="../assets/audios/kimbug.wav" type="audio/wav">
+  <source src="../assets/audios/kimbug.mp3" type="audio/mpeg">
+  <source src="../assets/audios/kimbug.ogg" type="audio/ogg">
+  <!--위 3가지 파일 모두 없어서 재생이 불가능한 경우 띄워줄 문구-->
+  <p>
+    당신의 브라우저를 버리시고 크롬을 사용하시는게 어떨까요? 
+  </p>
+</audio>
+
+<!--화면에 재생버튼과 음량조절버튼이 뜬다-->
+<video src="../assets/videos/kimbug.mp4" controls>
+</video>
+<!-- 열자마자 자동재생 그리고 반복되기를 원할때-->
+<video src="../assets/videos/kimbug.mp4" loop autoplay>
+</video>
+<!--src를 따로 빼주는 경우-->
+<video>
+  <source src="../assets/videos/kimbug.mov" type="video/mp4">
+  <source src="../assets/videos/kimbug.mp4" type="video/mp4">
+  <!--위 2가지 파일 모두 없어서 재생이 불가능한 경우 띄워줄 문구-->
+  <p>
+    브라우저를 업데이트 하심이 어떠신지요?
+  </p>
+  <a href="https://browsehappy.com">브라우저 업데이트하기</a>
+</video>
+```
+
+### iframe
+
+또다른 html문서나 컨텐츠를 집어넣고 싶을 때 사용. iframe 코드를 직접 작성할 경우는 거의 없음.  가령, 유튜브에 들어가서 원하는 영상을 클릭&gt;share&gt;embed&gt;iframe 코드 복사 후 내 코드에 붙여넣기를 하면 된다!
+
+```markup
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3pT_aBW_pdg" 
+frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; 
+picture-in-picture" allowfullscreen></iframe>
+```
+
+## 
+
+
 
