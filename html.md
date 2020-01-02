@@ -532,6 +532,28 @@ style 태그는 html 문서 내에 css 코드를 작성할 때. script 태그는
 </html>
 ```
 
+## Meta
+
+name과 content라는 attribute은 꼭 작성해줘야 함. name은 메타데이터의 종류, content는 메타데이터 값이다. 
+
+```markup
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="김버그">
+    <meta name="description" content="~~">
+    <meta name="keywords" content="김버그, 구름강의, 구름Edu">
+    <title>김버그의 버그없는 HTML과 CSS</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <h1>kimbug</h1>
+  </body>
+</html>
+```
+
  
 
 ### 
