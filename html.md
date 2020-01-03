@@ -554,7 +554,5 @@ name과 content라는 attribute은 꼭 작성해줘야 함. name은 메타데이
 </html>
 ```
 
- 
-
-### 
+## Html 훈련
 
