@@ -357,3 +357,67 @@ System.out.println(numbers);
 [10,20,30]
 ```
 
+#### ArrayList 구현 7 - get
+
+데이터를 가져오는 기능은 get이다. get은 인자로 전달된 인덱스 값을 그대로 배열로 전달한다. **배열은 메모리의 주소에 직접 접근하는 랜덤 엑세스**이기 때문에 매우 빠르게 처리된다. 
+
+```java
+public Object get(int index) {
+    return elementData[index];
+}
+```
+
+```java
+ArrayList numbers = new ArrayList();
+numbers.addLast(10);
+numbers.addLast(20);
+numbers.addLast(30);
+numbers.addLast(40);
+System.out.println(numbers.get(0));
+System.out.println(numbers.get(1));
+System.out.println(numbers.get(2));
+```
+
+```java
+10
+20
+30
+```
+
+#### ArrayList 구현 8 - size, indexOf
+
+엘리먼트의 크기를 알아내는 법은 간단하다. 내부적으로 size라는 값을 유지하고 있기 때문에 이 값을 돌려주기만 하면 된다. 
+
+```java
+public int size() {
+    return size;
+}
+```
+
+특정한 값을 가진 엘리먼트의 인덱스 값을 알아내는 방법을 알아보자. 값이 있다면 그 값이 발견되는 첫번째 인덱스 값을 리턴하고, 값이 없다면 -1을 리턴한다.  
+
+```java
+public Object indexOf(Object o){
+    for(int i=0; i < size; i++){
+        if(o.equals(elementData[i])){
+            return i;
+        }
+    }
+    return -1;
+}
+```
+
+```java
+ArrayList numbers = new ArrayList();
+numbers.addLast(10);
+numbers.addLast(20);
+numbers.addLast(30);
+System.out.println(numbers.indexOf(20));
+System.out.println(numbers.indexOf(40));
+```
+
+```java
+1
+-1
+```
+
