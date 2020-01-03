@@ -195,7 +195,7 @@ Radio와 동일하게 코드를 작성하되, input type만 checkbox로 변경�
 
 ## Form\(5\) - Select & Option
 
-![Select&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; tool-down box&#xB97C; &#xB9CC;&#xB4E4;&#xC5B4;&#xB0B4;&#xB294; &#xD0DC;&#xADF8;](.gitbook/assets/362.png)
+![Select&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; tool-down box&#xB97C; &#xB9CC;&#xB4E4;&#xC5B4;&#xB0B4;&#xB294; &#xD0DC;&#xADF8;](../.gitbook/assets/362.png)
 
 ```markup
 <form action="" method="GET">
@@ -287,7 +287,7 @@ table은 데이터를 담은 표를 만들 때 사용
 
 style은 고려하지 않는다고 했을 때, 아래 사진과 같은 table을 어떻게 만들 수 있을까?  
 
-![](.gitbook/assets/363.png)
+![](../.gitbook/assets/363.png)
 
 ```markup
 <table>
@@ -471,7 +471,7 @@ html 문서 상에서 코드를 작성하고 싶을 때 사용. p태그는 엔�
 * head 태그는 웹 문서에 관한 메타 데이터를 담으면 된다. 
 * body 태그는 웹 상에서 보여질 내용, 콘텐츠 그 자체를 담으면 된다. 
 
-![](.gitbook/assets/364.png)
+![](../.gitbook/assets/364.png)
 
 ## Title, Link, Style & Script
 

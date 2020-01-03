@@ -1,6 +1,7 @@
 # Table of contents
 
 * [Introduction](README.md)
-* [Html](html.md)
+* [Html](html/README.md)
+  * [Html 훈련](html/html.md)
 * [Data Structure](data-structure.md)
 
