@@ -10,7 +10,7 @@ description: 미운 웹 백조 만들기(HTML/CSS)  강의 듣고 복습
 
 ![&#xD3EC;&#xC778;&#xD2B8;&#xB294; &#xB808;&#xC774;&#xC544;&#xC6C3;!](.gitbook/assets/368.png)
 
-html 파
+html 파일
 
 ```markup
 <!DOCTYPE html>
