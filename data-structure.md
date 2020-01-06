@@ -421,3 +421,47 @@ System.out.println(numbers.indexOf(40));
 -1
 ```
 
+#### ArrayList 구현 9 - Iterator next, hasNext
+
+```java
+ArrayList.ListIterator it = numbers.listIterator();
+while (it.hasNext()) {
+    int value = (int) it.next();
+    System.out.println(value);
+}
+```
+
+위의 코드는 ListIterator라는 객체를 이용한 방법이다. ListIterator 객체는 반복 작업을 위해서 고안된 것이다. 이 객체를 만드는 방법은 ArrayList의 listIterator 메소드를 호출하는 것이다. 우선 이 메소드를 만드는 코드를 보자. 
+
+```java
+public ListIterator listIterator() {
+    // ListIterator 인스턴스를 생성해서 리턴합니다.
+    return new ListIterator();
+} 
+```
+
+아래는 ListIterator 클래스이다. 
+
+```java
+public class ListIterator {
+    // 현재 탐색하고 있는 순서를 가르키는 인덱스 값
+    private int nextIndex = 0;
+ 
+    // next 메소드를 호출할 수 있는지를 체크합니다.
+    public boolean hasNext() {
+    // nextIndex가 엘리먼트의 숫자보다 적다면 next를 이용해서 
+    //탐색할 엘리먼트가 존재하는 것이기 때문에 true를 리턴합니다. 
+        return nextIndex < size();
+    }
+     
+    // 순차적으로 엘리먼트를 탐색해서 리턴합니다. 
+    public Object next() {
+       // nextIndex에 해당하는 엘리먼트를 리턴하고 
+       // nextIndex의 값을 1 증가 시킵니다.
+        return elementData[nextIndex++];
+    }
+}
+```
+
+#### 
+
