@@ -78,3 +78,60 @@ description: 실전에 적용할 수 있도록 간단한 예제를 통해 훈련
 
 ```
 
+## \(3\) Feature Box
+
+웹사이트에서 종종 아래와 같은 화면을 볼 수 있다. 그 중, 첫번째 사진과 글에 대해 코드를 짜보려고 한다. 사진과 제목, 부연설명으로 이루어져 있어 간단하지만 주의해야 할 사항이 두 가지가 있다. 
+
+1. img 태그에는 경로를 지정하는 src 외에, 이미지가 없을 경우를 대비한 대체 텍스트인 alt라는 attribute을 꼭 넣어주어야 한다. 설령, 뭐라고 적어야 할지 모르겠거나 딱히 설명이 필요한 부분이 아니더라도 alt=""로 비워두면 된다. 
+2. html은 정보를 나타내기 위한 언어인데, 개발자에 따라서는 이미지를 정보의 영역이 아닌 디자인의 영역으로 생각하는 경우도 있다. 그럴 경우, img 태그 없이 div class에 no-image라는 attribute을 추가해 css에서 이미지 부분을 해결할 수도 있다. 
+
+![](../.gitbook/assets/369-_li.jpg)
+
+그러면 코드로 확인해보자. 
+
+```markup
+<!-- 이미지를 html에 포함시키는 경우 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feature Box</title>
+  <link rel="stylesheet" href="./styles3.css">
+</head>
+<body>
+  <div class="feature-box">
+    <img src="https://wac-cdn.atlassian.com/dam/jcr:bc1f15f9-3b2e-4c30-9313-0ebd6175f18c/File%20Cabinet@2x.png?cdnVersion=676" alt="">
+    <h1>
+      Free unlimited private repositories
+    </h1>
+    <p>
+      Free for small teams under 5 and priced to scale with Standard ($3/user/mo) or Premium ($6/user/mo) plans.
+    </p>
+  </div>
+</body>
+</html>
+
+<!-- 이미지를 css에 포함시키는 경우 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feature Box</title>
+  <link rel="stylesheet" href="./styles3.css">
+</head>
+<body>
+  <div class="feature-box no-image">
+    <!-- <img src="https://wac-cdn.atlassian.com/dam/jcr:bc1f15f9-3b2e-4c30-9313-0ebd6175f18c/File%20Cabinet@2x.png?cdnVersion=676" alt=""> -->
+    <h1>
+      Free unlimited private repositories
+    </h1>
+    <p>
+      Free for small teams under 5 and priced to scale with Standard ($3/user/mo) or Premium ($6/user/mo) plans.
+    </p>
+  </div>
+</body>
+</html>
+```
+
