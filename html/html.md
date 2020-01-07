@@ -137,7 +137,38 @@ description: 실전에 적용할 수 있도록 간단한 예제를 통해 훈련
 
 ## \(4\) Logo in Header
 
-다음과 같은 헤더를 만들 때 주의할 점은 
+다음과 같은 헤더를 만들 때 주의할 점은,
+
+* 로고는 페이지의 제일 중요한 부분이니 텍스트가 아닌 이미지를 넣는다하더라도, h1 태그로 감싸준다. 
+* q&a의 &은 브라우저가 오해할 수 있는 부분이므로, &amp;로 써야 한다. 
+* 로고와 q&a 모두 링크를 걸어야 하는 것을 잊으면 아니된다! 
+* 이미지의 alt, 꼭 빼먹지 않고 써준다. 
 
 ![](../.gitbook/assets/370.png)
+
+```markup
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logo in Header</title>
+  <link rel="stylesheet" href="./styles4.css">
+</head>
+<body>
+  <div class="header">
+    <h1>
+      <a href="./logoinheader.html">
+        <img src="https://statics.goorm.io/logo/edu/goorm_edu.svg" alt="Goorm Edu">
+      </a>
+    </h1>
+    <p>
+      <a href="https://edu.goorm.io/qna">
+        Q&amp;A
+      </a>
+    </p>
+  </div>
+</body>
+</html>
+```
 
