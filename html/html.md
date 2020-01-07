@@ -135,3 +135,9 @@ description: 실전에 적용할 수 있도록 간단한 예제를 통해 훈련
 </html>
 ```
 
+## \(4\) Logo in Header
+
+다음과 같은 헤더를 만들 때 주의할 점은 
+
+![](../.gitbook/assets/370.png)
+
