@@ -172,3 +172,91 @@ description: 실전에 적용할 수 있도록 간단한 예제를 통해 훈련
 </html>
 ```
 
+## \(5\) Breadcrumb & Pagination
+
+아래 사진이 차례로 breadcrumb과 pagination을 나타낸 것이다. 주의해야할 점, 
+
+* breadcrumb에서 '/'는 정보에 해당하지 않으므로 css로 처리한다. 
+* 1, 2, 3, ... 이 부분은 orderd list로 감싸준다. 
+* '...'는 button 태그로 감싸주고, 클릭할 수 없도록 disabled 시킨다. 그리고 button은 꼭 type이라는 attribute을 포함시켜야 한다! 
+* 프론트엔드 개발자는 눈이 잘 보이지 않는 사람들을 위해 만든 **aria-label**이라는 국제 태그를 잘 활용해야한다. ex\) &lt;a href="\#" **aria-label="Go to page 1"**&gt;1&lt;/a&gt;
+
+![](../.gitbook/assets/371.png)
+
+```markup
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Breadcrumb & Pagination</title>
+  <link rel="stylesheet" href="./style5.css">
+</head>
+<body>
+  <div class="breadcrumb">
+    <a href="https://github.com/rohjs">
+      rohjs
+    </a>
+    <a href="https://github.com/rohjs/bugless-101">
+      bugless-101
+    </a>
+  </div>
+  <div class="pagination">
+    <a href="" aria-label="Current page. Go to previous page" class="disabled">
+      Previous
+    </a>
+    <ol>
+      <li class="current-page">
+        <a href="" aria-label="Go to page 1">
+          1
+        </a>
+      </li>
+      <li>
+        <a href="" aria-label="Go to page 2">
+          2
+        </a>
+      </li>
+      <li>
+        <a href="" aria-label="Go to page 3">
+          3
+        </a>
+      </li>
+      <li>
+        <a href="" aria-label="Go to page 4">
+          4
+        </a>
+      </li>
+      <li>
+        <a href="" aria-label="Go to page 5">
+          5
+        </a>
+      </li>
+      <li>
+        <button type="button" disabled>
+          ...
+        </button>
+      </li>
+      <li>
+        <a href="" aria-label="Go to page 6">
+          6
+        </a>
+      </li>
+      <li>
+        <a href="" aria-label="Go to page 7">
+          7
+        </a>
+      </li>
+      <li>
+        <a href="" aria-label="Go to page 8">
+          8
+        </a>
+      </li>
+    </ol>
+    <a href="" aria-label="Go to next page">
+      Next
+    </a>
+  </div>
+</body>
+</html>
+```
+
