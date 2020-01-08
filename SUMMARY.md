@@ -6,4 +6,5 @@
 * [Css](css.md)
 * [Data Structure](data-structure/README.md)
   * [ArrayList](data-structure/arraylist.md)
+  * [LinkedList](data-structure/linkedlist.md)
 
