@@ -12,7 +12,7 @@ java에는 기본적으로 ArrayList가 내장되어 있다. 그래서 사용법
 
 * 생성
 
-ArrayList를 사용하기 위해서는 먼저 ArrayList 객를 만들어야 한다.  또, ArrayList는 java.util.ArrayList에 포함되어 있기 때문에 import를 해줘야 한다. 
+ArrayList를 사용하기 위해서는 먼저 ArrayList 객체를 만들어야 한다.  또, ArrayList는 java.util.ArrayList에 포함되어 있기 때문에 import를 해줘야 한다. 
 
 ```java
 import java.util.ArrayList; 
