@@ -401,5 +401,38 @@ public class ListIterator {
 }
 ```
 
+### ArrayList 구현 10 - Iterator previous, hasPrevious
+
+```java
+// previous 메소드를 호출해도 되는지를 체크합니다.
+public boolean hasPrevious(){
+    // nextIndex가 0보다 크다면 이전 엘리먼트가 
+    //존재한다는 의미입니다.
+    return nextIndex > 0;
+}
+ 
+// 순차적으로 이전 노드를 리턴합니다.
+public Object previous(){
+    // 이전 엘리먼트를 리턴하고 nextIndex의 값을 
+    // 1 감소합니다. 
+    return elementData[--nextIndex];
+}
+```
+
+### ArrayList 구현 11 - Iterator add, remove
+
+```java
+// 현재 엘리먼트를 추가합니다. 
+public void add(Object element){
+    ArrayList.this.add(nextIndex++, element);
+}
+ 
+// 현재 엘리먼트를 삭제합니다. 
+public void remove(){
+    ArrayList.this.remove(nextIndex-1);
+    nextIndex--;
+}
+```
+
 #### 
 
