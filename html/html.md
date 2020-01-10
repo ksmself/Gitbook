@@ -260,3 +260,58 @@ description: 실전에 적용할 수 있도록 간단한 예제를 통해 훈련
 </html>
 ```
 
+## \(6\) Product Card
+
+아래와 같은 product card를 만들 때 주의할 점은, 
+
+* lang="ko"로 설정해야 한다. 
+* 이미지의 alt 값에 들어갈 설명이 어차피 책제목이기 때문에 비워두고, 책 제목을 h1 태그로 한다.
+* 책 제목만큼은 아니더라도 중요한 정보라고 판단되는 '이병률', '오늘의 책', '9.4' 모두 strong 태그로 처리해준다. 
+* screen reader로 이 정보를 듣게 되는 사람들의 입장에서는, '오늘의 책'이라고만 나오면 무슨 뜻인지 모를 수 있기 때문에, aria-label에 '오늘의 책 선정'이라고 해준다. 
+* 같은 맥락에서 '이병률' 역시, aria-label에 '저자 이병률'이라고, '9.4'도 aria-label에 '평점 9.4'라고 해준다.
+* 별점의 경우, css로 처리해줄 수도 있지만, fontawesome이라는 사이트에서 제공하는 코드를 활용하면 html로 간단히 표현 가능하기 때문에 html로 처리해주었다. 
+
+![](../.gitbook/assets/372.png)
+
+```markup
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Card</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="https://kit.fontawesome.com/64b6b61aad.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="product-card">
+    <div class="product-card-image">
+      <img src="https://user-images.githubusercontent.com/19285811/69318246-becd7980-0c77-11ea-8324-6c43e2de8cf2.png" alt="">
+    </div>
+    <div class="product-card-title">
+      <h1>
+        혼자가 혼자에게
+      </h1>
+      <strong aria-label="오늘의 책 선정">
+        오늘의 책
+      </strong>
+    </div>
+    <strong aria-label="저자 이병률" class="product-card-author">
+      이병률
+    </strong>
+    <strong aria-label="평점 9.4" class="product-card-review">
+      <span aria-hidden="true">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star-half-alt"></i>
+      </span>
+      9.4
+    </strong>
+  </div>
+</body>
+</html>
+
+```
+
