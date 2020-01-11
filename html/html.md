@@ -1,5 +1,5 @@
 ---
-description: 실전에 적용할 수 있도록 간단한 예제를 통해 훈련하는 과정.
+description: 실전에 적용할 수 있도록 '김버그의 버그 없는 html' 강의의 간단한 예제를 통해 훈련하는 과정.
 ---
 
 # Html 훈련
@@ -309,6 +309,72 @@ description: 실전에 적용할 수 있도록 간단한 예제를 통해 훈련
       </span>
       9.4
     </strong>
+  </div>
+</body>
+</html>
+
+```
+
+## \(7\) Instagram User Profile
+
+다음은 Description List가 어떻게 쓰이는지 보기 위한 예제이다. 
+
+* dl은 오로지 description term인 dt, description data인 dd만 요소로 가진다. 
+* 단지, 사전을 위한 용도로만 쓰이는 것이 아니라 아래처럼 posts는 112개, followers는 274명, following은 238명... 이런 것들을 나타낼 때도 사용된다. 
+* screen reader로 듣는 사람들을 위해 이미지보다는 중요한 정보를 먼저 제시하고, 이미지는 맨 뒤로 뺀다. 
+
+![](../.gitbook/assets/373.png)
+
+```markup
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instagram User Profile</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="user-profile">
+    <div class="user-profile-data">
+      <h1>
+        _kimbug
+      </h1>
+      <dl>
+        <!-- 보다 정확한 정보 전달을 위해 대문자 사용, 
+      화면에 소문자로 표현되는 것은 css로 처리 -->
+        <dt>
+          Posts
+        </dt>
+        <dd>
+          112
+        </dd>
+        <dt>
+          Followers
+        </dt>
+        <dd>
+          274
+        </dd>
+        <dt>
+          Following
+        </dt>
+        <dd>
+          238
+        </dd>
+      </dl>
+      <h2>
+        우현
+      </h2>
+      <p>
+        김버그 #frontend #구독 #디지털노마드 🚩
+      </p>
+      <a href="https://www.youtube.com/c/kimbug">
+        youtube.com/c/kimbug
+      </a>
+    </div>
+    <div class="user-profile-photo">
+      <img src="https://instagram.fkul10-1.fna.fbcdn.net/vp/59a2c1304ba02593c35328e5990dd980/5E6731EA/t51.2885-19/s320x320/67069331_474838409740202_7787675159699128320_n.jpg?_nc_ht=instagram.fkul10-1.fna.fbcdn.net" alt="_kimbug">
+    </div>
   </div>
 </body>
 </html>
