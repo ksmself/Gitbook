@@ -381,3 +381,90 @@ description: 실전에 적용할 수 있도록 '김버그의 버그 없는 html'
 
 ```
 
+## \(8\) Receipt
+
+아래의 영수증처럼 만들기 위해 고려해야 할 사항은, 
+
+* screen reader로 듣는 사람들은 '24.06.20xx'나 '0.5L의 L'가 무엇인지 모를 수 있으므로 aria-label을 써주는 게 좋다. 
+* 중요하다고 생각되는 바코드 이미지나 total 가격은 strong 태그로 처리해준다. 
+* 강의를 듣고 코드를 짜면서 **느낀점**: 중요한 요소를 파악하고 그에 맞게 표현해주는 것, screen reader로 듣는 사람들을 고려하여 코드 짜기, 중요하지 않은 이미지는 css로 처리해줄수도 있다는 것
+
+![](../.gitbook/assets/374.png)
+
+```markup
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Receipt</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <h1>
+    Bill sharing request
+    <span>
+      from Kimbug
+    </span>
+  </h1>
+  <div class="receipt">
+    <span aria-label="Issued on June 24, 20xx">
+      24.06.20xx
+    </span>
+    <h2>
+      McDonald's
+    </h2>
+    <strong class="barcode">
+      <img src="./assets/barcode.svg" alt="Barcode">
+    </strong>
+
+    <div>
+      <div>
+        <dl>
+          <dt>
+            Coke Light - 0.3<span aria-label="litter">L</span>
+          </dt>
+          <dd>
+            &dollar;1.50
+          </dd>
+        </dl>
+      </div>
+      <div>
+        <dl>
+          <dt>
+            Heineken Beer - 0.5<span aria-label="litter">L</span>
+          </dt>
+          <dd>
+            &dollar;3.25
+          </dd>
+        </dl>
+      </div>
+      <div>
+        <dl>
+          <dt>
+            Chicken NcNuggets
+          </dt>
+          <dd>
+            &dollar;21.00
+          </dd>
+        </dl>
+      </div>
+      <div>
+        <dl>
+          <dt>
+            In total
+          </dt>
+          <strong>
+            <dd>
+              &dollar;25.75
+            </dd>
+          </strong>
+        </dl>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
+```
+
