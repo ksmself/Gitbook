@@ -152,7 +152,7 @@ public static void main(String[] args) {
 * 끝: 반복작업이 끝나는 인덱스, 중간 추가를 하려고 했던 인덱스 값이다. 
 * 반복작업: i--
 
-![](../.gitbook/assets/image%20%284%29.png)
+![](../.gitbook/assets/image%20%287%29.png)
 
 그럼 이제 전체 코드를 보자.
 
@@ -222,7 +222,7 @@ public static void main(String[] args) {
 
 데이터를 삭제하는 것은 중간에 추가하는 것과 유사하다. 다음 그림을 보도록 하자. 그림에 나타난것처럼 엘리먼트를 삭제할 때는 뒤에 있는 엘리먼트를 한칸씩 전진시킨다. 이때, 시작과 끝을 잘 파악하는 것이 중요한데, 시작은 삭제할 인덱스의 다음 인덱스이며, 끝은 size - 1이다. 그리고 엘리먼트를 옮기는 작업이 끝난 후에는 size의 값을 1 감소시키고, 마지막 엘리먼트도 삭제해다. 
 
-![](../.gitbook/assets/image%20%285%29.png)
+![](../.gitbook/assets/image%20%2810%29.png)
 
 코드를 보도록 하자.
 
