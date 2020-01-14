@@ -1,5 +1,5 @@
 ---
-description: 실전에 적용할 수 있도록 '김버그의 버그 없는 html' 강의의 간단한 예제를 통해 훈련하는 과정.
+description: 실전에 적용할 수 있도록 '김버그의 버그 없는 html' 강의의 간단한 예제를 통해 훈련하는 과정. (*CSS 파일은 제공하지 않습니다.)
 ---
 
 # Html 훈련
@@ -463,6 +463,95 @@ description: 실전에 적용할 수 있도록 '김버그의 버그 없는 html'
       </div>
     </div>
   </div>
+</body>
+</html>
+
+```
+
+## \(9\) Github Dropdown Menu
+
+![](../.gitbook/assets/375.png)
+
+위와 같은 drop down menu를 만들면서 고려해야 할 사항은,
+
+* 프로필 사진도 중요한 정보라고 보고, img 태그를 사용한다. 
+* screen reader로 듣는 사람들을 위해, button의 aria-label에 'Open User Menu'라고 적어준다. 
+* ol, ul의 자식요소는 li만 가능하다. So, a 태그를 li 안에 넣어준다. 
+* 느낀점: 오늘도 역시, 정보의 중요도를 파악하며 마크업하며, screen reader를 위한 aria-label을 잘 작성하는 게 중요하다고 느낌. 
+
+```markup
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Github Dropdown Menu</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="dropdown">
+    <button type="button" aria-label="Open User Menu" class="dropdown-button">
+      <img src="https://user-images.githubusercontent.com/19285811/69063907-43da4800-0a58-11ea-8efb-4b57dca4e3fe.png" alt="rohjs">
+    </button>
+    <div class="dropdown-menu">
+      <h3>
+        <a href="#">
+          Signed in as <strong>rohjs</strong>
+        </a>
+      </h3>
+      <ul>
+        <li>
+          <!-- ul이나 ol의 자식 요소로는 li만 올 수 있기 때문에 li 안에 a 태그 넣어줌 -->
+          <a href="">
+            Your profile
+          </a>
+        </li>
+        <li>
+          <a href="">
+            Your repositories
+          </a>
+        </li>
+        <li>
+          <a href="">
+            Your projects
+          </a>
+        </li>
+        <li>
+          <a href="">
+            Your stars
+          </a>
+        </li>
+        <li>
+          <a href="">
+            Your gists
+          </a>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <a href="">
+            Feature preview
+          </a>
+        </li>
+        <li>
+          <a href="">
+            Help
+          </a>
+        </li>
+        <li>
+          <a href="">
+            Settings
+          </a>
+        </li>
+        <li>
+          <a href="">
+            Sign out
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <script src="./app.js"></script>
 </body>
 </html>
 
