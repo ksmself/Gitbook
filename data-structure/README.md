@@ -23,7 +23,7 @@ description: 생활코딩의 Data Structure 강의 듣고 정리.
 * 반복문을 사용해서 배열에 있는 데이터를 하나 하나 꺼내서 각각의 값에 대한 처리를 할 수 있도록 함. 
 * 장점이자 단점: 크기가 정해져 있다, 기능이 없다 &lt;= 배열을 좋은 부품\(작고, 단\)으로 만들기 위해
 
-![\*index: &#xACE0;&#xC720;&#xD55C; &#xBC88;&#xD638;, &#xC804;&#xCCB4; &#xC9D1;&#xB2E8;&#xC5D0;&#xC11C; &#xB370;&#xC774;&#xD130;&#xB97C; &#xC2DD;&#xBCC4;&#xD574;&#xC8FC;&#xB294; &#xC911;&#xC694;&#xD55C; &#xC5ED;&#xD560; ](../.gitbook/assets/image%20%2814%29.png)
+![\*index: &#xACE0;&#xC720;&#xD55C; &#xBC88;&#xD638;, &#xC804;&#xCCB4; &#xC9D1;&#xB2E8;&#xC5D0;&#xC11C; &#xB370;&#xC774;&#xD130;&#xB97C; &#xC2DD;&#xBCC4;&#xD574;&#xC8FC;&#xB294; &#xC911;&#xC694;&#xD55C; &#xC5ED;&#xD560; ](../.gitbook/assets/image%20%2823%29.png)
 
 ## List
 
@@ -35,17 +35,17 @@ array는 데이터가 저장되어 있는 위치, 주소가 중요하다면 list
 
 * 데이터를 추가할 때: 세 번째 인덱스에 50이라는 값을 추가한다고 할 때, array는 기존의 세 번째 인덱스의 40이라는 값이 50으로 바뀐다. 반면, list는 2번째 인덱스와 4번째 인덱스 사이에 50이라는 값이 들어간다. 
 
-![&#xC6D0;&#xBCF8; data](../.gitbook/assets/image%20%2815%29.png)
+![&#xC6D0;&#xBCF8; data](../.gitbook/assets/image%20%2824%29.png)
 
 ![array](../.gitbook/assets/image.png)
 
-![list](../.gitbook/assets/image%20%2811%29.png)
+![list](../.gitbook/assets/image%20%2816%29.png)
 
 * 데이터를 삭제할 때: 0번째 인덱스에 10, 1번째 인덱스에 20, 2번째 인덱스에 30, 3번째 인덱스에 40, 4번째 인덱스에 50이 들어있는 데이터가 있었다고 하자. 여기서 3번째 인덱스의 40이라는 값을 지우면, array는 40이 없어진 자리가 빈자리로 남아 있지만, list는 4번째 인덱스에 있던 값이 3번째 인덱스로 옮겨 오게 된다. 즉, **array에서는 인덱스**가 주민등록번호처럼 변하지 않는 **고유한 값을 가질 수 있게** 하는 역할을 해주지만, **list**는 데이터 밀도를 촘촘하게 유지하게 하기 위해, **인덱스를 식별자로 사용하지 않는다**. 
 
-![array](../.gitbook/assets/image%20%284%29.png)
+![array](../.gitbook/assets/image%20%285%29.png)
 
-![list](../.gitbook/assets/image%20%286%29.png)
+![list](../.gitbook/assets/image%20%288%29.png)
 
 ### list의 기능
 
