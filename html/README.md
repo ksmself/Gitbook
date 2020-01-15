@@ -154,12 +154,12 @@ input은 사용자에게 어떤 정보나 데이터를 받을 때, 필드를 생
 &lt;label&gt; 라벨 &lt;/label&gt;, 폼 양식에 이름을 붙이는 태그 
 
 * 다양한 인풋들 중, 누구를 위한 라벨인지를 꼭 나타내주어야 함
-* &lt;label for="누"&gt; 라벨 &lt;/label&gt;
+* &lt;label for="누구"&gt; 라벨 &lt;/label&gt;
 * 라벨을 클릭할 경우, 해당 인풋에 포커스가 들어온다. 
 * user의 사용성 개선을 위해 중요한 태그! 
 
 ```markup
-<label for="user-name"> 이 </label>
+<label for="user-name"> 이름 </label>
 <input type="text" id="user-name"/>
 <!--user-name의 인풋에 '이름'이라는 라벨을 붙이는 코드 
 특이하게, label의 id에는 #을 붙이지 않음 -->

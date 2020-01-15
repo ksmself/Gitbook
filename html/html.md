@@ -557,3 +557,42 @@ description: 실전에 적용할 수 있도록 '김버그의 버그 없는 html'
 
 ```
 
+## \(10\) Input Group
+
+아래와 같은 인풋그룹을 만들 때 고려해야 할 사항은, 
+
+* 가장 먼저 덩어리를 파악해야 한다. 아래의 경우, 제목/설명/인풋창/제출버튼 이렇게 나눌 수 있다. 
+* form은 꼭 method라는 attribute을 적어주어야 한다. 
+* input은 꼭 type을 정해주어야 하고, placeholder를 이용해서 문구를 띄워놓을 수 있다. 
+* 'Subscribe' 버튼은 제출용이므로, button의 type은 submit으로 한다. 
+
+![](../.gitbook/assets/376.png)
+
+```markup
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Input Group</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="subscription">
+    <h1>
+      Manage Subscriptions
+    </h1>
+    <p>
+      You can follow the discussion on @kimbug without to leave a comment. 
+      Cool, huh?<br/>
+      Just enter your email address in the form here below and you are all set
+    </p>
+    <form action="" method="GET" class="input-group">
+      <input type="email" placeholder="Your Email">
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+</body>
+</html>
+```
+
