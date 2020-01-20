@@ -49,13 +49,13 @@ temp.next = head;
 head = temp;
 ```
 
-![](../.gitbook/assets/image%20%2820%29.png)
+![](../.gitbook/assets/image%20%2821%29.png)
 
 #### 중간에 추가
 
 3번째 자리\(인덱스 2\)에 90을 추가해보자.
 
-![](../.gitbook/assets/image%20%2818%29.png)
+![](../.gitbook/assets/image%20%2819%29.png)
 
 3번째 자리는 붉은 화살표가 표시된 부분이다. 즉, 6과 23 사이에 90을 위치시켜야 하므로 우선 3번째 자리를 찾아야 한다. 
 
@@ -85,7 +85,7 @@ Vertex temp2 = temp1.next;
 
 값이 90인 새로운 노드를 생성한다. 
 
-![](../.gitbook/assets/image%20%2825%29.png)
+![](../.gitbook/assets/image%20%2827%29.png)
 
 ```java
 Vertex newVertex = new Vertex(input);
@@ -108,7 +108,7 @@ newVertex.next = temp2;
 
 데이터를 제거하는 것도 추가하는 것과 비슷하다. 아래 리스트에서 세번째 노드\(인덱스2\)를 제거하는 과정을 알아보자. 
 
-![](../.gitbook/assets/image%20%2822%29.png)
+![](../.gitbook/assets/image%20%2823%29.png)
 
 우선, head를 이용해서 첫번째 노드를 찾는다.
 
@@ -127,7 +127,7 @@ while (--k!=0)
 //cur이 6이 된
 ```
 
-![](../.gitbook/assets/image%20%2819%29.png)
+![](../.gitbook/assets/image%20%2820%29.png)
 
 세 번째 노드를 찾고, 두번째 노드의 next를 23으로 변경한다. 그 후에 90을 지우는 게 가능하다. 
 
@@ -139,7 +139,62 @@ cur.next = cur.next.next;
 delete tobedeleted;
 ```
 
-![](../.gitbook/assets/image%20%2826%29.png)
+![](../.gitbook/assets/image%20%2829%29.png)
+
+#### 인덱스를 이용한 데이터 조
+
+인덱스를 이용해서 데이터를 조회할 때 linked list는 head가 가리키는 노드부터 시작해서 순차적으로 노드를 찾아가는 과정을 거쳐야 한다. 만약, 찾고자 하는 엘리먼트가 가장 끝에 있다면 모든 노드를 탐색해야 한다. 
+
+![linked list&#xC5D0;&#xC11C; &#xB370;&#xC774;&#xD130; &#xC870;&#xD68C;](../.gitbook/assets/image%20%2815%29.png)
+
+반면에, array를 이용해서 리스트를 구현하면 인덱스를 이용해서 해당 엘리먼트에 바로 접근할 수 있기 때문에 매우 빠르다. 
+
+![array list&#xC5D0;&#xC11C; &#xB370;&#xC774;&#xD130; &#xC870;&#xD68C;](../.gitbook/assets/image%20%2824%29.png)
+
+### LinkedList - java 구현 1 객체생
+
+* LinkedList에서 가장 중요한 것이 바로 노드의 구현이다. 노드는 실제로 데이터가 저장되는 그릇과 같은 것이라서 이것부터 구현을 먼저 한다.
+* 자바는 객체 지향 언어이기 때문에 노드는 객체로 만들기 딱 좋은 대상이다.
+* 그리고 노드 객체는 리스트의 내부 부품이기 때문에 외부에는 노출되지 않는 게 좋다. 그래서 private으로 지정한다. 사용자가 이 객체에 대해서 알 필요가 없다. 단지 값을 넣고 빼는 것으로 충분하다. 
+
+![](../.gitbook/assets/image%20%2828%29.png)
+
+* head는 첫번째 노드를 지정하는 참조값이다. 
+* tail은 마지막 노드를 지정한다.
+* size는 노드의 크기를 의미한다. 노드를 변경할 때마다 이 값들을 수정해야 한다. 
+* tail이나 size는 마지막 노드를 찾거나 노드의 수를 셀 때, 연산의 횟수를 획기적으로 줄여준다. 
+* 객체 Node는 내부적으로 data와 next 변수를 가지고 있다. data는 노드의 값이고, next는 다음 노드를 가리키는 참조값이다. 
+
+위의 내용을 코드화 시켜 보면,
+
+```java
+public class LinkedList {
+    // 첫번째 노드를 가리키는 필드
+    private Node head;
+    private Node tail;
+    private int size = 0;
+    private class Node{
+        // 데이터가 저장될 필드
+        private Object data;
+        // 다음 노드를 가리키는 필드
+        private Node next;
+        public Node(Object input) {
+            this.data = input;
+            this.next = null;
+        }
+        // 노드의 내용을 쉽게 출력해서 확인해볼 수 있는 기능
+        public String toString(){
+            return String.valueOf(this.data);
+        }
+    }
+}
+```
+
+
+
+  
+
+### 
 
 
 
