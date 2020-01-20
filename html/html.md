@@ -661,3 +661,102 @@ description: 실전에 적용할 수 있도록 '김버그의 버그 없는 html'
 
 ```
 
+## \(12\) Gmail Inbox
+
+아래와 같은 메일 인박스를 만들때는, 
+
+* 물론 리스트를 사용할 수도 있지만, 구획이 기준에 따라 나눠져 있으므로 테이블을 사용하는 게 좋다.
+* 브라우저에게는 전달해야하지만, 보이고 싶지 않은 정보는 'sr-only'라는 class를 사용해, css에서 보이지 않도록 처리할 수 있다. 
+* input은 label과 함께 사용하는 게 좋다. 
+* tr은 table row 
+
+![](../.gitbook/assets/379.png)
+
+```markup
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gmail Inbox</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <table class="inbox">
+    <thead class="sr-only">
+      <tr>
+        <th scope="col">
+          Actions
+        </th>
+        <th scope="col">
+          Sender
+        </th>
+        <th scope="col">
+          Title
+        </th>
+        <th scope="col">
+          Time
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="unread">
+        <td>
+          <div class="inbox-actions">
+            <div class="inbox-checkbox">
+              <input type="checkbox" id="inbox-1">
+              <label for="inbox-1" class="sr-only">Select this email</label>
+            </div>
+            <button type="button" class="inbox-star">
+              <span class="sr-only">Add to favorites</span>
+            </button>
+          </div>
+        </td>
+        <td>
+          Goorm Edu
+        </td>
+        <td>
+          <a href="#">
+            <strong class="sr-only">Unread:</strong>
+            <strong>Rate your course: FRONTEND 101 WITH KIMBUG</strong>
+            <span>- Woohyeon. How’s everything going? We want to hear your opnion on...</span>
+          </a>
+        </td>
+        <td>
+          3:34 PM
+        </td>
+      </tr>
+      <tr class="read">
+        <td>
+          <div class="inbox-actions">
+            <div class="inbox-checkbox">
+              <input type="checkbox" id="inbox-1">
+              <label for="inbox-1" class="sr-only">Select this email</label>
+            </div>
+            <button type="button" class="inbox-star">
+              <span class="sr-only">Add to favorites</span>
+            </button>
+          </div>
+        </td>
+        <td>
+          Goorm Edu
+        </td>
+        <td>
+          <a href="#">
+            <strong class="sr-only">Read:</strong>
+            <strong>Rate your course: FRONTEND 101 WITH KIMBUG</strong>
+            <span>- Woohyeon. How’s everything going? We want to hear your opnion on...</span>
+          </a>
+        </td>
+        <td>
+          3:34 PM
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <script src="./app.js"></script>
+</body>
+</html>
+
+```
+
