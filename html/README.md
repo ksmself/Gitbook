@@ -306,7 +306,7 @@ style은 고려하지 않는다고 했을 때, 아래 사진과 같은 table을 
 
   <tbody>
     <tr>
-     <!--브라우저에게 의 header라는 것을 알려주는게 scope="row"-->
+     <!--브라우저에게 행의 header라는 것을 알려주는게 scope="row"-->
       <th scope="row">1교시</th>
       <!--2개의 행을 차지할때, rowspan="2"라고 -->
       <td rowspan="2">왕초보 HTML &amp; CSS</td>
