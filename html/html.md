@@ -669,6 +669,7 @@ description: 실전에 적용할 수 있도록 '김버그의 버그 없는 html'
 * 브라우저에게는 전달해야하지만, 보이고 싶지 않은 정보는 'sr-only'라는 class를 사용해, css에서 보이지 않도록 처리할 수 있다. 
 * input은 label과 함께 사용하는 게 좋다. 
 * tr은 table row 
+* 브라우저에게 열의 header라는 것을 알려주는 게 scope="col"
 
 ![](../.gitbook/assets/379.png)
 
