@@ -596,3 +596,68 @@ description: 실전에 적용할 수 있도록 '김버그의 버그 없는 html'
 </html>
 ```
 
+## \(11\) Feed
+
+아래와 같은 피드를 만들 때는, 
+
+* 작은 요소들로 먼저 나눈다. 프로필 사진/닉네임/팔로우 버튼/글 작성 시간/글/Like 버튼/ Comment 버튼 / Comment 창 / Submit 버튼 
+* '30 min'이라는 정보는 screen reader로 듣는 사람들은 뜬금 없을 수 있으므로, aria-label을 이용해 어떤 내용인지 알려주도록 한다. 
+* comment 창은 여러 줄의 텍스트가 들어가므로, text 대신 textarea를 사용한다. 
+
+![js&#xB85C; &#xAD6C;&#xD604;&#xD55C; action&#xB4E4;&#xC740; &#xC804;&#xBD80; &#xC2E4;&#xD589;&#xC2DC;&#xD0A8; &#xC0C1;&#xD0DC;](../.gitbook/assets/378.png)
+
+```markup
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feed</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="feed">
+    <div class="feed-user-profile">
+      <a href="#">
+        <img src="https://user-images.githubusercontent.com/19285811/69063907-43da4800-0a58-11ea-8efb-4b57dca4e3fe.png" alt="Kimbug">
+      </a>
+      <div>
+        <h1>
+          <a href="#">
+            Kimbug
+          </a>
+        </h1>
+        <span aria-label="Posted 30 minutes ago">
+          30 min
+        </span>
+      </div>
+      <button type="button">
+        Follow
+      </button>
+    </div>
+    <div class="feed-content">
+      <p>
+        The most beautiful experience we can have is the mysterious. It is the 
+        fundamental emotion that stands at the cradle of true art and true 
+        science. — Albert Einstein
+      </p>
+    </div>
+    <div class="feed-footer">
+      <button type="button">
+        10 Likes
+      </button>
+      <button type="button">
+        0 Comments
+      </button>
+    </div>
+    <form action="" method="POST" class="feed-comment">
+      <textarea placeholder="Write a comment"></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  <script src="./app.js"></script>
+</body>
+</html>
+
+```
+
