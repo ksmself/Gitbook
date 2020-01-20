@@ -151,7 +151,7 @@ delete tobedeleted;
 
 ![array list&#xC5D0;&#xC11C; &#xB370;&#xC774;&#xD130; &#xC870;&#xD68C;](../.gitbook/assets/image%20%2824%29.png)
 
-### LinkedList - java 구현 1 객체생
+### LinkedList  java 구현 1 - 객체 생성
 
 * LinkedList에서 가장 중요한 것이 바로 노드의 구현이다. 노드는 실제로 데이터가 저장되는 그릇과 같은 것이라서 이것부터 구현을 먼저 한다.
 * 자바는 객체 지향 언어이기 때문에 노드는 객체로 만들기 딱 좋은 대상이다.
