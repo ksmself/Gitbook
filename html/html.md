@@ -761,3 +761,55 @@ description: 실전에 적용할 수 있도록 '김버그의 버그 없는 html'
 
 ```
 
+## \(13\) Music Player
+
+아래와 같은 뮤직 플레이어를 만들때는,
+
+* 곡의 순서가 있으므로, ordered list, 즉 ol을 사용한다. 
+* 전체 lang="en"으로 설정해두었으나, 중간 중간 한국어를 사용할 경우, lang="ko"라고 attribute을 추가해준다. 
+* '04:09'만 들리면 무슨 말일지 모를 screen reader를 위해, screen reader에만 읽히도록 'sr-only'라는 클래스를 만들어 이용한다. 
+
+![](../.gitbook/assets/380.png)
+
+```markup
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Player</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <ol class="music-player">
+    <li class="music-play-item">
+      <img src="https://m.media-amazon.com/images/I/814Rp76DidL._SS500_.jpg"
+      alt="러브 엑스 마키나"
+      lang="ko"
+      class="music-album-cover">
+      <div class="music-info">
+        <div class="music-info-detail">
+          <h1>
+            <span lang="ko">
+              러브 엑스 마키나
+            </span>
+            Love Ex Machina
+          </h1>
+          <strong>
+            MLSL (밀레니엄 살롱)
+          </strong>
+        </div>
+        <span>
+          <span class="sr-only">Duration</span>
+          04:09
+        </span>
+      </div>
+      <audio src="./assets/music-1.mp3" class="music-audio"></audio>
+      <script src="./app.js"></script>
+    </li>
+  </ol>
+</body>
+</html>
+
+```
+
