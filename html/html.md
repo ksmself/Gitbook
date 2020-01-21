@@ -813,3 +813,43 @@ description: 실전에 적용할 수 있도록 '김버그의 버그 없는 html'
 
 ```
 
+## Video Player
+
+아래와 같은 비디오 플레이어를 만들때는,
+
+* 한글만 사용되므로, 전체 언어 설정은 한국어로 해준다 =&gt; lang="ko"
+
+![](../.gitbook/assets/381.png)
+
+```markup
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Player</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="video-player">
+    <div class="video-container">
+      <video controls>
+        <source src="./assets/kimbug-bjj.mp4" type="video/mp4">
+        <source src="./assets/kimbug-bjj(1).mov" type="video/mp4">
+      </video>
+    </div>
+    <div class="video-player-info">
+      <h1>
+        주짓수 4주차 롤링 영상
+      </h1>
+      <p>
+        30초 만에 압살 실화인가
+      </p>
+    </div>
+  </div>
+</body>
+</html>
+```
+
+
+
