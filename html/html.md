@@ -819,6 +819,7 @@ description: 실전에 적용할 수 있도록 '김버그의 버그 없는 html'
 
 * 한글만 사용되므로, 전체 언어 설정은 한국어로 해준다 =&gt; lang="ko"
 * controls라는 attribute을 적어주어야만 재생 버튼과 음량 조절 버튼을  화면에서  확인할 수 있다. 
+* 브라우저에 따라 \(audio\)mp3/ogg/wav \| \(video\)mp4/mov 등 각각 지원하지 않는 파일이 있을 수 있으므로 이때를 대비해 파일을 여러 개 써준다. 
 
 ![](../.gitbook/assets/381.png)
 
