@@ -190,6 +190,58 @@ public class LinkedList {
 }
 ```
 
+### LinkedList java 구현 2 - addFirst
+
+```java
+public void addFirst(Object input){
+    // 노드를 생성합니다.
+    Node newNode = new Node(input);
+    // 새로운 노드의 다음 노드로 해드를 지정합니다.
+    newNode.next = head;
+    // 헤드로 새로운 노드를 지정합니다.
+    head = newNode;
+    size++;
+    if(head.next == null){
+        tail = head;
+    }
+}
+```
+
+### LinkedList java 구현 3 - addLast
+
+리스트의 끝에 데이터를 추가할 때는 tail을 사용한다. tail이 없어도 구현이 가능하지만, tail이 없다면 마지막 노드를 찾아야 할 것이다. 리스트의 끝에 데이터를 추가하는 작업은 자주 있는 작업이고, 마지막 노드를 찾는 작업은 첫 노드부터 마지막 노드까지 순차적으로 탐색을 해야 하기 때문에 최악의 상황이라고 할 수 있다. 그래서 tail을 사용하도록 하겠다. 
+
+```java
+public void addLast(Object input){
+    // 노드를 생성합니다.
+    Node newNode = new Node(input);
+    // 리스트의 노드가 없다면 첫번째 노드를 추가하는 메소드를 사용합니다.
+    if(size == 0){
+        addFirst(input);
+    } else {
+        // 마지막 노드의 다음 노드로 생성한 노드를 지정합니다.
+        tail.next = newNode;
+        // 마지막 노드를 갱신합니다.
+        tail = newNode;
+        // 엘리먼트의 개수를 1 증가 시킵니다.
+        size++;
+    }
+}
+```
+
+### LinkedList java 구현 4 - node
+
+중간에 노드를 추가하는 방법에  앞서 특정 위치의 노드를 찾아내는 방법을 먼저 알아보겠다. 
+
+```java
+Node node(int index) {
+    Node x = head;
+    for (int i = 0; i < index; i++)
+        x = x.next;
+    return x;
+}
+```
+
 
 
   
