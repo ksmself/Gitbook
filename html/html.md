@@ -813,11 +813,12 @@ description: 실전에 적용할 수 있도록 '김버그의 버그 없는 html'
 
 ```
 
-## Video Player
+## \(14\) Video Player
 
 아래와 같은 비디오 플레이어를 만들때는,
 
 * 한글만 사용되므로, 전체 언어 설정은 한국어로 해준다 =&gt; lang="ko"
+* controls라는 attribute을 적어주어야만 재생 버튼과 음량 조절 버튼을  화면에서  확인할 수 있다. 
 
 ![](../.gitbook/assets/381.png)
 
