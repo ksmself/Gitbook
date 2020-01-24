@@ -298,7 +298,91 @@ public String toString() {
 }
 ```
 
-### 
+### LinkedList java 구현 7 - removeFirst
+
+```java
+public Object removeFirst(){
+    // 첫번째 노드를 temp로 지정하고 
+    //head의 값을 두번째 노드로 변경
+    Node temp = head;
+    head = temp.next;
+    // 데이터를 삭제하기 전에 리턴할 값을 임시 변수에 담는다. 
+    Object returnData = temp.data;
+    temp = null;
+    size--;
+    return returnData;
+}
+```
+
+### LinkedList java 구현 8 - remove, removeLast
+
+```java
+public Object remove(int k){
+    if(k == 0)
+        return removeFirst();
+    // k-1번째 노드를 temp의 값으로 지정
+    Node temp = node(k-1);
+    // 삭제 노드를 todoDeleted에 기록
+    // 삭제 노드를 지금 제거하면 삭제 앞 노드와 삭제 뒤 노드를 
+    //연결할 수 없다.  
+    Node todoDeleted = temp.next;
+    // 삭제 앞 노드의 다음 노드로 삭제 뒤 노드를 지정
+    temp.next = temp.next.next;
+// 삭제된 데이터를 리턴하기 위해서 returnData에 데이터를 저장
+    Object returnData = todoDeleted.data; 
+    if(todoDeleted == tail){
+        tail = temp;
+    }
+    // temp.next를 삭제 
+    todoDeleted = null; 
+    size--;
+    return returnData;
+}
+
+public Object removeLast(){
+    return remove(size - 1);
+}
+```
+
+### LinkedList java 구현 9 - size, get
+
+엘리먼트의 크기를 알아내는 법은 간단하다. 내부적으로 size라는 값을 유지하고 있기 때문에 이 값을 돌려주기만 하면 된다. 
+
+```java
+public int size() {
+    return size;
+}
+
+public Object get(int k){
+    Node temp = node(k);
+    return temp.data;
+}
+```
+
+### LinkedList java 구현 10 - indexOf
+
+특정한 값을 가진 엘리먼트의 인덱스 값을 알아내는 방법을 알아보자. 값이 있다면 그 값이 발견되는 첫번째 인덱스 값을 리턴하고, 값이 없다면 -1을 리턴한다. 
+
+```java
+public int indexOf(Object data){
+    // 탐색 대상이 되는 노드를 temp로 지정
+    Node temp = head;
+    // 탐색 대상이 몇번째 엘리먼트에 있는지를 의미하는 변수로 
+    //index를 사용
+    int index = 0;
+    // 탐색 값과 탐색 대상의 값을 비교 
+    while(temp.data != data){
+        temp = temp.next;
+        index++;
+        // temp의 값이 null이라는 것은 더 이상 탐색 대상이 
+        //없다는 것을 의미합니다. 이 때 -1을 리턴
+        if(temp == null)
+            return -1;
+    }
+    // 탐색 대상을 찾았다면 대상의 인덱스 값을 리턴
+    return index;
+}
+```
 
 
 
