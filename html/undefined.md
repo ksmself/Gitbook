@@ -61,5 +61,76 @@
 </header>
 ```
 
+## Global Navigation
+
+nav는 문서 페이지 간에 이동이 필요한 메뉴가 있는 경우 사용한다. 또한, nav는 sectioning elements에 포함되므로, 반드시 heading 태그를 포함해야 한다. 
+
+![nav](../.gitbook/assets/385.png)
+
+위의 nav를 간단히 마크업해보자. 
+
+```markup
+<nav>
+  <!-- nav는 sectioning elements이므로 반드시 heading 태그 포함 -->
+  <h1>Global Navigation Menu</h1>
+  <ul>
+    <li>
+      <a href="#">
+        <span>Current Page</span>
+        <!-- Icon -->
+        Home
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <!-- Icon -->
+        Explore
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <strong aria-label="5 Unread notifications">5</strong>
+        <!-- Icon -->
+        Notifications
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <!-- Icon -->
+        Messages
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <!-- Icon -->
+        Bookmarks
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <!-- Icon -->
+        Lists
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <!-- Icon -->
+        Profile
+      </a>
+    </li>
+    <li>
+      <button type="button">
+        <!-- Icon -->
+        More
+      </button>
+      <!-- Dropdown Menu -->
+    </li>
+  </ul>
+  <button type="button">
+    Tweet
+  </button>
+</nav>
+```
+
 
 
