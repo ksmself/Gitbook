@@ -132,5 +132,46 @@ nav는 문서 페이지 간에 이동이 필요한 메뉴가 있는 경우 사�
 </nav>
 ```
 
+## Main
+
+main은 전체 페이지 내에서 가장 본격적인 컨텐츠가 시작하는 부분을 감싸기 위해 사용하는 것이고, html 내에서 단 한번밖에 사용하지 못한다. 그리고 main은 sectioning elements가 아니므로 heading 태그를 꼭 포함할 필요는 없다. 
+
+![main.](../.gitbook/assets/386.png)
+
+main의 header 부분을 마크업해보자. 
+
+```markup
+<main>
+  <header>
+    <h1>
+      Home
+    </h1>
+    <button type="button" aria-label="Timeline Options">
+      <!-- Icon -->
+    </button>
+    <!-- button을 누르면 나오는 menu는 div로 묶어줌 -->
+    <div>
+      <h2>
+        Home shows you top Tweets first
+      </h2>
+      <button type="button">
+        <strong>
+          See latest Tweets instead
+        </strong>
+        <span>You will be switched back Home after you've been away
+        for a while.
+        </span>
+      </button>
+      <a href="#">
+        <!-- Icon -->
+        View content preferences 
+      </a>
+    </div>
+  </header>
+</main>
+```
+
+## 
+
 
 
