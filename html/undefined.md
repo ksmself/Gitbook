@@ -182,5 +182,38 @@ main의 header 부분을 마크업해보자.
 
 ![tweet form](../.gitbook/assets/387.png)
 
+```markup
+<section>
+  <h1>
+    What's happening? 
+  </h1>
+  <form action="#" method="post">
+    <img src="#" alt="@kimbugx">
+    <textarea placeholder="What's happening?" maxlength="280"></textarea>
+    <button type="button" aria-label="Upload files">
+      <!-- Icon -->
+    </button>
+    <input type="file" multiple accept="image/*, video/*">
+    <button type="button" aria-label="Search GIFs...">
+      <!-- Icon -->
+    </button>
+    <button type="button" aria-label="Create a poll">
+      <!-- Icon -->
+    </button>
+    <button type="button" aria-label="Choose emoji">
+      <!-- Icon -->
+    </button>
+    <strong aria-label="0 out of 280 characters">
+    </strong>
+    <button type="button" aria-label="Add another tweet">
+      <!-- Icon -->
+    </button>
+    <button type="submit">Tweet</button>
+  </form>
+</section>
+```
+
+## 
+
 
 
