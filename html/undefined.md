@@ -171,7 +171,16 @@ main의 header 부분을 마크업해보자.
 </main>
 ```
 
-## 
+## Tweet Form
+
+아래의 트위터 폼을 마크하기 전에, 다음 사항들을 읽어보고 가자.
+
+* section은 가장 만만하게 사용할 수 있는 sectioning elements이다. _논리적으로 완결된 집합체_일 경우, **div 대신 section**을 사용해서 마크업하면 되기 때문이다. 
+* **form**에서 작성하는 _내용이 많을 경우_, method는 get 대신 '**post**'를 사용한다.
+* **textarea**에서 입력 가능한 최대 길이를 설정하고 싶은 경우, '**maxlength**'를 사용한다. 
+* **input의 type이 file**일때, 이미지든 비디오든 전부 허용하겠다는 의미에서 _multiple accept="image/\*, video/\*"라고 표현할 수 있다._ 
+
+![tweet form](../.gitbook/assets/387.png)
 
 
 
