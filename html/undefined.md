@@ -218,7 +218,7 @@ main의 header 부분을 마크업해보자.
 아래의 타임라인을 마크업하면서 주의할 점은, 
 
 * 아래의 타임라인은 하나의 section으로 볼 수 있다. 
-* section은 sectioning elements에 해당하므로, h1 태그를 반드시 작성해주어야 한다. 
+* section은 sectioning elements에 해당하므로, heading 태그를 반드시 작성해주어야 한다. 
 * 타임라인에도 순서가 있다고 판단했으므로 ordered list를 사용해준다.
 
 ![Timeline](../.gitbook/assets/388.png)
@@ -248,7 +248,120 @@ main의 header 부분을 마크업해보자.
 </section>
 ```
 
-## 
+## Tweet
+
+아래와 같은 트윗을 마크업하면서 주의할점은, 
+
+* **article**은 sectioning elements로서, _블로그 글, 뉴스 기사, 트위터 피드_처럼 **정보 콘텐츠로서 완결성이 있는 독립적인 콘텐츠**일 경우, section보다 article을 사용하는 것이 뉘앙스를 전달하기 쉽다! 
+* 프로필사진, 이름, 아이디, 포스팅날짜, 옵션 버튼은 tweet의 **상단부**에 해당하므로 **header**로 묶는다. 
+* description list\[**dl**\], discription term\[**dt**\], discription data\[**dd**\], _dl의 자식 요소_는 오로지 _div, dt, dd_만 가능하다.
+* comment, retweet, like, share 모두 **하단부**로 묶어 **footer**에 넣는다. 
+
+![Example of Tweet](../.gitbook/assets/389.png)
+
+```markup
+<article>
+  <h1>A Tweet from 김익명</h1>
+  <!-- 전체 tweet에서 도입부에 해당하는 부분은 header로 -->
+  <header>
+    <a href="#">
+      <img src="#" alt="김익명">
+    </a>
+    <h2>
+      <a href="#">
+        김익명
+      </a>
+    </h2>
+    <dl>
+      <div>
+        <dt>Username</dt>
+        <dd>
+          <a href="#">
+            @anonymouskim
+          </a>
+        </dd>
+      </div>
+      <div>
+        <dt>Posted</dt>
+        <dd>
+          <a href="#">
+            Dec 25
+          </a>
+        </dd>
+      </div>
+    </dl>
+    <button type="button" aria-label="Options">
+      <!-- Icon -->
+    </button>
+    <div>
+      <button type="button">
+        <!-- Icon -->
+        Show less often
+      </button>
+      <button type="button">
+        <!-- Icon -->
+        Embed Tweet
+      </button>
+      <button type="button">
+        <!-- Icon -->
+        Unfollow @anonymouskim
+      </button>
+      <button type="button">
+        <!-- Icon -->
+        Mute @anonymouskim
+      </button>
+      <button type="button">
+        <!-- Icon -->
+        Block @anonymouskim
+      </button>
+      <button type="button">
+        <!-- Icon -->
+        Report Tweet
+      </button>
+    </div>
+  </header>
+  <p>
+    영어를 더 잘 하고싶다. 그러나 공부를 하고 싶지는 않다. 내 삶의 모든 것이 이런 식으로 망해왔다.
+  </p>
+  <footer>
+    <button type="button">
+      <span class="sr-only">Tweet your reply</span>
+      <strong aria-label="3 replied">3</strong>
+    </button>
+    <button type="button">
+      <span class="sr-only">Retweet</span>
+      <strong aria-label="3 retweeted">3</strong>
+    </button>
+    <div>
+      <button type="button">
+        Retweet
+      </button>
+      <button type="button">
+        Retweet with comment
+      </button>
+    </div>
+    <button type="button">
+      <span class="sr-only">Like this tweet</span>
+      <strong aria-label="100 liked">100</strong>
+    </button>
+    <button type="button">
+      <span class="sr-only">Share</span>
+    </button>
+    <div>
+      <button type="button">
+        Send via Direct Message
+      </button>
+      <button type="button">
+        Add Tweet to Bookmarks
+      </button>
+      <button type="button">
+        Copy link to Tweet
+      </button>
+    </div>
+  </footer>
+</article>
+
+```
 
 
 
