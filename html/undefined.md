@@ -420,5 +420,34 @@ main의 header 부분을 마크업해보자.
 </aside>
 ```
 
+## Footer
 
+아래와 같은 footer를 마크업할때 주의할점은,, 
+
+* 링크를 눌렀을 때, 새 창이 뜨는 경우 'target="blank"'라는 attribute을 꼭 포함시킨다. 
+
+![footer](../.gitbook/assets/391.png)
+
+```markup
+<footer>
+  <a href="#" target="_blank">Terms</a>
+  <a href="#" target="_blank">Privacy policy</a>
+  <a href="#" target="_blank">Cookies</a>
+  <a href="#" target="_blank">Ads info</a>
+  <button type="button">
+    More
+    <!-- Icon -->
+  </button>
+  <!-- dropdown을 위한 div -->
+  <div>
+    <a href="#" target="_blank">About</a>
+    <a href="#" target="_blank">Status</a>
+    <a href="#" target="_blank">Businesses</a>
+    <a href="#" target="_blank">Developers</a>
+  </div>
+  <span>
+    © 2019 Twitter, Inc.
+  </span>
+</footer>
+```
 
