@@ -213,6 +213,41 @@ main의 header 부분을 마크업해보자.
 </section>
 ```
 
+## Timeline
+
+아래의 타임라인을 마크업하면서 주의할 점은, 
+
+* 아래의 타임라인은 하나의 section으로 볼 수 있다. 
+* section은 sectioning elements에 해당하므로, h1 태그를 반드시 작성해주어야 한다. 
+* 타임라인에도 순서가 있다고 판단했으므로 ordered list를 사용해준다.
+
+![Timeline](../.gitbook/assets/388.png)
+
+```markup
+<section>
+  <h1>
+    Your Timeline
+  </h1>
+  <ol>
+    <li>
+      <!-- Tweet -->
+    </li>
+    <li>
+      <!-- Tweet -->
+    </li>
+    <li>
+      <!-- Tweet -->
+    </li>
+    <li>
+      <!-- Tweet -->
+    </li>
+    <li>
+      <!-- Tweet -->
+    </li>
+  </ol>
+</section>
+```
+
 ## 
 
 
