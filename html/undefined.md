@@ -363,5 +363,62 @@ main의 header 부분을 마크업해보자.
 
 ```
 
+## Aside
+
+아래와 같은 aside를 마크업할때, 주의할 점
+
+* **aside**도 _sectioning elements_의 일종이고, 논리적으로 완결된 집합체이지만, **본문 내용과는 직접적인 관련성이 없어서 위젯, 배너광고** 같은 side 역할을 하는 애들에 사용해준다. 
+
+![aside](../.gitbook/assets/390.png)
+
+```markup
+<aside>
+  <header>
+    <h1>
+      Worldwide Trends
+    </h1>
+    <button type="button" aria-label="Options">
+      <!-- Icon -->
+    </button>
+  </header>
+  <ol>
+    <li>
+      <button type="button" aria-label="Options">
+        <!-- Icon -->
+      </button>
+      <div>
+        <button type="button">
+          <!-- Icon -->
+          This trend is spam
+        </button>
+        <button type="button">
+          <!-- Icon -->
+          This trend is abusive or harmful
+        </button>
+        <button type="button">
+          <!-- Icon -->
+          This trend is a duplicate 
+        </button>
+        <button type="button">
+          <!-- Icon -->
+          This trend is low quality 
+        </button>
+      </div>
+      <a href="#">
+        <span>1 • Trending worldwide</span>
+        <strong lang="ko">#김버그</strong>
+        <span>100K Tweets</span>
+      </a>
+    </li>
+    <!-- 이런 식으로 list가 이어짐 -->
+  </ol>
+  <footer>
+    <button type="button">
+      Show more
+    </button>
+  </footer>
+</aside>
+```
+
 
 
