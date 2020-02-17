@@ -1,5 +1,5 @@
 ---
-description: 개념을 제대로 숙지하고 있는지 스스로 체크하기 위한 훈련
+description: 미운 웹 백조 만들기(HTML/CSS)  강의 듣고 복습
 ---
 
 # Css
@@ -84,26 +84,6 @@ ul{
 }
 
 ```
-
-## position
-
-### static과 relative
-
-static과 relative는 함께 간다고 생각하면 된다. relative는 원래 static일 때 위치에서 설정한 값을 기준으로 이동하면 되는 것이고, static은 앞에 relative가 있다면 relative가 원래 있었어야 할 자리 다음 위치로 가게 된다.  
-
-### fixed
-
-fixed는 항상 브라우저가 기준이다. 화면이 바뀌더라도 브라우저를 기준으로 위치가 고정된다.
-
-### absolute
-
-absolute는 조상 엘리먼트를 기준으로 relative하다고 생각하면 된다. 
-
-### fixed와 sticky의 차이
-
-fixed는 보이는 화면을 기준으로 지정한 오프셋에 계속 고정되고, sticky는 스크롤을 내리다가 지정한 오프셋에 도달하면 계속 그 위치에 고정된다.  
-
-
 
 
 
