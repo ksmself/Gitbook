@@ -60,7 +60,66 @@ margin: 30px 20px;
 margin: 10px 20px 30px;
 ```
 
-### 
+### Box Sizing
+
+아래와 같이 padding-top이 40px, padding-left가 50px이고, width와 height가 모두 480px인 정사각형의 박스를 만든다고 하자. 
+
+![width&#xC640; height&#xAC00; &#xBAA8;&#xB450; 480px&#xC778; &#xC815;&#xC0AC;&#xAC01;&#xD615;](.gitbook/assets/395.png)
+
+위와 같은 박스를 만들기 위해 아래와 같은 css 코드를 작성하게 될 것이다. 
+
+```css
+/* 이름이 box인 class */
+.box{
+    width: 480px;
+    height: 480px;
+    padding-top: 40px;
+    padding-left: 50px;
+    background-color: #0066ff;
+    /* text 색상은 color로 지정할 수 있다 */
+    color: #fff;
+}
+```
+
+그런데 위와 같이 코드를 작성하게 되면, padding 값이 포함되어 width와 height가 520, 530인 직사각형 박스가 완성된다. 
+
+![&#xC758;&#xB3C4;&#xCE58; &#xC54A;&#xAC8C; &#xC9C1;&#xC0AC;&#xAC01;&#xD615;&#xC774; &#xB9CC;&#xB4E4;&#xC5B4;&#xC9C4; &#xC0C1;&#xD669;.](.gitbook/assets/396.png)
+
+왜 직사각형이 만들어졌을까? 바로 **Box-sizing이 content-box**로 설정되어 있기 때문이다. 즉, width와 height가 content-box를 기준으로 정해졌기 때문인 것이다.   
+이를 border를 포함한 width와 height에 대한 설정으로 바꿔주기 위해서는 **box-sizing을 border-box**로 변경해주면 된다.
+
+![box-sizing&#xC744; border-box&#xB85C; &#xBCC0;&#xACBD;&#xD588;&#xC744; &#xB54C;&#xC758; width&#xC640; height. ](.gitbook/assets/397.png)
+
+코드를 다음과 같이 변경하면, content-box에 변화가 생긴다. 
+
+```css
+/* 이름이 box인 class */
+.box{
+    box-sizing:border-box;
+    width: 480px;
+    height: 480px;
+    padding-top: 40px;
+    padding-left: 50px;
+    background-color: #0066ff;
+    /* text 색상은 color로 지정할 수 있다 */
+    color: #fff;
+}
+```
+
+![box-sizing&#xC744; border-box&#xB85C; &#xBCC0;&#xACBD;&#xD55C; &#xD6C4;&#xC758; content-box&#xC758; width&#xC640; height&#xC5D0; &#xC0DD;&#xAE34; &#xBCC0;&#xD654;. ](.gitbook/assets/398.png)
+
+대부분의 프론트엔드 개발자들은 위와 같은 상황때문에 처음부터 이를 깔고 시작한다고 한다. 
+
+```css
+/* *는 모든 요소에 해당됨을 의미*/
+*{
+    box-sizing: border-box;
+}
+```
+
+### Box
+
+
 
 
 
