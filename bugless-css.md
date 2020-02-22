@@ -126,6 +126,8 @@ margin: 10px 20px 30px;
 * Inline Block
 * Flex
 
+### Block
+
 
 
 
