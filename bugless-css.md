@@ -151,6 +151,33 @@ css를 배운 적이 있다면, margin: 0 auto; 에 대해 들어본 적이 있�
 
 ### Inline
 
+block의 키워드는 '**길막**'이지만, **inline**의 키워드는 '**흐름**'이다. 아래와 같은 상황에서 Inline은 자동으로 다음줄로 넘어가게 된다. 우리가 텍스트를 작성할 때에도, 일정 글자 수가 넘어가면 다음줄로 넘어가듯이 말이다. 
+
+![&#xBC15;&#xC2A4;&#xAC00; &#xC624;&#xBA74;&#xC11C; &#xC804;&#xCCB4; width&#xAC00; &#xBD80;&#xBAA8;&#xC758; width&#xB97C; &#xB118;&#xC5B4;&#xC11C;&#xB824; &#xD560;&#xB54C;. ](.gitbook/assets/400.png)
+
+#### Block vs Inline
+
+block은 면, inline은 선이라고 이해하면 된다. block은 영역을 잡기 위한 박스 타입이므로, width, height, padding, border, margin 모두 사용 가능하다. 하지만 inline은 content를 옆으로 흐르게 하는 흐름이므로, 이 흐름을 방해하는 아래와 같은 상황을 매우 싫어한다.
+
+![Inline&#xC758; &#xD750;&#xB984;&#xC744; &#xBC29;&#xD574;&#xD558;&#xB294; &#xC0C1;&#xD669;](.gitbook/assets/401.png)
+
+#### 사용 불가능한 속
+
+따라서, 위와 같이 Inline의 흐름을 방해하는 속성을 사용할 수 없다. 바로 아래의 리스트 말이다. 
+
+* width
+* height
+* padding-top
+* padding-bottom
+* margin-top
+* margin-bottom
+* border-top
+* border-bottom
+
+### Inline Block
+
+
+
 
 
 
