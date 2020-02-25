@@ -161,7 +161,7 @@ block은 면, inline은 선이라고 이해하면 된다. block은 영역을 잡
 
 ![Inline&#xC758; &#xD750;&#xB984;&#xC744; &#xBC29;&#xD574;&#xD558;&#xB294; &#xC0C1;&#xD669;](.gitbook/assets/401.png)
 
-#### 사용 불가능한 속
+#### 사용 불가능한 속성
 
 따라서, 위와 같이 Inline의 흐름을 방해하는 속성을 사용할 수 없다. 바로 아래의 리스트 말이다. 
 
@@ -175,6 +175,14 @@ block은 면, inline은 선이라고 이해하면 된다. block은 영역을 잡
 * border-bottom
 
 ### Inline Block
+
+Inline Block은 '짬짜면' 이라는 키워드로 소개할 수 있다. Block && Inline, 즉, block과 inline의 장점만 모았다. 아래의 그림이 적절한 예시이다. 
+
+![Inline Block&#xC758; &#xC608;&#xC2DC;](.gitbook/assets/402.png)
+
+위의 그림은 width, height, padding-top, margin-bottom을 모두 적용했다. 즉, Inline Block은 Block처럼 모든 속성을 활용할 수 있지만, Inline처럼 흐름이 있다. 
+
+## Float
 
 
 
