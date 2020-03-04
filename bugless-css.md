@@ -220,7 +220,9 @@ float는 **'블록 요소'의 '가로 배치'**를 하기 위한 요소이다. '
 
 ![float&#xB97C; clearfix&#xB85C; &#xCC3E;&#xC544;&#xB0B8; &#xC608;&#xC2DC;](.gitbook/assets/413.png)
 
-위의 사진은 clearfix로 레이아웃이 무너지는 걸 막은 예시다. **float 다음에 오는 block에 clear: left; 를 적용**하면, 이 블록은 **자신의 왼쪽에 있는 float를 찾아내게 된다**. 
+위의 사진은 clearfix로 레이아웃이 무너지는 걸 막은 예시다. **float 다음에 오는 block에 clear: left; 를 적용**하면, 이 블록은 **자신의 왼쪽에 있는 모든 float를 찾아내게 된다**. **clear:** left; 뿐 아니라 **right, both**도 사용할 수 있다. 
+
+#### Pseudo-Element 이용해서 해결하
 
 
 
