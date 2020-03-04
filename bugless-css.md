@@ -212,7 +212,15 @@ float는 **'블록 요소'의 '가로 배치'**를 하기 위한 요소이다. '
 
 ### How to fix
 
-#### 쉽지만 왜인지 알 수 없는 overflow:hidden
+#### 쉽지만 왜인지 알 수 없는 overflow:hidden;
+
+원래, 자식에게 float가 적용되면, 부모는 자식이 사라졌다고 생각하고, 이 자식을 찾을 길이 없다. 하지만, **부모에게 overflow: hidden;을 적용**하면, 왜인지는 몰라도 부모는 자식을 바로 찾아낸다. 
+
+#### fm으로 해결 가능한 clearfix
+
+![float&#xB97C; clearfix&#xB85C; &#xCC3E;&#xC544;&#xB0B8; &#xC608;&#xC2DC;](.gitbook/assets/413.png)
+
+위의 사진은 clearfix로 레이아웃이 무너지는 걸 막은 예시다. **float 다음에 오는 block에 clear: left; 를 적용**하면, 이 블록은 **자신의 왼쪽에 있는 float를 찾아내게 된다**. 
 
 
 
