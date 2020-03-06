@@ -224,6 +224,23 @@ float는 **'블록 요소'의 '가로 배치'**를 하기 위한 요소이다. '
 
 #### Pseudo-Element 이용해서 해결하기
 
+Html에서는 존재하지 않는 가상 요소를 이용하는 방법이다. 
+
+![&#xBD95;&#xAD34;&#xB41C; &#xB808;&#xC774;&#xC544;&#xC6C3;.](.gitbook/assets/418.png)
+
+위와 같은 상황일때, 마지막 박스 뒤에 div를 만들어, 그 div에 clear를 줄 수도 있지만, 단순히 스타일적인 부분 때문에 의미 없는 html 요소를 추가하는 것이 현명한 방법은 아니다. 대신, css로 가상 요소를 만들어 이를 해결하는 방법이다. 
+
+![pseudo-element &#xC774;&#xC6A9;&#xD558;&#xB294; &#xBC29;&#xBC95;](.gitbook/assets/416.png)
+
+위와 같이 'parent'라는 클래스 뒤에 가상요소를 만드는 방법이다. 
+
+* 가상요소를 selector **뒤에 만들면**, **selector :: after**, selector **앞에 만들면**, **selector :: before**라고 하면 된다.  
+* 가상요소를 만들 때, 절대 빠트리면 안되는 것은 '**content**'이다. 빈칸으로 두든, 이모티콘을 넣든 그 내용은 content 안에 들어가야 한다. 
+* clear 속성을 이용할 수 있는 것은 'block' 뿐이다. 그래서 clear를 주려고 한다면, 해당 selector의 **display를 block으로** 바꿔야 한다.
+* 그리고 clear를 주면 된다. **앞 요소**에 대해서는 **clear: left;** **뒤 요소**에 대해서는 **clear: right;**  
+
+## 
+
 
 
 
