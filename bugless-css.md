@@ -281,10 +281,6 @@ position된 요소들의 수직 방향의 level을 알려주는 요소이다. st
 
 flexbox는 **정렬**의 끝판왕. flexbox는 아주 잘 만들어졌기 때문에, '_How to use it_'만 기억하면 된다. 총 4가지 step이 있다. 
 
-1. 가로 정렬? 세로 정렬?
-2. 무조건 한 줄 안에 다 정렬?
-3. 씐나는 플렉스박스 파티 타임! 
-
 ### step 1: 나, 플렉스 박스 쓸거임 \(단호\)
 
 ![flexbox &#xC4F4;&#xB2E4;&#xACE0; &#xC120;&#xC5B8;&#xD558;&#xAE30;.](.gitbook/assets/420.png)
@@ -309,7 +305,21 @@ flex를 사용하면 보이지 않는 두 개의 축이 생긴다. Main axis와 
 
 ![flex-direction: column-reverse;](.gitbook/assets/428.png)
 
-### step 3: 
+### step 3: 무조건 한 줄 안에 다 정렬? 
+
+![&#xD55C; &#xC904; &#xC548;&#xC5D0; &#xB2E4; &#xC815;&#xB82C;&#xD560;&#xC9C0; &#xB9D0;&#xC9C0;.](.gitbook/assets/429.png)
+
+![&#xD55C; &#xC904; &#xC548;&#xC5D0; &#xB2E4; &#xC815;&#xB82C;&#xD558;&#xACE0; &#xC2F6;&#xC740; &#xC0C1;&#xD669;.](.gitbook/assets/430.png)
+
+위와 같은 block을 flex를 이용해서 한 줄 안에 다 정렬을 하고 싶지만, width가 600px이기 때문에 block이 한 줄에 최대 2개 들어갈 수 있는 상황이다. 이때, nowrap을 사용하면 한 줄 안에 다 정렬하는 것이 가능하다. 
+
+![nowrap&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xBA70; &#xC790;&#xC2DD;&#xC758; &#xC0AC;&#xC774;&#xC988;&#xB97C; &#xC904;&#xC778; &#xACBD;&#xC6B0;.](.gitbook/assets/431.png)
+
+그런데, 물론 이렇게 자식의 사이즈를 줄이면서까지 정렬을 원하지 않는 경우도 있다. 이때는, wrap을 사용해주면 된다. 
+
+![wrap&#xC744; &#xC0AC;&#xC6A9;&#xD55C; &#xACBD;&#xC6B0;](.gitbook/assets/432.png)
+
+### step 4: 
 
 
 
