@@ -277,6 +277,40 @@ position된 요소들의 수직 방향의 level을 알려주는 요소이다. st
 
 ![z-index &#xC0AC;&#xC6A9; &#xC608;&#xC2DC;](.gitbook/assets/419.png)
 
+## Flexbox
+
+flexbox는 **정렬**의 끝판왕. flexbox는 아주 잘 만들어졌기 때문에, '_How to use it_'만 기억하면 된다. 총 4가지 step이 있다. 
+
+1. 가로 정렬? 세로 정렬?
+2. 무조건 한 줄 안에 다 정렬?
+3. 씐나는 플렉스박스 파티 타임! 
+
+### step 1: 나, 플렉스 박스 쓸거임 \(단호\)
+
+![flexbox &#xC4F4;&#xB2E4;&#xACE0; &#xC120;&#xC5B8;&#xD558;&#xAE30;.](.gitbook/assets/420.png)
+
+_flexbox도 box의 일종_이다. 그래서 **display에 flex**라고 넣어주는 것! flexbox는 block과 유사하지만, block은 할 수 없는 요소를 쉽게 정렬할 수 있는 magic power를 가지고 있다고 생각하면 된다. inline-flex는 inline-block과 유사하지만 요소를 쉽게 정렬할 수 있는 힘을 가지고 있는 것! 그런데 이 선언은 반드시 **정렬하고자 하는 요소를 감싸는 부모에게 display: flex;** 라고 해야한다.  
+
+### step 2: 가로 정렬? 세로 정렬? 
+
+![&#xC5B4;&#xB290; &#xBC29;&#xD5A5;&#xC73C;&#xB85C; &#xC815;&#xB82C;&#xD560;&#xC9C0; &#xC120;&#xC5B8;.](.gitbook/assets/421.png)
+
+가로로 정렬을 원하면 flex-direction을 row로, 세로로 정렬을 원하면 column으로! 
+
+#### axis
+
+flex를 사용하면 보이지 않는 두 개의 축이 생긴다. Main axis와 Cross axis가 생기는데, Main axis는 flex-direction의 방향에 따라서 생기고, Main과 정확히 수직을 이루는 방향으로 Cross axis가 생긴다. 
+
+![flex-direction: row;](.gitbook/assets/422.png)
+
+![flex-direction: column;](.gitbook/assets/423.png)
+
+![flex-direction: row-reverse;](.gitbook/assets/427.png)
+
+![flex-direction: column-reverse;](.gitbook/assets/428.png)
+
+### step 3: 
+
 
 
 
