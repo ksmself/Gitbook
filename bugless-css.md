@@ -273,7 +273,9 @@ Html에서는 존재하지 않는 가상 요소를 이용하는 방법이다.
 
 ### z-index
 
-position된 요소들의 수직 방향의 level을 알려주는 요소이다. static을 제외한 모든 type은, relative만 하더라도, 사용하게 되면 수직으로 붕 뜨게 된다. 다양한 요소들이 존재할 때, 수직적 레벨을 달리해주고 싶을 , 
+position된 요소들의 수직 방향의 level을 알려주는 요소이다. static을 제외한 모든 type은, relative만 하더라도, 사용하게 되면 수직으로 붕 뜨게 된다. 다양한 요소들이 존재할 때, 수직적 레벨을 달리해주고 싶은 상황에서, z-index를 사용해주게 된다. 바로 아래처럼 말이다.  
+
+![z-index &#xC0AC;&#xC6A9; &#xC608;&#xC2DC;](.gitbook/assets/419.png)
 
 
 
