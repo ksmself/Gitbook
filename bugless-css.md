@@ -260,10 +260,20 @@ Html에서는 존재하지 않는 가상 요소를 이용하는 방법이다.
 ### absolute
 
 * absolute를 사용하면 float를 사용했을 때와 비슷한 일이 일어난다. float를 사용하면 벌어지는 4가지의 일 중, 플로트 나만 볼 수 있어요\(feat. 인라인\)을 제외한 3가지의 일이 absolute를 사용하면 일어난다.
-* **집 나간 내 새끼, 찾을 길 없네**
+* **집 나간 내 새끼, 찾을 길 없네**: height가 200px인 요소 a,b,c를 가진 부모 요소는 height가 600px이다. 이 중, a에게 position 값으로 absolute를 주게 되면 a는 붕뜨면서, 부모와 형제들이 a가 사라졌다고 생각하게 되면서, 부모의 height 값이 400px로 바뀐다. 
 * **블록으로 신분 상승**: 원래 인라인이었던 요소에 position 값으로 absolute를 주게 되면, block으로 바뀌면서 width, height, padding-bottom 등등에 값을 부여할 수 있다. 
 * **길막을 못해 슬픈 블록아**: 원래 인라인이었던 요소에 position 값으로 absolute를 주게 되면, block으로 바뀌긴 하지만 '길막'을 할 수 없다. 그래서 자동으로 margin이 생기지 않는다. 
-* \*\*\*\*
+* absolute는 자신이 원하는 요소를 이동의 기준점으로 잡을 수 있는데, **position이 static이 아닌 것만을 기준으로 잡을 수 있다**.  
+
+### fixed
+
+* absolute를 사용했을 때와 동일한 일이 일어난다. 
+* 집 나간 내 새끼, 찾을 길 없네 / 블록으로 신분 상승 / 길막을 못해 슬픈 블록아 
+* 그러나 fixed의 기준점은 **viewport**이다. viewport는 **내가 보고 있는 브라우저 창의 전체 크기**를 의미한다. 만약, 내가 iphone x 유저라면, iphone x 디스플레이 전체가 viewport가 되는 것이고, galaxy s20 유저라면, galaxy s20 디스플레이 전체가 viewport가 되는 것이다. 
+
+### z-index
+
+position된 요소들의 수직 방향의 level을 알려주는 요소이다. static을 제외한 모든 type은, relative만 하더라도, 사용하게 되면 수직으로 붕 뜨게 된다. 다양한 요소들이 존재할 때, 수직적 레벨을 달리해주고 싶을 , 
 
 
 
