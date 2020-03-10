@@ -263,7 +263,7 @@ Html에서는 존재하지 않는 가상 요소를 이용하는 방법이다.
 * **집 나간 내 새끼, 찾을 길 없네**: height가 200px인 요소 a,b,c를 가진 부모 요소는 height가 600px이다. 이 중, a에게 position 값으로 absolute를 주게 되면 a는 붕뜨면서, 부모와 형제들이 a가 사라졌다고 생각하게 되면서, 부모의 height 값이 400px로 바뀐다. 
 * **블록으로 신분 상승**: 원래 인라인이었던 요소에 position 값으로 absolute를 주게 되면, block으로 바뀌면서 width, height, padding-bottom 등등에 값을 부여할 수 있다. 
 * **길막을 못해 슬픈 블록아**: 원래 인라인이었던 요소에 position 값으로 absolute를 주게 되면, block으로 바뀌긴 하지만 '길막'을 할 수 없다. 그래서 자동으로 margin이 생기지 않는다. 
-* absolute는 자신이 원하는 요소를 이동의 기준점으로 잡을 수 있는데, **position이 static이 아닌 것만을 기준으로 잡을 수 있다**.  
+* absolute는 자신이 원하는 요소를 이동의 기준점으로 잡을 수 있는데, **position이 static이 아닌 것\(조상\)만을 기준으로 잡을 수 있다**.  
 
 ### fixed
 
@@ -285,7 +285,7 @@ flexbox는 **정렬**의 끝판왕. flexbox는 아주 잘 만들어졌기 때문
 
 ![flexbox &#xC4F4;&#xB2E4;&#xACE0; &#xC120;&#xC5B8;&#xD558;&#xAE30;.](.gitbook/assets/420.png)
 
-_flexbox도 box의 일종_이다. 그래서 **display에 flex**라고 넣어주는 것! flexbox는 block과 유사하지만, block은 할 수 없는 요소를 쉽게 정렬할 수 있는 magic power를 가지고 있다고 생각하면 된다. inline-flex는 inline-block과 유사하지만 요소를 쉽게 정렬할 수 있는 힘을 가지고 있는 것! 그런데 이 선언은 반드시 **정렬하고자 하는 요소를 감싸는 부모에게 display: flex;** 라고 해야한다.  
+_flexbox도 box의 일종_이다. 그래서 **display에 flex**라고 넣어주는 것! flexbox는 block과 유사하지만, block은 할 수 없는 요소를 쉽게 정렬할 수 있는 magic power를 가지고 있다고 생각하면 된다. inline-flex는 inline-block과 유사하지만 요소를 쉽게 정렬할 수 있는 힘을 가지고 있는 것! 그런데 이 선언은 반드시 **정렬하고자 하는 요소를 감싸는** _**부모**_**에게 display: flex;** 라고 해야한다.  
 
 ### step 2: 가로 정렬? 세로 정렬? 
 
