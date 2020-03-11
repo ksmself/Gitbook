@@ -357,6 +357,34 @@ align-items는 cross-axis를 기준으로 할 때 사용한다.
 
 #### align-content
 
+**flex-wrap: wrap;** 일때 사용한다. 물론, cross axis를 기준으로 볼때! 
+
+무슨 영문인지는 모르겠지만 아래처럼 떨어져 있는 요소들을 정렬해보려고 한다.
+
+![flex-wrap: wrap; &#xC77C;&#xB54C;](.gitbook/assets/450.png)
+
+위의 요소를 align-items: flex-end;를 이용해서 전부 아래로 내리려고 한다. 그런데 결과는 우리가 예상한 것과 다르게 두 요소 사이의 간격이 여전히 떨어진채로 바닥에 붙는다.
+
+![align-items: flex-end; &#xC77C;&#xB54C;.](.gitbook/assets/445.png)
+
+flex-end를 사용했음에도, red child와 yellow child가 저렇게 정렬된다는 것은, red child & yellow child와 blue child의 cross axis가 따로 존재한다고 볼 수 있다. 이때, **align-content**를 사용하면, 축을 하나로 판단하여 red child와 yellow child가 blue child 바로 위로 내려오게 된다. 
+
+flex-wrap: wrap;일때, align-content: space-between;을 사용하면 아래와 같이 정렬된다. 
+
+![align-content: space-between&#xC744; &#xC0AC;&#xC6A9;&#xD588;&#xC744; &#xB54C;.](.gitbook/assets/448.png)
+
+이제, align-content를 어느 때에 사용해야 하는지 알게 되었지만, 그래도 헷갈린다고 한다면 cross axis를 기준으로 볼때는 먼저, align-items를 사용하고, 원하는 대로 정렬되지 않으면 align-content를 사용하는 것도 방법이 될 수 있다.
+
+![align-content&#xB97C; &#xC5B8;&#xC81C; &#xC368;&#xC57C;&#xD560; &#xC9C0; &#xBAA8;&#xB974;&#xACA0;&#xB2E4;&#xBA74;. ](.gitbook/assets/451.png)
+
+### order
+
+item 각각에 번호를 부여해서 원하는대로 정렬하는 것이 가능하다! 
+
+![order&#xB85C; &#xAC04;&#xB2E8;&#xD558;&#xAC8C; &#xC815;&#xB82C;&#xD558;&#xAE30;](.gitbook/assets/452.png)
+
+## 
+
 
 
 
