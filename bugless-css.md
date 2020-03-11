@@ -319,7 +319,35 @@ flex를 사용하면 보이지 않는 두 개의 축이 생긴다. Main axis와 
 
 ![wrap&#xC744; &#xC0AC;&#xC6A9;&#xD55C; &#xACBD;&#xC6B0;](.gitbook/assets/432.png)
 
-### step 4: 
+### step 4: 씐나는 플렉스 박스 파티 타임!
+
+플렉스 박스를 제대로 활용하려면 두 가지 축을 잘 사용해야 한다. 바로 main axis와 cross axis! **main axis**를 기준으로 할 때는, **justify-content**를, **cross axis**를 기준으로 할 때는, **align-items**, **align-content**를 활용해야 한다. 
+
+![flex-box party time &#xC900;&#xBE44;&#xBB3C;.](.gitbook/assets/433.png)
+
+#### justify-content
+
+main axis가 row이든, column이든 상관 없이 main axis를 기준으로 정렬하려고 한다면 justify-content를 활용하면 된다. 
+
+![flex-direction&#xC774; row&#xC77C;&#xB54C;, justify-content&#xAC00; center&#xC778; &#xC0C1;&#xD669;.](.gitbook/assets/434.png)
+
+![flex-direction&#xC774; row&#xC77C;&#xB54C;, justify-content&#xAC00; flex-start&#xC778; &#xC0C1;&#xD669;.](.gitbook/assets/435.png)
+
+![flex-direction&#xC774; row-reverse&#xC77C;&#xB54C;, justify-content&#xAC00; flex-start&#xC778; &#xC0C1;&#xD669;.](.gitbook/assets/436.png)
+
+![flex-direction&#xC774; row&#xC77C;&#xB54C;, justify-content&#xAC00; flex-end&#xC778; &#xC0C1;&#xD669;.](.gitbook/assets/437.png)
+
+![flex-direction&#xC774; row&#xC77C;&#xB54C;, justify-content&#xAC00; space-between&#xC778; &#xC0C1;&#xD669;.](.gitbook/assets/439.png)
+
+space-around는 요소 주변 간격을 동일하게 한다. 
+
+![flex-direction&#xC774; row&#xC77C;&#xB54C;, justify-content&#xAC00; space-around&#xC778; &#xC0C1;&#xD669;. ](.gitbook/assets/438.png)
+
+#### align-items
+
+
+
+
 
 
 
