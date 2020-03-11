@@ -345,6 +345,18 @@ space-around는 요소 주변 간격을 동일하게 한다.
 
 #### align-items
 
+align-items는 cross-axis를 기준으로 할 때 사용한다. 
+
+![cross axis&#xAC00; column&#xC77C;&#xB54C;, align-items&#xAC00; center&#xC778; &#xC0C1;&#xD669;.](.gitbook/assets/440.png)
+
+![main axis&#xAC00; column&#xC774;&#xACE0;, justify-content&#xAC00; center&#xC774;&#xBA70;, cross axis&#xAC00; row&#xC774;&#xACE0;, align-items&#xAC00; center!](.gitbook/assets/442.png)
+
+아래와 같이 cross axis는 column인데, 간격을 띄울 요소가 존재하지 않는 상황에서는 align-items: space-around/ space-between을 사용할 수 없다. 
+
+![space-around&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC5C6;&#xB294; &#xC0C1;&#xD669;.](.gitbook/assets/441.png)
+
+#### align-content
+
 
 
 
