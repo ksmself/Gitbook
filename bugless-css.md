@@ -397,6 +397,12 @@ item 각각에 번호를 부여해서 원하는대로 정렬하는 것이 가능
 
 ![media query &#xC120;&#xC5B8;.](.gitbook/assets/455.png)
 
+max-width도 사용 가능하다. 아래의 경우, 최소 768px부터 991px까지 animation을 적용해달라는 코드이다. 
+
+![max-width &#xC0AC;&#xC6A9; &#xC608;&#xC2DC;.](.gitbook/assets/457.png)
+
+## 
+
 
 
 
