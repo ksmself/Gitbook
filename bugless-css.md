@@ -389,6 +389,7 @@ item 각각에 번호를 부여해서 원하는대로 정렬하는 것이 가능
 * 요즘에는 web browser를 데스크탑에서만 보지 않는다. 다양한 디바이스로 웹 브라우저를 보게 된다. 
 * **디바이스의 사이즈에 따라**서 딱 맞게 화면에 보이도록 **css 적용을 해놓은 그런 웹 사이트**를 **반응형 웹**이라고 한다. 
 * 반응형 웹을 만들기 위해서는, **html**에서의 **viewport meta** 태그 선언과 **css**에서의 **media query** 선언이 꼭 필요하다!
+* 종종, width:100**vw**; height:100**vh**; 라는 표현을 쓰곤 하는데, 여기 vw와 vh는 **viewport width**, **viewport height**를 의미한다. 1vh는 내가 보고 있는 viewport height의 1%를 의미한다. 
 
 ![viewport &#xC120;&#xC5B8;.](.gitbook/assets/454.png)
 
