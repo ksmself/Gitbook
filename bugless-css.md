@@ -383,7 +383,20 @@ item 각각에 번호를 부여해서 원하는대로 정렬하는 것이 가능
 
 ![order&#xB85C; &#xAC04;&#xB2E8;&#xD558;&#xAC8C; &#xC815;&#xB82C;&#xD558;&#xAE30;](.gitbook/assets/452.png)
 
-## 
+## Media Query
+
+* media query는 **Responsive Web**\(반응형 웹\)을 만들기 위해 반드시 알아야 하는 **css 선언**! 
+* 요즘에는 web browser를 데스크탑에서만 보지 않는다. 다양한 디바이스로 웹 브라우저를 보게 된다. 
+* **디바이스의 사이즈에 따라**서 딱 맞게 화면에 보이도록 **css 적용을 해놓은 그런 웹 사이트**를 **반응형 웹**이라고 한다. 
+* 반응형 웹을 만들기 위해서는, **html**에서의 **viewport meta** 태그 선언과 **css**에서의 **media query** 선언이 꼭 필요하다!
+
+![viewport &#xC120;&#xC5B8;.](.gitbook/assets/454.png)
+
+**min-width**: 768px은 **최소** 768px **부터는**~ 이라는 뜻이다. 
+
+![media query &#xC120;&#xC5B8;.](.gitbook/assets/455.png)
+
+
 
 
 
