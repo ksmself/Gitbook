@@ -401,7 +401,59 @@ max-width도 사용 가능하다. 아래의 경우, 최소 768px부터 991px까�
 
 ![max-width &#xC0AC;&#xC6A9; &#xC608;&#xC2DC;.](.gitbook/assets/457.png)
 
-## 
+## Typography
+
+텍스트를 예쁘게 디자인하는 것. 사용자들이 보다 읽기 좋은 텍스트를 제공하기 위한 것. 
+
+### Essentials
+
+![typography&#xC5D0;&#xC11C; essential&#xD55C; &#xC694;&#xC18C;&#xB4E4;](.gitbook/assets/463.png)
+
+#### font-size
+
+* 글자의 크기를 나타
+* px: 절대 단위. 어딜 가든 1px, 2px, 3px.. 고정된 값을 가진다. 
+* **em**: 상대 단위. **실제로 적용된 폰트 사이즈를 1em**으로 본다. 예를 들어, font-size가 20px이라면, 1em은 20px이 되고, width에 40em이라고 주면, width는 800px이 되는 식이다. 
+* **rem**: 상대 단위. **html에 적용된 폰트 사이즈를 1rem**으로 본다. 예를 들어, html에 font-size를 20px을 주고, css에서 font-size를 3em이라고 하면, font-size를 60px이라고 지정한 것과 같다. 
+
+#### line-height
+
+* 줄 간격. 
+* px, em, rem 모두 사용가능하지만 **주로 em을 사용**한다. 
+* px이나 rem을 사용할 때는 반드시 그 단위를 표기해주어야 하지만, **em을 사용할 때**는 이를 **생략**하는 것이 관례다. 예를 들면, **line-height: 1.5;** 이런 식으로 말이다. 
+* line-height가 얼마이든, **글씨는 줄 간격의 가장 가운데에  배치**가 된다. 
+
+#### letter-spacing
+
+* 글자와 글자 사이의 자간.
+* 사용할 수 있는 단위로는 px과 em이 있다. 하지만 해당 폰트 사이즈에 비례해서 몇 퍼센트를 줄이고 늘리는 게 좋겠냐는 뉘앙스로 많이 사용되기 때문에, **주로 em을 사용**한다. 
+* 자간을 폰트 사이즈에 비례해 **1% 정도 줄이고 싶으면, letter-spacing: -0.01em;** 이런 식으로 표현한다. 
+
+#### font-family
+
+* 폰트 서체를 표현할 때 사용하는 속성.
+* font-family: "Poppins";는 Poppins라는 서체를 사용하라는 뜻.
+* font-family: "Poppins", sans-serif;는 Poppins라는 서체를 사용하되, 없으면 sans-serif를 사용하라는 뜻.
+* serif는 삐침이 있는 서체, sans-serif는 삐침이 없는 서체. \*아래 이미지 참고
+
+![serif&#xC640; sans-serif &#xBE44;&#xAD50;.](.gitbook/assets/466.png)
+
+#### font-weight
+
+* 폰트의 무게, 즉, 굵기를 의미함.
+* 100 단위로 표현.
+* **regular** 사이즈의 굵기는 **400**, **bold** 사이즈의 굵기는 **700**.
+
+![font-weight.](.gitbook/assets/460.png)
+
+#### color
+
+* 폰트의 색상값.
+* **hex**: **\#0066ff** 이런 식으로 표현하는 게 hex.  
+* **rgb**: **rgb\(0,102, 255\)** 이런 식으로 표현하는 게 rgb.
+* **rgba** : **rgba\(0,102, 255, 1\)**이라고 해서 rgb에 a, **투명도**가 더해진 것. a가 **1이면 완전히 불투명**한 것, **0이면 완전 투명**한 것. 
+
+### and etc...
 
 
 
