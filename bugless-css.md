@@ -488,6 +488,16 @@ max-width도 사용 가능하다. 아래의 경우, 최소 768px부터 991px까�
 
 ### Webfont
 
+#### 갖다 쓴
+
+1. [https://fonts.google.com/](https://fonts.google.com/) 에 들어간다. 
+2. 마음에 드는 폰트를 고른다. 
+3. 사이트에서 알려주는 대로 embed한다.  
+
+![webfont&#xB97C; &#xAC16;&#xB2E4; &#xC4F0;&#xB294; &#xBC29;&#xBC95;.](.gitbook/assets/468.png)
+
+#### 직접 제공한
+
 
 
 
