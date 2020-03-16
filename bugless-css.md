@@ -411,7 +411,7 @@ max-width도 사용 가능하다. 아래의 경우, 최소 768px부터 991px까�
 
 #### font-size
 
-* 글자의 크기를 나타
+* 글자의 크기를 나타냄.
 * px: 절대 단위. 어딜 가든 1px, 2px, 3px.. 고정된 값을 가진다. 
 * **em**: 상대 단위. **실제로 적용된 폰트 사이즈를 1em**으로 본다. 예를 들어, font-size가 20px이라면, 1em은 20px이 되고, width에 40em이라고 주면, width는 800px이 되는 식이다. 
 * **rem**: 상대 단위. **html에 적용된 폰트 사이즈를 1rem**으로 본다. 예를 들어, html에 font-size를 20px을 주고, css에서 font-size를 3em이라고 하면, font-size를 60px이라고 지정한 것과 같다. 
@@ -454,6 +454,39 @@ max-width도 사용 가능하다. 아래의 경우, 최소 768px부터 991px까�
 * **rgba** : **rgba\(0,102, 255, 1\)**이라고 해서 rgb에 a, **투명도**가 더해진 것. a가 **1이면 완전히 불투명**한 것, **0이면 완전 투명**한 것. 
 
 ### and etc...
+
+#### text-align
+
+* 텍스트를 정렬할 때 사용.
+* left \| right \| center 로 정렬 가능. 
+* \*dummy text를 만들고 싶으면 lorem이라고 쓰고 원하는 글자수를 적은 뒤 탭을 누르면 된다. 
+
+#### text-indent
+
+* 들여쓰기 할 때 사용. 
+* text-indent: 100px; 이런 식으로 사용 가능. 
+* 마이너스 값도 사용 가능한데, 이럴 경우 들여써지는 것이 아니라 앞쪽으로 밀려난다. 
+
+#### text-transform
+
+* 알파벳 베이스 문자들에만 유의미하다. 
+* none \| capitalize \| uppercase \| lowercase 
+
+![text-transform&#xC758; &#xC608;&#xC2DC;. ](.gitbook/assets/467.png)
+
+#### text-decoration
+
+* 텍스트에 줄을 긋는 것과 관련된 속성.
+* none \| underline \| line-through \| overline
+* 보통 언제 쓰냐면, a 태그를 사용하게 될 경우 기본적으로 underline이 된 상태로 style이 나타나기 때문에, 이걸 없애길 원할 때, text-decoration: none; 이라고 표현하곤 한다. 
+
+#### font-style
+
+* 문자를 기울이고 싶을 때 사용. 
+* normal \| italic \| oblique
+* html에서 em 태그는 강조하고 싶을 때 사용해주는 데, em은 기본적으로 기울여진 채로 표현되기 때문에 이를 원하지 않을 때, em의 font-style: normal; 로 바꿔주곤 한다. 
+
+### Webfont
 
 
 
