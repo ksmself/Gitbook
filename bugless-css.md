@@ -511,6 +511,16 @@ max-width도 사용 가능하다. 아래의 경우, 최소 768px부터 991px까�
 
 ![&quot;Kimbug&quot;&#xCCB4;&#xAC00; &#xC801;&#xC6A9;&#xB41C; &#xBAA8;&#xC2B5;.](.gitbook/assets/473.png)
 
+## Background
+
+* **background-color**: 배경색, hex, rgb, rgba로 부여할 수 있다. 
+* **background-image**: 배경 이미지를 넣는 것. url\(\) 함수를 이용해서, 가지고 있는 이미지의 경로를 넣어주거나, web에서 넣고 싶은 이미지를 찾아, 그 이미지의 주소를 복사해 넣어줄 수도 있다. 
+* **background-repeat**: repeat \| no-repeat. 기본 값은 repeat. 이미지가 반복되어 나타나지 않기를 바란다면, no-repeat으로 설정해주면 된다. 
+* **background-size**: contain \| cover \| custom. contain은 이미지가 박스 안에 완전히 포함되어 나타나고, cover은 박스가 빈 공간 없이 완전히 채워지는 것이고, custom은 사용자가 사이즈를 직접 정할 수 있다. 
+* **background-position**: x, y를 기준으로 배경이미지의 위치를 정할 수 있다. 
+
+![contain&#xACFC; cover&#xC758; &#xCC28;&#xC774;.](.gitbook/assets/475.png)
+
 ## 
 
 
