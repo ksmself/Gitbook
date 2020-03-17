@@ -488,7 +488,7 @@ max-width도 사용 가능하다. 아래의 경우, 최소 768px부터 991px까�
 
 ### Webfont
 
-#### 갖다 쓴
+#### 갖다 쓴다
 
 1. [https://fonts.google.com/](https://fonts.google.com/) 에 들어간다. 
 2. 마음에 드는 폰트를 고른다. 
@@ -496,9 +496,22 @@ max-width도 사용 가능하다. 아래의 경우, 최소 768px부터 991px까�
 
 ![webfont&#xB97C; &#xAC16;&#xB2E4; &#xC4F0;&#xB294; &#xBC29;&#xBC95;.](.gitbook/assets/468.png)
 
-#### 직접 제공한
+#### 직접 제공한다
 
+1. font 압축 파일을 다운받는다. 
+2. font용 css 파일을 만들어 font-face를 만든다. 
+3. font-family, font-style, font-weight, src를 지정한다. 
+4. font 파일이 완성되면 html에서 link에 첨부하거나, css 파일에서 import한다. 
 
+![&#xC644;&#xC131;&#xB41C; font-face.](.gitbook/assets/472.png)
+
+![html&#xC758; link&#xC5D0; font &#xD30C;&#xC77C;&#xC744; &#xCCA8;&#xBD80;&#xD558;&#xB294; &#xBC29;&#xBC95;.](.gitbook/assets/470.png)
+
+![css&#xC5D0; font &#xD30C;&#xC77C;&#xC744; import&#xD558;&#xB294; &#xBC29;&#xBC95;. ](.gitbook/assets/474.png)
+
+![&quot;Kimbug&quot;&#xCCB4;&#xAC00; &#xC801;&#xC6A9;&#xB41C; &#xBAA8;&#xC2B5;.](.gitbook/assets/473.png)
+
+## 
 
 
 
