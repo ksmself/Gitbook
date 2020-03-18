@@ -521,7 +521,23 @@ max-width도 사용 가능하다. 아래의 경우, 최소 768px부터 991px까�
 
 ![contain&#xACFC; cover&#xC758; &#xCC28;&#xC774;.](.gitbook/assets/475.png)
 
+## Transition
+
+css에서는 스타일의 속성을 바꾸는 경우가 종종 있는데, 이 때 애니메이션을 주어 **자연스럽게 바뀔 수** 있도록 하는 것이 **Transition**! 변화가 스르륵 일어날 수 있게 도와준다. 
+
+* **property**: css 속성을 뜻함. 변화를 일으킬 속성이 무엇인지 명시를 하기 위함. 
+* 모든 property에 대해 변화를 주고 싶으면 all이라고 지정하면 된다. 
+* **duration**: transition이 얼마 동안 일어나야 하는지 알려주기 위한 시간. 단위로는 ms\(1000ms == 1s\)와 s가 있음.
+* \[**timing-function**\]: 생략 가능. 변화의 속도를 지정해주는 function. ease-in \| ease-out \| ease-in-out \| cubic-bezier\(\) 를 주로 사용함. 
+* ease-in은 처음에는 천천히 바뀌다가 나중에는 휙 바뀜. ease-out은 처음에는 휙 바뀌고 나중에는 천천히 바뀜. ease-in-out은 짬뽕. cubic-bezier\(\)는 사용자가 가속도의 변화를 제어하고 싶을 때 사용하는 function. 
+* \[**delay**\]: 생략 가능. transition이 좀 delay된 후에 나타나기를 바랄 때 사용. 
+* 아래는 font-size는 1초동안 휙에서 천천히 바뀌고, background-color는 2초동안 cubic-bezier에서 지정한 가속도로 변화하며 1초 delay된 후에 나타나게 하는 transition이다. 
+
+![transition &#xC0AC;&#xC6A9; &#xC608;&#xC2DC;.](.gitbook/assets/476.png)
+
 ## 
+
+
 
 
 
