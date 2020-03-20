@@ -535,7 +535,22 @@ css에서는 스타일의 속성을 바꾸는 경우가 종종 있는데, 이 �
 
 ![transition &#xC0AC;&#xC6A9; &#xC608;&#xC2DC;.](.gitbook/assets/476.png)
 
-## 
+## Animation
+
+transition은 css를 먹인 어떤 속성에 변화를 '스르륵' 주게 되지만, animation은 animation을 주고 싶을 때 자유롭게 사용 가능하다. 
+
+어떤 박스에 animation을 주려고 할 때, 그 animation을 따로 이름을 붙여 만들어 속성을 정한다. @keyframes 뒤에 붙이고자 하는 이름을 적어주고, animation이 시작할 때 속성을 from에, 바뀔 때 속성을 to에 적어주면 된다. from, to 대신에 0%, 50%, 100%처럼 %로도 표현 가능하다. 
+
+![Animation &#xAE30;&#xBCF8; &#xD2C0;. ](.gitbook/assets/477.png)
+
+* 아래는box라는 클래스에서 move-box라는 animation을 사용하려고 하는 경우이다. 즉, 사용하고자 하는 **animation-name**에 해당 animation의 이름을 넣어준다. 
+* **animation-duration**은 얼마동안 animation이 실행될지 정해주는 속성이다. 
+* **animation-iteration-count**는 해당 animation이 몇 번 반복할지 정해주는 속성이다. **한 번 animation이 실행되고 난 뒤에는 원래 상태로** 돌아간다. 그런데, **animation-direction**을 **alternate**으로 정해주게 되면, animation이 여러번 반복될 때, 한 번 실행후 마지막 상태에서 원래 상태로 돌아갔다 다시 돌아오는 식이다. 
+* **animation-timing-function**은 '변화의 속도'를 지정해주는 속성이다. 
+* **animation-delay**를 통해 ~초 뒤에 animation이 구현되도록 할 수 있다. 
+* 사실 이것들 외에도 animation과 관련된 property들이 매우 많다. 궁금하다면 mdn에 들어가 css animation이라고 검색하면 animation과 관련된 속성들이 다 나온다. 
+
+![animation &#xC0AC;&#xC6A9; &#xC608;&#xC2DC;.](.gitbook/assets/478.png)
 
 
 
