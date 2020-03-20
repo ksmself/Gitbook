@@ -235,8 +235,8 @@ Html에서는 존재하지 않는 가상 요소를 이용하는 방법이다.
 위와 같이 'parent'라는 클래스 뒤에 가상요소를 만드는 방법이다. 
 
 * 가상요소를 selector **뒤에 만들면**, **selector :: after**, selector **앞에 만들면**, **selector :: before**라고 하면 된다.  
-* 가상요소를 만들 때, 절대 빠트리면 안되는 것은 '**content**'이다. 빈칸으로 두든, 이모티콘을 넣든 그 내용은 content 안에 들어가야 한다. 
-* clear 속성을 이용할 수 있는 것은 'block' 뿐이다. 그래서 clear를 주려고 한다면, 해당 selector의 **display를 block으로** 바꿔야 한다.
+* 가상요소를 만들 때, **절대 빠트리면 안되는 것**은 '**content**'이다. 빈칸으로 두든, 이모티콘을 넣든 그 내용은 content 안에 들어가야 한다. 
+* **clear 속성을 이용할 수 있는 것은 'block' 뿐**이다. 그래서 clear를 주려고 한다면, 해당 selector의 **display를 block으로** 바꿔야 한다.
 * 그리고 clear를 주면 된다. **앞 요소**에 대해서는 **clear: left;** **뒤 요소**에 대해서는 **clear: right;**  
 
 ## Position
