@@ -30,7 +30,7 @@
 * **float를 사용하면서 레이아웃이 붕괴**되기 때문에, 이를 방지하기 위해 **pseudo-element**를 활용한다. 
 
 ```css
-.tab-menu-item::after{
+.tab-menu::after{
     content: ' ';
     display: block;
     clear: left;
@@ -47,7 +47,7 @@
   }
 ```
 
-* 기타 디자인적 요소들을 추가해주고, 무엇보다 부모에게 자식의 요소를 찾아주는 '**overflow: hidden**;'을 빼먹어서는 안된다.  
+* 기타 디자인적 요소들을 추가해준다.
 
 ```css
   .tab-menu{
@@ -120,14 +120,13 @@
   .tab-menu{
     list-style-type: none;
     padding-left: 0;
-    overflow: hidden;
     max-width: 540px;
     border-bottom: 1px solid #E5EAEF;
   }
   .tab-menu-item{
     float: left;
   }
-  .tab-menu-item::after{
+  .tab-menu::after{
       content: ' ';
       display: block;
       clear: left;
