@@ -53,7 +53,6 @@
   .tab-menu{
     list-style-type: none;
     padding-left: 0;
-    overflow: hidden;
     max-width: 540px;
     border-bottom: 1px solid #E5EAEF;
   }
