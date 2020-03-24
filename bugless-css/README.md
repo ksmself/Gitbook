@@ -552,7 +552,20 @@ transition은 css를 먹인 어떤 속성에 변화를 '스르륵' 주게 되지
 
 ![animation &#xC0AC;&#xC6A9; &#xC608;&#xC2DC;.](../.gitbook/assets/478.png)
 
+## Selectors
 
+### Type, Class & ID Selector
+
+![selector.](../.gitbook/assets/481.png)
+
+* **Type** Selector: html 태그 selector.
+* **Class** Selector: class를 선택할 때 사용. _class의 이름이 'box'_라면, **.box**{property: value}; 
+* box1이자 box2이자 box3인 class를 선택하고 싶다면, **.box1.box2.box3** 이렇게 선택해주면 된다. 
+* **ID** Selector: ID는 식별자. html 세상에서 해당 ID는 단 하나만 존재. ID의 이름이 'kimbug'라면, **\#kimbug**라고 표현! 
+* div.active.box는 div이자 active이자 box인 요소. 
+* _id가 kimbug이자 class는 box_인 요소는 **\#kimbug.box** or **.box\#kimbug**라고 표현 가능하다. 
+
+### 
 
 
 
