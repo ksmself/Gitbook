@@ -143,5 +143,151 @@
   }
 ```
 
+## float 2 
+
+![&#xB514;&#xC790;&#xC778; &#xC2DC;&#xC548;.](../.gitbook/assets/482.png)
+
+![&#xD604;&#xC7AC; &#xC0C1;&#xD0DC;. ](../.gitbook/assets/483.png)
+
+* 우선, 이미지의 모양을 둥글게 하고, width와 height 값을 조정해야 한다. 
+
+```css
+  .card-user{
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+  }
+```
+
+* card-content 사이의 여백을 위해 h1과 strong에 margin-bottom을 주었다. 그런데, strong의 margin-bottom은 적용되지 않아 왜 그런가 봤더니 display가 inline이었다. 그래서 display를 block으로 변경해주었다. \*margin을 줄 때는 한 방향으로 통일하는 것이 좋음. 
+
+```css
+  .card-content h1{
+    margin-bottom: 4px;
+  }
+  .card-content strong{
+    margin-bottom: 12px;
+    display: block;
+  }
+```
+
+* 이제는 가로배치를 해야한다. card-user와 card-content 모두 float: left; 시키고, 둘 사이의 여백을 위해 margin-right을 사용하였다. 
+
+```css
+  .card-user{
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    margin-right: 20px;
+  }
+  .card-user,
+  .card-content{
+    float: left;
+  }
+```
+
+* 레이아웃 붕괴를 위해 pseudo-element를 활용하지만, 이 속성이 한 번만 사용되지 않을 수 있기 때문에 clearfix라는 class를 만들어 clear: both;로 하고 언제든 사용할 수 있도록 했다. 또한, card 전부분에 필요한 padding을 주었다.  
+
+```css
+  .clearfix::after{
+    content:'';
+    display: block;
+    clear: both;
+  }
+  .card{
+    padding: 20px;
+  }
+```
+
+### 완성된 html 파일
+
+```markup
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Float 2</title>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="card clearfix">
+      <img src="./assets/user.jpg" alt="Customer support" class="card-user" />
+      <div class="card-content">
+        <h1>RE: 안녕하세요 배송 관련 문의드립니다</h1>
+        <strong>
+          customer support
+        </strong>
+        <p>
+          안녕하세요 우현님. 문의 드린 사항에 대한 답변드립니다. 지난 12...
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
+```
+
+### 완성된 css 파일
+
+```css
+* {
+    box-sizing: border-box;
+    margin: 0;
+  }
+  
+  body {
+    font-family: "Noto Sans KR", sans-serif;
+    letter-spacing: -0.02em;
+  }
+  
+  h1 {
+    font-size: 16px;
+    font-weight: 400;
+    color: #1f2d3d;
+    line-height: 1.25;
+  }
+  
+  strong {
+    font-size: 14px;
+    font-weight: 400;
+    color: #afb3b9;
+    line-height: 1.4285714286;
+  }
+  
+  p {
+    font-size: 16px;
+    color: #79818b;
+    line-height: 1.5;
+  }
+  
+  /* ▼ WHERE YOUR CODE BEGINS */
+  .clearfix::after{
+    content:'';
+    display: block;
+    clear: both;
+  }
+  .card{
+    padding: 20px;
+  }
+  .card-user{
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    margin-right: 20px;
+  }
+  .card-content h1{
+    margin-bottom: 4px;
+  }
+  .card-content strong{
+    margin-bottom: 12px;
+    display: block;
+  }
+  .card-user,
+  .card-content{
+    float: left;
+  }
+```
+
 ## 
 
