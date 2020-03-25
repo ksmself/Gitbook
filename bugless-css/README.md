@@ -565,6 +565,19 @@ transition은 css를 먹인 어떤 속성에 변화를 '스르륵' 주게 되지
 * div.active.box는 div이자 active이자 box인 요소. 
 * _id가 kimbug이자 class는 box_인 요소는 **\#kimbug.box** or **.box\#kimbug**라고 표현 가능하다. 
 
+### Child, Descendant & Sibling Combinators
+
+* child : 자식 선택자
+* descendant : 자손 선택자
+* sibling: 형제 선택자
+* 아래의 이미지를 보자. li는 ul의 자식이지만, section의 자식은 아니다. section의 자손이다. p는 li와 형제 관계이다. 
+* **parent &gt; child** : 아래의 이미지와 함께 보면, 'section &gt; h1' 은 section의 자식인 h1만 선택하라는 뜻.
+* **parent descendant** : 아래의 이미지와 함께 보면, 'section h1'은 section의 자손인 h1을 선택하라는 뜻. _자기 자식도 포함_! 
+* **parent + sibling** : '.active + li'는 클래스 액티브 바로 뒤에 오는 li 하나만 선택하라는 뜻. 
+* **parent ~ sibling**: '.active ~ li'는 클래스 액티브 뒤에 오는 li 모두 선택하라는 뜻
+
+![&#xC608;&#xC2DC;.](../.gitbook/assets/484.png)
+
 ### 
 
 
