@@ -332,12 +332,127 @@
   }
 ```
 
-* 가로 배치 후에는 둘 사이의 간격을 위해 user-photo에 margin-right을 적용한다. 
+* user-photo에 padding을 적용한다. 
 
 ```css
   .user-photo{
-    margin-right: 12px;
+    padding: 8px 12px;
   }
 ```
 
-* 
+* user-name도 수직으로 가운데 정렬을 위해 padding을 적용한다. 
+
+```css
+  .user-name{
+    padding: 16px 0;
+  }
+```
+
+* 마지막으로 초록 동그라미를 만들어낸다. 초록 동그라미는 원래 위치에서 완전히 떼내어, 원래의 맥락에서 완전히 벗어나서 위치를 옮겨야 하므로 position: aboslute;를 사용한다. 자연히 부모 요소는 relative가 되어야 하므로 user-photo의 position을 relative로 바꿔준다.
+
+```css
+  .user-status{
+    position: absolute;
+    right: 10px;
+    bottom: 6px;
+    display: block;
+    box-sizing: content-box;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 2px solid #FFFFFF;
+    background-color:#21D891;
+  }
+```
+
+### 완성된 html 파일
+
+```markup
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Position 1</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="user-card">
+      <div class="user-photo">
+        <img src="./assets/user.jpg" alt="Kimbug" />
+        <span class="user-status" aria-label="Active"></span>
+      </div>
+      <h1 class="user-name">
+        Kimbug
+      </h1>
+    </div>
+  </body>
+</html>
+```
+
+### 완성된 css 파일
+
+```css
+* {
+    box-sizing: border-box;
+    margin: 0;
+  }
+  
+  body {
+    font-family: "Lato", sans-serif;
+  }
+  
+  h1 {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #273444;
+  }
+  
+  /* ▼ WHERE YOUR CODE BEGINS */
+  .user-card{
+    width: 240px;
+    height: 56px;
+    background-color: #ffffff;
+    border: 1px solid #E5EAEF;
+    border-radius: 4px;
+  }
+  .user-card::after{
+    content: '';
+    display: block;
+    clear: left;
+  }
+  .user-photo,
+  .user-name{
+    float: left;
+  }
+  .user-photo{
+    position: relative;
+    padding: 8px 12px;
+  }
+  .user-photo img{
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  .user-name{
+    padding: 16px 0;
+  }
+  .user-status{
+    position: absolute;
+    right: 10px;
+    bottom: 6px;
+    display: block;
+    box-sizing: content-box;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 2px solid #FFFFFF;
+    background-color:#21D891;
+  }
+```
+
+## 
+
