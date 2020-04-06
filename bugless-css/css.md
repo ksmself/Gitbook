@@ -289,5 +289,55 @@
   }
 ```
 
-## 
+## position 1 
 
+![&#xB514;&#xC790;&#xC778; &#xC2DC;&#xC548;. ](../.gitbook/assets/485.png)
+
+![&#xD604;&#xC7AC; &#xC0C1;&#xD0DC;.](../.gitbook/assets/486.png)
+
+* 프로필 이미지와 user name을 담고 있는 user-card의 속성부터 정리한다. 
+
+```css
+  .user-card{
+    width: 240px;
+    height: 56px;
+    background-color: #ffffff;
+    border: 1px solid #E5EAEF;
+    border-radius: 4px;
+  }
+```
+
+* 이미지의 사이즈와 border-radius를 조정한다. 이때, 이미지는 **user-photo의 img**이므로 아래의 코드와 같이 표현한다. 
+
+```css
+  .user-photo img{
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+```
+
+* 이미지와 user name의 가로 배치가 필요해보인다.  
+
+```css
+  .user-card::after{
+    content: '';
+    display: block;
+    clear: left;
+  }
+  .user-photo,
+  .user-name{
+    float: left;
+  }
+```
+
+* 가로 배치 후에는 둘 사이의 간격을 위해 user-photo에 margin-right을 적용한다. 
+
+```css
+  .user-photo{
+    margin-right: 12px;
+  }
+```
+
+* 
