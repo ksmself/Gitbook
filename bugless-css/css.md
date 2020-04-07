@@ -454,5 +454,48 @@
   }
 ```
 
-## 
+## position 2 
+
+![&#xB514;&#xC790;&#xC778; &#xC2DC;&#xC548;.](../.gitbook/assets/487.png)
+
+![&#xD604;&#xC7AC; &#xC0C1;&#xD0DC;.](../.gitbook/assets/488.png)
+
+* 먼저, card의 사이즈부터 조정한다. 
+
+```css
+  .card{
+    width: 400px;
+    height: 354px;
+  }
+```
+
+* card의 사이즈를 조정해도 이미지가 줄어들지 않으니, 이미지의 사이즈를 조정한다. 이때, 이미지는 inline인데, width와 height를 적용했으니 display를 block으로 바꿔준다. 
+
+```css
+  .card-carousel img{
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+```
+
+* 화살표의 position을 조정해준다. top: 50%으로 하면, 50% 지점에서부터 시작되기 때문에, 화살표의 위치가 정중앙보다 내려오게 된다. 그래서 transform: translateY\(-50%\)을 사용해 그 위치로부터 50% 올라갈 수 있도록 조정해준다. 
+
+```css
+  .card-carousel{
+    position: relative;
+  }
+  #prev, 
+  #next{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  #prev{
+    left: 0;
+  }
+  #next{
+    right: 0;
+  }
+```
 
