@@ -64,85 +64,6 @@
   }
 ```
 
-### 완성된 html 파일
-
-```markup
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Float 1</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./p-style.css" />
-  </head>
-  <body>
-    <ul class="tab-menu">
-      <li class="tab-menu-item">
-        <a href="#">Summary</a>
-      </li>
-      <li class="tab-menu-item selected">
-        <a href="#">Emails</a>
-      </li>
-      <li class="tab-menu-item">
-        <a href="#">Files</a>
-      </li>
-      <li class="tab-menu-item">
-        <a href="#">Mentions</a>
-      </li>
-    </ul>
-  </body>
-</html>
-```
-
-### 완성된 css 파일
-
-```css
-* {
-    box-sizing: border-box;
-    margin: 0;
-  }
-  
-  body {
-    font-family: "Roboto", sans-serif;
-    letter-spacing: -0.02em;
-  }
-  
-  a {
-    font-size: 18px;
-    line-height: 20px;
-    color: #8492a6;
-    text-decoration: none;
-  }
-  
-  /* ▼ WHERE YOUR CODE BEGINS */
-  .tab-menu{
-    list-style-type: none;
-    padding-left: 0;
-    max-width: 540px;
-    border-bottom: 1px solid #E5EAEF;
-  }
-  .tab-menu-item{
-    float: left;
-  }
-  .tab-menu::after{
-      content: ' ';
-      display: block;
-      clear: left;
-  }
-  .tab-menu-item a{
-    padding: 16px 20px;
-    display: inline-block;
-    margin-right: 16px;
-  }
-  .tab-menu-item.selected a{
-    color: #2860E1;
-    /* font-weight이 medium이므로 */
-    font-weight: 500;
-    border-bottom: 2px solid #2860E1;
-  }
-```
-
 ## float 2 
 
 ![&#xB514;&#xC790;&#xC778; &#xC2DC;&#xC548;.](../.gitbook/assets/482.png)
@@ -196,96 +117,6 @@
   }
   .card{
     padding: 20px;
-  }
-```
-
-### 완성된 html 파일
-
-```markup
-<!DOCTYPE html>
-<html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Float 2</title>
-    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./style.css" />
-  </head>
-  <body>
-    <div class="card clearfix">
-      <img src="./assets/user.jpg" alt="Customer support" class="card-user" />
-      <div class="card-content">
-        <h1>RE: 안녕하세요 배송 관련 문의드립니다</h1>
-        <strong>
-          customer support
-        </strong>
-        <p>
-          안녕하세요 우현님. 문의 드린 사항에 대한 답변드립니다. 지난 12...
-        </p>
-      </div>
-    </div>
-  </body>
-</html>
-```
-
-### 완성된 css 파일
-
-```css
-* {
-    box-sizing: border-box;
-    margin: 0;
-  }
-  
-  body {
-    font-family: "Noto Sans KR", sans-serif;
-    letter-spacing: -0.02em;
-  }
-  
-  h1 {
-    font-size: 16px;
-    font-weight: 400;
-    color: #1f2d3d;
-    line-height: 1.25;
-  }
-  
-  strong {
-    font-size: 14px;
-    font-weight: 400;
-    color: #afb3b9;
-    line-height: 1.4285714286;
-  }
-  
-  p {
-    font-size: 16px;
-    color: #79818b;
-    line-height: 1.5;
-  }
-  
-  /* ▼ WHERE YOUR CODE BEGINS */
-  .clearfix::after{
-    content:'';
-    display: block;
-    clear: both;
-  }
-  .card{
-    padding: 20px;
-  }
-  .card-user{
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    margin-right: 20px;
-  }
-  .card-content h1{
-    margin-bottom: 4px;
-  }
-  .card-content strong{
-    margin-bottom: 12px;
-    display: block;
-  }
-  .card-user,
-  .card-content{
-    float: left;
   }
 ```
 
@@ -365,95 +196,6 @@
   }
 ```
 
-### 완성된 html 파일
-
-```markup
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Position 1</title>
-    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./style.css" />
-  </head>
-  <body>
-    <div class="user-card">
-      <div class="user-photo">
-        <img src="./assets/user.jpg" alt="Kimbug" />
-        <span class="user-status" aria-label="Active"></span>
-      </div>
-      <h1 class="user-name">
-        Kimbug
-      </h1>
-    </div>
-  </body>
-</html>
-```
-
-### 완성된 css 파일
-
-```css
-* {
-    box-sizing: border-box;
-    margin: 0;
-  }
-  
-  body {
-    font-family: "Lato", sans-serif;
-  }
-  
-  h1 {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #273444;
-  }
-  
-  /* ▼ WHERE YOUR CODE BEGINS */
-  .user-card{
-    width: 240px;
-    height: 56px;
-    background-color: #ffffff;
-    border: 1px solid #E5EAEF;
-    border-radius: 4px;
-  }
-  .user-card::after{
-    content: '';
-    display: block;
-    clear: left;
-  }
-  .user-photo,
-  .user-name{
-    float: left;
-  }
-  .user-photo{
-    position: relative;
-    padding: 8px 12px;
-  }
-  .user-photo img{
-    display: block;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-  }
-  .user-name{
-    padding: 16px 0;
-  }
-  .user-status{
-    position: absolute;
-    right: 10px;
-    bottom: 6px;
-    display: block;
-    box-sizing: content-box;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    border: 2px solid #FFFFFF;
-    background-color:#21D891;
-  }
-```
-
 ## position 2 
 
 ![&#xB514;&#xC790;&#xC778; &#xC2DC;&#xC548;.](../.gitbook/assets/487.png)
@@ -498,4 +240,23 @@
     right: 0;
   }
 ```
+
+* card-content 내부에 대한 정리다. 처음 혼자 실습을 해볼 때는 컨텐트 내부 요소 각각의 position을 조정했지만, 강의를 들어보니 그냥 padding을 주면 쉽게 positioning이 가능했다. card-content의 strong부분도 그냥 text-align을 right으로 주면 되었다. 
+
+```css
+  .card-content h1{
+    margin-bottom: 2px;
+  }
+  .card-content strong{
+    display: block;
+    /* 일반적으로, margin은 한 방향으로 주는 것이 좋음 */
+    margin-top: 8px;
+    text-align: right;
+  }
+  .card-content{
+    padding: 12px 16px;
+  }
+```
+
+## 
 
