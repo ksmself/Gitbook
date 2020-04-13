@@ -258,5 +258,75 @@
   }
 ```
 
+## position 3 
+
+![&#xB514;&#xC790;&#xC778; &#xC2DC;&#xC548;.](../.gitbook/assets/492.png)
+
+![&#xD604;&#xC7AC; &#xC0C1;&#xD0DC;.](../.gitbook/assets/491.png)
+
+* 텍스트나 **인라인 요소를 블록 안에서 가운데 정렬하고 싶을 때** 사용하는 속성이, **text-align: center;**이다. 
+
+```css
+  .modal-title, 
+  .modal-desc{
+    text-align: center;
+  }
+  .modal-title{
+    margin-bottom: 4px;
+  }
+  .modal-desc{
+    width: 591px;
+    margin: 0 auto 24px;
+  }
+```
+
+* input과 버튼도 display가 inline-block이므로, 부모 요소인 block 'input'에 가운데 정렬 속성을 주면 된다. 그리고 버튼에 padding을 주면, 혹여나 글씨가 커지더라도 버튼이 꽉 차지 않고 일정 여백을 유지한 채 버튼의 사이즈가 커진다. 
+
+```css
+  .input-group{
+    text-align: center;
+  }
+  .input-group input{
+    border: none;
+    width: 200px;
+    height: 36px;
+    padding: 0 16px;
+    border-radius: 4px;
+    background-color: #F6F8FA;
+    margin-right: 8px;
+  }
+  .input-group button{
+    border: none;
+    height: 36px;
+    padding: 8px 14px;
+    border-radius: 4px;
+    background-color: #2860E1;
+    color: #fff;
+  }
+```
+
+* modal은 display가 block인데, **block은 width 값을 따로 부여하지 않을 경우, 부모의 100%를 다 차지**한다. 근데 만약, **position: fixed를 주게 되면, width가 따로 선언되어 있지 않기 때문에, 가지고 있는 content 사이즈만큼 줄게 된다.** 
+
+```css
+  .modal{
+    padding: 32px 40px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 4px;
+  }
+```
+
+* close 버튼은 뷰포트와도 상관 없고, 원래 있던 자리에서 아예 똑 떼서 오른쪽 상단에 붙이고 싶은 것이므로 position: absolute를 사용한다. 부모인 modal도 이미 position이 fixed이므로 건드릴 필요가 없다. 
+
+```css
+  .close-button{
+    position: absolute;
+    top: 8px;
+    right: 8px;
+  }
+```
+
 ## 
 
