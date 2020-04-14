@@ -30,3 +30,58 @@ When you introduce a new piece of data into a JavaScript program, the browser sa
 
 To see all of the properties and methods on the **Math object**: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Math](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math)
 
+## Variables 
+
+a container for a value. 
+
+### var
+
+* Prior to the ES6, programmers could only use the **var** keyword to declare variables. 
+* short for variable. JavaScript keyword that creates, or declares, a new variable. 
+* myName is the variable's name. **Capitalizing** in this way is a standard convention in JS. 
+
+### let 
+
+* the **let** keyword was introduced in ES6.
+* variable can be **reassigned** a different value. 
+* we can declare a variable **without assigning** the variable a value. The variable will be automatically initialized with  a value of **undefined**. \(and even **var**\)
+
+### const
+
+* also introduced in ES6, and is short for the word constant.
+* **cannot be reassigned** because it is **constant**. 
+* must be assigned a value when declared. 
+* If you're trying to decide between which keyword to use, **let or const**, think about whether you'll need to **reassign** the variable later on. 
+
+### String Interpolation
+
+In the ES6 version of JS, we can insert, or interpolate, variables into strings using template literals. 
+
+```javascript
+const myPet = 'armadilllo';
+console.log(`I own a pet ${myPet}.`);
+//Output: I own a pet armadillo.
+```
+
+* a **template literal** is wrapped by backticks **\`** \(this key is usually located on the top of your keyboard, left of the 1 key\) 
+* Inside the template literal, you'll see a placeholder, **${myPet}**. The value of **myPet** is inserted into the template literal. 
+* biggest benefits to using template literals is the **readability** of the code. 
+
+### typeof operator 
+
+* If you need to check the **data type** of a variable's value, use the **typeof** operator.
+* typeof operator checks the value to its right and returns, or passes back, a string of the data type.
+
+```javascript
+const unknown1 = 'foo';
+console.log(typeof unknown1); // Output: string
+
+const unknown2 = 10;
+console.log(typeof unknown2); // Output: number
+
+const unknown3 = true; 
+console.log(typeof unknown3); // Output: boolean
+```
+
+## 
+
