@@ -83,5 +83,55 @@ const unknown3 = true;
 console.log(typeof unknown3); // Output: boolean
 ```
 
+## Conditional Statements
+
+### Comparison Operators 
+
+* is equal to: **===**
+* is not equal to: **!==** 
+
+### Truthy and Falsy
+
+```javascript
+let myVariable = 'I Exist!';
+if (myVariable) {
+   console.log(myVariable)
+} else {
+   console.log('The variable does not exist.')
+}
+```
+
+* **if** statement will run because **myVariable** has a **truthy** value.
+* even though the value of **myVariable** is not explicitly the value **true**, when used in a boolean or conditional context, it evaluates to **true** because it has been assigned a non-falsy value. 
+
+#### falsy values
+
+* **0**
+* empty strings like **""** or **''**
+* **null**, represent there is no value at all
+* **undefined**, represent when a declared variable lacks a value
+* **NaN**
+
+### Truthy and Falsy Assignment
+
+Say you have a website and want to take a user's username to make a personalized greeting. Sometimes, the user does not have an account, making the **username** variable falsy. The code below checks it username is defined and assigns a defalut string if it is not. 
+
+```javascript
+let defaultName = username || 'Stranger';
+```
+
+**\|\|** checks the **left-hand condition first**, the variable **defaultName** will be assigned the actual value of **username** if is truthy, and it will be assigned the value of **'Stranger'** if _username is falsy_. This concept is also referred to as _short-circuit evaluation_. 
+
+### Ternary Operator
+
+```javascript
+isNightTime ? console.log('Turn on the lights!') 
+: console.log('Turn off the lights!');
+```
+
+* Two expressions follow the **?** and are separated by a **colon**. 
+* If the condition evaluates to **true**, the **first** expression executes.
+* If the condition evaluates to **false**, the **second** expression executes. 
+
 ## 
 
