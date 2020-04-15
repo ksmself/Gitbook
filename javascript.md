@@ -176,6 +176,24 @@ console.log(rectangleArea(5, 7))
 
 Did we write our function wrong? No, In fact, the function worked fine, and the computer did calculate the area as 35, but we didn't capture it. We can do that with the keyword **return**! 
 
+### Function Expressions 
+
+Another way to define a function. 
+
+* To define a function inside an expression, we can use the **function** keyword.
+* In a function expression, the _function name is usually omitted_. It is called an anonymous function. 
+* A function expression is often stored in a **variable in order to refer to it**. 
+* Unlike function declarations, function expressions are not hoisted so they cannot be called before they are defined. 
+
+```javascript
+const calculateArea = function(width, height){
+  const area = width * height;
+  return area;
+}; 
+```
+
+### 
+
 ### 
 
 ### 
