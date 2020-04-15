@@ -149,6 +149,21 @@ function greetWorld() {
 * greetWorld is the **name** of the function, followed by parentheses.
 * console.log\('Hello, World!'\); is a **function body**, the block of statements required to perform a specific task, enclosed in the function's curly brackets, **{}**. 
 
+### Default Parameters 
+
+One of the features added in ES6 is the ability to use **default parameters**. It allows parameters to have a predetermined value in case there is _no argument passed_ into the function or if the argument is _undefined_ when called. 
+
+```javascript
+function greeting (name = 'stranger') {
+  console.log(`Hello, ${name}!`)
+}
+
+greeting('Nick') // Output: Hello, Nick!
+greeting() // Output: Hello, stranger!
+```
+
+### 
+
 ### 
 
 ### 
