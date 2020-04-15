@@ -192,6 +192,21 @@ const calculateArea = function(width, height){
 }; 
 ```
 
+### Arrow Functions
+
+ES6 introduced _arrow function syntax_, a shorter way to write functions by using the special "fat arrow" **\(\) =&gt;** notation. 
+
+* Arrow functions remove the need to type out the keyword **function** every time you need to create a function. 
+* Instead, you first include the parameters inside the **\( \)** and then add an arrow **=&gt;** that points to the function body surrounded **{}**.
+* It's important to be familiar with the multiple ways of writing functions because you will come across each of these when reading other JavaScript code.  
+
+```javascript
+const rectangleArea = (width, height) => {
+  let area = width * height;
+  return area;
+};
+```
+
 ### 
 
 ### 
