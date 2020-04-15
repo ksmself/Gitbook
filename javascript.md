@@ -133,5 +133,23 @@ isNightTime ? console.log('Turn on the lights!')
 * If the condition evaluates to **true**, the **first** expression executes.
 * If the condition evaluates to **false**, the **second** expression executes. 
 
-## 
+## Functions
+
+### Function Declarations
+
+One way to create a function is by using a function declaration. 
+
+```javascript
+function greetWorld() {
+  console.log('Hello, World!');
+}
+```
+
+* The **function** is a keyword.
+* greetWorld is the **name** of the function, followed by parentheses.
+* console.log\('Hello, World!'\); is a **function body**, the block of statements required to perform a specific task, enclosed in the function's curly brackets, **{}**. 
+
+### 
+
+### 
 
