@@ -162,6 +162,20 @@ greeting('Nick') // Output: Hello, Nick!
 greeting() // Output: Hello, stranger!
 ```
 
+### Return
+
+When a function is called, the computer will ****_**run through**_ the function's code and _**evaluate the result**_ of calling the function. By default that resulting value is **undefined**. 
+
+```javascript
+function rectangleArea(width, height) {
+  let area = width * height 
+}
+console.log(rectangleArea(5, 7)) 
+// Prints undefined
+```
+
+Did we write our function wrong? No, In fact, the function worked fine, and the computer did calculate the area as 35, but we didn't capture it. We can do that with the keyword **return**! 
+
 ### 
 
 ### 
