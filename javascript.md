@@ -234,6 +234,85 @@ const squareNum = (num) => {
 const squareNum = num => num * num;
 ```
 
+## Scope
+
+where variables can be accessed or referenced. 
+
+### Global Scope
+
+Variables can exist either outside of or within blocks. In **global scope**, variables are _declared outside of blocks_. They can be accessed by any code in the program, including code in blocks. 
+
+```javascript
+const color = 'blue'
+
+const returnSkyColor = () => {
+  return color; // blue 
+};
+
+console.log(returnSkyColor()); // blue
+```
+
+* Even though the **color** variable is _defined outside of the block_, it can be accessed in the function block. 
+
+### Block Scope
+
+When a variable is _defined inside a block_, it is only accessible to the code within the curly braces **{ }**. This variable has **block scope**. 
+
+```javascript
+const logSkyColor = () => {
+  let color = 'blue'; 
+  console.log(color); // blue 
+};
+
+logSkyColor(); // blue 
+console.log(color); // ReferenceError
+```
+
+### Scope Pollution 
+
+It may seem like a great idea to always make your variables accessible, but _having too many global variables can cause problems_ in a program. When you declare global variables, they go to the **global namespace**. Global variables _remain there until the program finishes_ which means our global namespace can fill up really quickly. 
+
+**Scope pollution** is when we have too many global variables that exist in the global namespace, or when we reuse variables across different scopes. 
+
+```javascript
+let num = 50;
+
+const logNum = () => {
+  num = 100; // Take note of this line of code
+  console.log(num);
+};
+
+logNum(); // Prints 100
+console.log(num); // Prints 100
+```
+
+* We have a variable **num**.
+* Inside the function body of **logNum\(\)**, we want to declare a new variable but forgot to use the **let** keyword. 
+* When we call **logNum\(\)**, **num** gets reassigned to **100**. 
+* The reassignment inside **logNum\(\)** affects the global variable **num**.
+* Even though the reassignment is allowed and we won't get an error, if we decide to use **num** later, we'll unknowingly use the new value of **num**.  
+* It's best practice to not define variables in the global scope. 
+
+### Practice Good Scoping 
+
+```javascript
+const logSkyColor = () => {
+  const dusk = true;
+  let color = 'blue'; 
+  if (dusk) {
+    let color = 'pink';
+    console.log(color); // pink
+  }
+  console.log(color); // blue 
+};
+
+console.log(color); // ReferenceError
+```
+
+* It's an example of how to use block scope. 
+* While we use block scope, we still pollute our namespace by reusing the same variable name twice. A better practice would be to rename the variable inside the block. 
+* If a **variable does not need to exist outside a block** =&gt; **It shouldn't!** 
+
 ## 
 
 ### 
