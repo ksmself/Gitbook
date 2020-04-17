@@ -9,7 +9,7 @@
 
 ## float 1
 
-![&#xB514;&#xC790;&#xC778; &#xC2DC;&#xC548;.](../.gitbook/assets/479.png)
+![&#xB514;&#xC790;&#xC778; &#xC2DC;&#xC548;.](../.gitbook/assets/479%20%281%29.png)
 
 ![&#xD604;&#xC7AC; &#xC0C1;&#xD0DC;.](../.gitbook/assets/480.png)
 
@@ -327,6 +327,18 @@
     right: 8px;
   }
 ```
+
+## flexbox 1 
+
+이미 float를 이용해서 가로 배치했던 코드를 지우고, flexbox를 이용해보려고 한다. 
+
+![&#xB514;&#xC790;&#xC778; &#xC2DC;&#xC548;. ](../.gitbook/assets/479.png)
+
+* flexbox를 이용할때는 가장 먼저 가로 배치하려고 하는 요소들을 감싸는 **부모에게 display: flexbox;**를 선언한다. 
+* 그리고, flex-direction을 선언하는데, row일 경우는 이 값이 default이므로 따로 선언하지 않아도 된다. 
+* 가로 배치할 아이들이 한 줄에 꼭 들어와야 한다면 flex-wrap을 nowrap으로 해주어야 하지만, 이 값도 default라서 따로 선언할 필요가 없다. 
+* 위의 경우, justifiy-content는 flex-start로 해줘야 하지만, 이 값도 default! 
+* align-items는 center로 선언해주면 된다.  
 
 ## 
 
