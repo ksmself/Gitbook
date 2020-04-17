@@ -334,11 +334,22 @@
 
 ![&#xB514;&#xC790;&#xC778; &#xC2DC;&#xC548;. ](../.gitbook/assets/479.png)
 
-* flexbox를 이용할때는 가장 먼저 가로 배치하려고 하는 요소들을 감싸는 **부모에게 display: flexbox;**를 선언한다. 
+* flexbox를 이용할때는 가장 먼저 가로 배치하려고 하는 요소들을 감싸는 **부모에게 display: flex;**를 선언한다. 
 * 그리고, flex-direction을 선언하는데, row일 경우는 이 값이 default이므로 따로 선언하지 않아도 된다. 
 * 가로 배치할 아이들이 한 줄에 꼭 들어와야 한다면 flex-wrap을 nowrap으로 해주어야 하지만, 이 값도 default라서 따로 선언할 필요가 없다. 
 * 위의 경우, justifiy-content는 flex-start로 해줘야 하지만, 이 값도 default! 
 * align-items는 center로 선언해주면 된다.  
+
+## flexbox 2 
+
+float를 이용해서 가로 배치했던 코드를 지우고 float를 이용해보자. 
+
+![&#xB514;&#xC790;&#xC778; &#xC2DC;&#xC548;. ](../.gitbook/assets/493.png)
+
+* 이미지와 텍스트를 담고 있는 박스를 가로 배치하려고 한다. 이들을 감싸는 부모인 card에 display: flex;를 선언한다. 
+* flex-direction은 row이므로 생략, flex-wrap도 nowrap이므로 생략. 
+* justify-content는 space-between으로 준다. 둘 사이가 너무 멀어지지 않게 width값도 조정해준다. 
+* align-items는 flex-start이므로 생략한다. 
 
 ## 
 
