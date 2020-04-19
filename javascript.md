@@ -326,6 +326,70 @@ let newYearsResolutions = ['Keep a journal', 'Take a
 falconry class', 'Learn to juggle'];
 ```
 
+### Arrays with let and const 
+
+Variables declared with the **const** keyword cannot be reassigned. However, elements in an array declared with **const** remain mutable. Meaning that we _can change the contents of a **const** array_, but _cannot reassign a new array or a different value_. 
+
+```javascript
+const utensils = ['Fork', 'Knife', 'Chopsticks', 'Spork'];
+// change the contents of a const array is possible
+utensils[3] = 'Spoon';
+console.log(utensils);
+// cannnot reassign a new array! 
+utensils = ['namnam'];
+```
+
+### The .push\(\) Method
+
+One of built-in JS methods that make working with arrays easier. **.push\(\)** allows us to **add items to the end of an array**. 
+
+```javascript
+const itemTracker = ['item 0', 'item 1', 'item 2'];
+
+itemTracker.push('item 3', 'item 4');
+
+console.log(itemTracker); 
+//Output: ['item 0', 'item 1', 'item 2', 'item 3', 'item 4'];
+```
+
+### The .pop\(\) Method
+
+Another array method, **.pop\(\)** **removes the last item of an array**. 
+
+```javascript
+const newItemTracker = ['item 0', 'item 1', 'item 2'];
+
+const removed = newItemTracker.pop();
+
+console.log(newItemTracker); 
+// Output: [ 'item 0', 'item 1' ]
+console.log(removed);
+// Output: item 2
+```
+
+### More Array Methods 
+
+[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
+
+### Arrays and Functions 
+
+```javascript
+const flowers = ['peony', 'daffodil', 'marigold'];
+
+function addFlower(arr) {
+  arr.push('lily');
+}
+
+addFlower(flowers);
+
+console.log(flowers); 
+// Output: ['peony', 'daffodil', 'marigold', 'lily']
+```
+
+When you pass an array into a function, if the array is mutated inside the function, that **change will be maintained outside the function** as well. 
+
+## 
+
 ### 
 
 ### 
