@@ -313,7 +313,20 @@ console.log(color); // ReferenceError
 * While we use block scope, we still pollute our namespace by reusing the same variable name twice. A better practice would be to rename the variable inside the block. 
 * If a **variable does not need to exist outside a block** =&gt; **It shouldn't!** 
 
-## 
+## Arrays
+
+Arrays are JS's way of making lists. It can store any data types\(including strings, numbers, and booleans\). Like lists, arrays are ordered, meaning each item has a numbered position. 
+
+### Create an Array
+
+One way we can create an array is to use an array literal. An array literal creates an array by wrapping items in square brackets **\[ \]**. We can have an array that holds all the same data types or an array that _holds different data types_. We can also _save an array to a variable_. 
+
+```javascript
+let newYearsResolutions = ['Keep a journal', 'Take a 
+falconry class', 'Learn to juggle'];
+```
+
+### 
 
 ### 
 
