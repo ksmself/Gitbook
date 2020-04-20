@@ -351,5 +351,5 @@ float를 이용해서 가로 배치했던 코드를 지우고 float를 이용해
 * justify-content는 space-between으로 준다. 둘 사이가 너무 멀어지지 않게 width값도 조정해준다. 
 * align-items는 flex-start이므로 생략한다. 
 
-## 
+## flexbox 3 
 
