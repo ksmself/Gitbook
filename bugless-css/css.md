@@ -353,3 +353,61 @@ float를 이용해서 가로 배치했던 코드를 지우고 float를 이용해
 
 ## flexbox 3 
 
+![&#xB514;&#xC790;&#xC778; &#xC2DC;&#xC548;.](../.gitbook/assets/495.png)
+
+![&#xD604;&#xC7AC; &#xC0C1;&#xD0DC;. ](../.gitbook/assets/494.png)
+
+* 이미지는 inline이다. 그래서 먼저 display를 block으로 바꿔준다. 
+
+```css
+ .profile-image{
+    display: block;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 16px;
+ }
+```
+
+* flex를 이용해서 가운데 정렬을 해준다. 
+
+```css
+  .profile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 386px;
+  }
+  .profile-image{
+    display: block;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 16px;
+ }
+
+  .profile-name{
+    margin-bottom: 4px;
+ }
+
+  .profile-detail{
+    display: flex;
+    justify-content: space-between;
+ }
+```
+
+* 그런데 이렇게 하고 나면, profile-detail의 width 값이 작아진다. 간혹, flex를 이용해서 center로 정렬하고 나면 width값이 저절로 조정되는 경우가 있다고 한다.  그래서 profile-detail의 width를 100%로 조정해주면 좁혀진 width가 해결된다. 
+
+```css
+  .profile-detail{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+ }
+  .profile-detail-item{
+    text-align: center;
+ }
+```
+
+## 
+
