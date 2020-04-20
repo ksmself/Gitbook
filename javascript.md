@@ -388,6 +388,16 @@ console.log(flowers);
 
 When you pass an array into a function, if the array is mutated inside the function, that **change will be maintained outside the function** as well. 
 
+## Loops 
+
+### When to use a while loop
+
+The syntax of a **for** loop is ideal when we _know how many times the loop should run_, but we don't always know this in advance. In situations when we want a loop to execute an _undetermined number of times_, **while** loops are the best choice.  
+
+### The break keyword
+
+With breaks, we can add _test conditions_ besides the stopping condition, and exit the loop when they're met. 
+
 ## 
 
 ### 
