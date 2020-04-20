@@ -398,6 +398,36 @@ The syntax of a **for** loop is ideal when we _know how many times the loop shou
 
 With breaks, we can add _test conditions_ besides the stopping condition, and exit the loop when they're met. 
 
+## Higher-Order Functions 
+
+### Introduction
+
+When we say "bake", it calls to mind a familiar subroutine-- preheating an oven, putting something into an oven for a set amount of time, and finally removing it. This allows us to **abstract** away a lot of the details and communicate key concepts more concisely. 
+
+In programming, we can accomplish "**abstraction**" by writing **functions**. In addition to allowing us to reuse our code, functions help to _make clear, readable programs_. 
+
+**Higher-order functions** are functions that _accept other functions as arguments and/or return functions as output_. This enables us to build abstractions on other abstractions, just like "We hosted a birthday party" is an abstraction that may build on the abstraction "We made a cake."
+
+### Functions as Data 
+
+We can assign functions to variables, and we can reassign them to new variables. Below, we have an annoyingly long function name that hurts the readability of any code in which it's used. 
+
+```javascript
+const announceThatIAmDoingImportantWork = () => {
+    console.log("I’m doing very important work!");
+};
+```
+
+What if we wanted to rename this function without sacrificing the source code? 
+
+```javascript
+const busy = announceThatIAmDoingImportantWork;
+
+busy(); // This function call barely takes any space!
+```
+
+In JS, functions are first class objects. This means that, like other objects you've encountered, Js functions can have properties and methods. 
+
 ## 
 
 ### 
