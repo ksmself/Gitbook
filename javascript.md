@@ -428,6 +428,127 @@ busy(); // This function call barely takes any space!
 
 In JS, functions are first class objects. This means that, like other objects you've encountered, Js functions can have properties and methods. 
 
+## Iterators
+
+The built-in JS array methods that help us **iterate** are called iteration methods, at times referred to as **iterators**. _Iterators are methods called on arrays to manipulate elements and return values_. 
+
+### The .forEach\(\) Method
+
+It will **execute the same code for each element of an array**. 
+
+```javascript
+const groceries = ['brown sugar', 'salt', 'cranberries', 
+'walnuts'];
+
+groceries.forEach(function(groceryItem){
+console.log('-' + groceryItem);
+}):
+```
+
+* .forEach\(\) takes an argument of callback function. 
+* .forEach\(\) _loops through the array and executes the callback function for each element_. During each execution, _the current element is passed as an argument to the callback function_. 
+
+Another way to pass a callback for .forEach\(\) is to use **arrow function** syntax. 
+
+```javascript
+groceries.forEach(groceryItem => 
+console.log(groceryItem));
+```
+
+We can also define a function beforehand to be used as the callback function. 
+
+```javascript
+function printGrocery(element){
+  console.log(element);
+}
+
+groceries.forEach(printGrocery);
+```
+
+### The .map\(\) Method
+
+When **.map\(\)** is called on an array, it takes an argument of a callback function and **returns a new array**! 
+
+```javascript
+const numbers = [1, 2, 3, 4, 5]; 
+
+const bigNumbers = numbers.map(number => {
+  return number * 10;
+});
+
+console.log(numbers); // Output: [1, 2, 3, 4, 5]
+console.log(bigNumbers); // Output: [10, 20, 30, 40, 50]
+```
+
+**.map\(\)** works in a similar manner to **.forEach\(\)** - the major difference is that **.map\(\)** returns a new array. Notice that the elements in **numbers** were not altered and **bigNumbers** is a new array. 
+
+### The .filter\(\) Method
+
+Like **.map\(\)**, **.filter\(\)** _returns a new array_. However, **.filter\(\)** returns an array of elements **after filtering out certain elements** from the original array. The callback function for the **.filter\(\)** method should return **true or false** _depending on the element that is passed to it_. The elements that cause the callback function to **return true are added to the new array**. 
+
+```javascript
+const words = ['chair', 'music', 'pillow', 'brick', 
+'pen', 'door']; 
+
+const shortWords = words.filter(word => {
+  return word.length < 6;
+});
+
+console.log(words); 
+// Output: ['chair', 'music', 'pillow', 'brick', 'pen', 'door']; 
+console.log(shortWords); 
+// Output: ['chair', 'music', 'brick', 'pen', 'door']
+```
+
+### The .findIndex\(\) Method 
+
+We sometimes want to find the location of an element in an array. Calling **.findIndex\(\)** on an array will **return the index of the first element that evaluates to true** in the callback function. 
+
+```javascript
+const jumbledNums = [123, 25, 78, 5, 9]; 
+
+const lessThanTen = jumbledNums.findIndex(num => {
+  return num < 10;
+});
+
+console.log(lessThanTen); // Output: 3 
+```
+
+If _there isn't a single element in the array that satisfies the condition_ in the callback, then **.findIndex\(\) will return -1**.  
+
+### The .reduce\(\) Method 
+
+It **returns a single value after iterating** through the elements of an array, thereby **reducing the array**. 
+
+```javascript
+const numbers = [1, 2, 4, 10];
+
+const summedNums = numbers.reduce((accumulator, 
+currentValue) => {
+  return accumulator + currentValue
+})
+
+console.log(summedNums) // Output: 17
+```
+
+The **.reduce\(\)** method can also _take an optional second parameter to set an initial value for accumulator_\(remember, the first argument is the callback function\). 
+
+```javascript
+const numbers = [1, 2, 4, 10];
+
+const summedNums = numbers.reduce((accumulator, 
+currentValue) => {
+  return accumulator + currentValue
+}, 100)  // <- Second argument for .reduce()
+
+//first accumulator is 100! 
+console.log(summedNums); // Output: 117
+```
+
+### Iterator Documentation 
+
+[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Array\#Iteration\_methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Iteration_methods)
+
 ## 
 
 ### 
