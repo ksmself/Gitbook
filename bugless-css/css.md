@@ -479,3 +479,48 @@ width 값이 가장 작은 ipone5 기준으로 상태를 확인한다. ipone5에
 
 ### desktop
 
+데스크탑은 모바일 버전에서 수정하면 된다. 
+
+![&#xB514;&#xC790;&#xC778; &#xC2DC;&#xC548;. ](../.gitbook/assets/496.png)
+
+![&#xD604;&#xC7AC; &#xC0C1;&#xD0DC;. ](../.gitbook/assets/499.png)
+
+* 배너를 상단으로 옮겨줘야 하는데, 모바일에서 정해둔 bottom 값을 해제해야 한다. bottom: auto로! 
+
+```css
+  @media screen and (min-width: 768px){
+    .banner{
+      bottom: auto;
+      top: 0;
+    }
+
+    .banner-title a{
+      height: 80px;
+    }
+  }
+```
+
+* landing 부분도 달라진 부분만 수정해준다. 
+
+```css
+    .landing{
+      align-items: center;
+    }
+
+    .landing-title{
+      margin-bottom: 32px;
+      text-align: center;
+      font-size: 50px;
+    }
+
+    .landing-link{
+      width: 180px;
+      height: 56px;
+      font-size: 18px;
+    }
+```
+
+## 
+
+
+
