@@ -409,5 +409,73 @@ float를 이용해서 가로 배치했던 코드를 지우고 float를 이용해
  }
 ```
 
-## 
+## media query 
+
+만들어야 하는 여러 버전 중, 모바일부터 시작한다. 나머지 버전은 모바일과 다른 부분에 한해서만 코드를 작성해주면 된다. 
+
+### mobile 
+
+![&#xB514;&#xC790;&#xC778; &#xC2DC;&#xC548;. ](../.gitbook/assets/497.png)
+
+width 값이 가장 작은 ipone5 기준으로 상태를 확인한다. ipone5에서 제대로 나타난다면, 다른 기기에서도 아무 문제 없기 때문이다. 
+
+![&#xD604;&#xC7AC; &#xC0C1;&#xD0DC;.](../.gitbook/assets/498.png)
+
+* 가장 먼저 노란색 배너를 아래에 위치시킨다. 뷰포트를 기준으로 가장 하단에 배치되기를 원하기 때문에 **position: fixed**를 사용해준다. 또, 배너가 화면에서 전체 가로 길이만큼 차지하기 바라므로 **width는 100%**로 해준다. / 앵커 영역이 배너 전체가 되기를 바라므로, **height를 배너의 높이만큼** 준다. 이때, display를 변경해줘야 하는데, **앵커 안의 텍스트가 가운데 정렬**되기 바라므로 **텍스트의 부모인 앵커에 flex를** 준다. 
+
+```css
+  .banner{
+    position: fixed;
+    bottom: 0;
+    left: 0; 
+    width: 100%;
+    background-color: #FFC82C;
+  }
+
+  .banner-title a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; 
+    height: 64px;
+    font-size: 18px;
+  }
+```
+
+* landing의 height가 애매하게 끊어져 있으므로, height를 100vh로 조정해준다. 왼쪽, 오른쪽으로 부터 20px씩 padding을 준다. landing-title은 세로로 가운데, 가로로는 끝에 붙어 있다. landing에 display: flex를 준다. 텍스트가 오른쪽 정렬되어 있으므로 text-align: right을 준다. 
+
+```css
+  .landing{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    height: 100vh;
+    padding: 0 20px;
+  }
+
+  .landing-title{
+    margin-bottom: 24px;
+    text-align: right;
+    font-size: 32px;
+  }
+```
+
+* laning-link 역시 텍스트가 가운데 정렬되어야 하므로, 부모인 landing-link에 flex를 준다. 
+
+```css
+  .landing-link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 160px;
+    height: 52px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid #FFFFFF;
+    border-radius: 16px;
+    font-size: 15px;
+  }
+```
+
+### desktop
 
