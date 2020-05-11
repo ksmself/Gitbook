@@ -328,7 +328,7 @@ falconry class', 'Learn to juggle'];
 
 ### Arrays with let and const 
 
-Variables declared with the **const** keyword cannot be reassigned. However, elements in an array declared with **const** remain mutable. Meaning that we _can change the contents of a **const** array_, but _cannot reassign a new array or a different value_. 
+Variables declared with the **const** keyword cannot be reassigned. However, elements in an array declared with **const** remain mutable. Meaning that we _**can change the contents of a const array**_, but ****_**cannot reassign a new array or a different value**_. 
 
 ```javascript
 const utensils = ['Fork', 'Knife', 'Chopsticks', 'Spork'];
@@ -502,7 +502,7 @@ console.log(shortWords);
 
 ### The .findIndex\(\) Method 
 
-We sometimes want to find the location of an element in an array. Calling **.findIndex\(\)** on an array will **return the index of the first element that evaluates to true** in the callback function. 
+We sometimes want to find the location of an element in an array. Calling **.findIndex\(\)** on an array will **return the index of the** _**first element**_ **that evaluates to true** in the callback function. 
 
 ```javascript
 const jumbledNums = [123, 25, 78, 5, 9]; 
@@ -518,7 +518,7 @@ If _there isn't a single element in the array that satisfies the condition_ in t
 
 ### The .reduce\(\) Method 
 
-It **returns a single value after iterating** through the elements of an array, thereby **reducing the array**. 
+It _**returns a single value**_ **after iterating** through the elements of an array, thereby **reducing the array**. 
 
 ```javascript
 const numbers = [1, 2, 4, 10];
