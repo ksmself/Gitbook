@@ -520,6 +520,196 @@ width 값이 가장 작은 ipone5 기준으로 상태를 확인한다. ipone5에
     }
 ```
 
+## Typography Library 제작 
+
+디자이너가 아래의 typography 위주로 사용하겠다고 시안을 준다면, 개발자는 이 typography library를 제작하여 활용하면 된다. 
+
+![typography.](../.gitbook/assets/502.png)
+
+* font-size는 font-size, line-height, letter-spacing을 함께 묶어 클래스로 만들어주는데, 주어진 **line-height**는 font-size로 나누어 표시하고, **em은 생략**한다. **letter-spacing은 em**이 필요하다.  
+
+아래와 같이 Typography Library 제작! 
+
+```css
+/* ▼ WHERE YOUR CODE BEGINS */
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+    letter-spacing: -0.015em;
+}
+
+/* Font Size */
+.fs-tiny{
+    font-size: 12px;
+    /* line-height는 em 생략 */
+    line-height: 1.33333333333;
+}
+
+.fs-small{
+    font-size: 14px;
+    line-height: 1.42857142857;
+}
+
+.fs-base{
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.fs-medium{
+    font-size: 18px;
+    line-height: 1.55555555556;
+}
+
+.fs-large{
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+.fs-h2{
+    font-size: 28px;
+    line-height: 1.42857142857;
+}
+
+.fs-h1{
+    font-size: 34px;
+    line-height: 1.41176470588;
+}
+
+/* Font Weight */
+.fw-light{
+    font-weight: 300;
+}
+
+.fw-regular{
+    font-weight: 400;
+}
+
+.fw-medium{
+    font-weight: 500;
+}
+
+.fw-bold{
+    font-weight: 700;
+}
+
+/* Colors */
+.text-dark{
+    color: #1F2D3D;
+}
+
+.text-primary{
+    color: #3C4858;
+}
+
+.text-secondary{
+    color: #8492A6;
+}
+
+.text-tertiary{
+    color: #C0CCDA;
+}
+
+.text-white{
+    color:  #FFFFFF;
+}
+
+.text-success{
+    color: #13CE66;
+}
+
+.text-error{
+    color: #FF5216;
+}
+
+.text-info{
+    color:  #009EEB;
+}
+```
+
+제작한 library를 활용하여 아래의 시안을 완성해보자. 
+
+![&#xB514;&#xC790;&#xC778; &#xC2DC;&#xC548;.](../.gitbook/assets/503.png)
+
+* 먼저, box-sizing을 수정해주고, 브라우저에서 자체 생성한 margin도 없애준다. 
+
+```css
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+```
+
+* font-size, font-weight, font의 color에 맞춰 class를 넣어준다. h3는 이미 bold, p는 regular weight이 적용되어 있으므로 생략해준다. 
+
+```markup
+<div class="container">
+      <h1 class="fs-h1 fw-light text-dark">
+        버그가 너무 많아
+        <br />
+        김 버그
+      </h1>
+
+      <h3 class="fs-base text-dark">
+        주니어 개발자의 성장 드라마, 김버그
+      </h3>
+      <p class="fs-base text-primary">
+        속에서 같은 주며, 가지에 그들의 우리의 때문이다. 이 길지 가는 있는 같이, 있다. 그들에게 그들은 길지 보내는
+        얼마나 동력은 칼이다. 청춘 위하여 같은 새 노래하며 풀이 청춘을 천자만홍이 풍부하게 칼이다. 목숨이 사는가
+        그들에게 안고, 위하여서, 타오르고 말이다. 많이 자신과 얼마나 없으면 몸이 이것은
+        <span class="text-error">품고 있으랴?</span>
+      </p>
+
+      <h3 class="fs-base text-dark">
+        앞으로의 계획
+      </h3>
+      <p class="fs-base text-primary">
+        끓는 봄바람을 끝까지 심장은 사는가 끓는 철환하였는가? 찾아다녀도, 우리는 청춘에서만 능히 행복스럽고 바로
+        위하여서. 반짝이는 광야에서 가지에 커다란 것이 청춘은 그들은 봄바람이다. 날카로우나 피가 얼마나 얼마나 기쁘며,
+        밥을 끓는 자신과 귀는 말이다. 그림자는 황금시대의 현저하게 곳으로 소리다.이것은 쓸쓸하랴? <strong>가진 인간의 옷을
+          생명을</strong> 창공에 그들의 얼마나 살 따뜻한 힘있다. 현저하게 투명하되 웅대한 대한 것이다.
+      </p>
+
+      <h2 class="fs-h2 fw-regular text-dark">
+        프론트엔드 개발, 첫 단추를 꿰다
+      </h2>
+
+      <h3 class="fs-base text-dark">
+        HTML, CSS
+      </h3>
+      <p class="fs-base text-primary">
+        속에서 같은 주며, 가지에 그들의 우리의 때문이다. 이 길지 가는 있는 같이, 있다. 그들에게 그들은 길지 보내는
+        얼마나 동력은 칼이다. 청춘 위하여 <strong>같은 새 노래하며</strong> 풀이 청춘을 천자만홍이 풍부하게 칼이다.
+        목숨이 사는가 그들에게 안고, 위하여서, 타오르고 말이다. 많이 자신과 얼마나 없으면 몸이 이것은 품고 있으랴?
+      </p>
+    </div>
+```
+
+* margin을 적용해주고, 텍스트가 너무 가로로 길면 가독성이 떨어지므로 max-width를 정해주고,  padding도 준다. 
+
+```css
+.container{
+    width: 100%;
+    max-width: 736px;
+    margin: 0 auto;
+    padding: 48px;
+}
+
+h1{
+    margin-bottom: 48px;
+}
+
+h2{
+    margin-bottom: 24px;
+}
+
+h3{
+    margin-bottom: 8px;
+}
+
+p{
+    margin-bottom: 32px;
+}
+```
+
 ## 
 
 
