@@ -549,7 +549,52 @@ console.log(summedNums); // Output: 117
 
 [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Array\#Iteration\_methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Iteration_methods)
 
-## 
+## Objects 
+
+JavaScript objects are containers storing related data and functionality. 
+
+### Creating Object Literals
+
+Objects can be assigned to variables just like any JavaScript type. Using curly braces, **{ }** to designate an _object literal_. 
+
+```javascript
+let spaceship = {}; // spaceship is an empty object
+```
+
+We fill an object with unordered data. This data is organized into **key-value** pairs. A key is like a variable name that points to a location in memory that holds a value. A key's value can be of any data type in the language including functions or other objects. 
+
+We make a key-value pair by writing the **key's name**, or identifier, followed by a **colon** and then the **value**. We **separate** each key-value pair in an object literal with a **comma**. 
+
+```javascript
+// An object literal with two key-value pairs
+let spaceship = {
+  'Fuel Type': 'diesel',
+  color: 'silver'
+};
+```
+
+The spaceship object has two properties Fuel Type and color. 'Fuel Type' has **quotation marks** because it contains a **space character**. 
+
+### Accessing Properties 
+
+There are two ways we **can access an object's property**. The first way is **dot notation**. We've used dot notation to access the properties and methods of built-in objects and data instances. With property dot notation, we write the **object's name**, followed by the **dot operator** and then the property name\(**key**\). 
+
+```javascript
+let spaceship = {
+  homePlanet: 'Earth',
+  color: 'silver'
+};
+spaceship.homePlanet; // Returns 'Earth',
+spaceship.color; // Returns 'silver',
+```
+
+If we try to access **a property that does not exist** on that object, **undefined** will be returned. 
+
+```javascript
+spaceship.favoriteIcecream; // Returns undefined
+```
+
+### 
 
 ### 
 
