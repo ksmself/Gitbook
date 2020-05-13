@@ -846,9 +846,71 @@ p{
       line-height: 1.6;
       color: #151B26;
   }
+  
+  .property-detail{
+      font-size: 14px;
+      line-height: 1.14285714286;
+      color: #7D858F;
+  }
 ```
 
-* sr-only !!!
+* **sr-only**는 scrren reader에게만 읽히기를 바라므로, 브라우저 상에서는 보이지 않게 해야 한다. 그런데, **display: none**을 사용하면, **screen reader도 읽지 않는** 상황이 발생한다. 그래서 display: none은 사용하지 않는다. 우리는 sr-only가 아예 영역으로서 사라지는 것, 집을 떠나기를 바라므로 position: absolute를 사용한다. 
+
+```css
+  .sr-only{
+      position: absolute;
+      z-index: -100;
+      /* width나 height 중 하나라도 0이 되면 아예 
+      없는 것으로 생각하여 screen reader도 읽지 않음 */
+      width: 1px;
+      height: 1px;
+      /* 조금이라도 벗어나면 자르라는 의미에서 
+      overflow: hidden */
+      overflow: hidden;
+      /* 그래도 불안하다면 투명도를 0으로 */
+      opacity: 0;
+  }
+```
+
+* property-detail에서는 span 중 마지막, div 중 마지막~ 등 선택자에 대해 고민해야 하는 부분이 나온다. 
+
+```css
+  .property-detail dd span::after{
+      content: '•';
+      display: inline-block;
+      /* inline-block은 좌우로는 margin 줄 수 있다! */
+      margin: 0 8px;
+  }
+
+  .property-detail dd span:last-child::after{
+      content: '';
+      margin: 0;
+  }
+
+  .property-detail div:first-child{
+      margin-bottom: 8px;
+  }
+```
+
+* 드디어, card-image, card-content이 정리되었으니 이들을 가로배치 할 차례다. 
+
+```css
+  .card{
+      display: flex;
+      width: 840px; 
+      padding: 24px;
+  }
+```
+
+* 여기까지 하고 나면, card-content에는 width 값을 따로 주지 않아서 가장 긴 width를 차지하는 h1의 width만큼만 content가 차지하게 되어서, padding 24px보다 더 안쪽으로 card-content가 위치해있다. 그래서 공간이 남았을 때, 그 공간을 차지할지 말지 결정하는 flex-grow라는 속성을 사용해준다. 
+
+```css
+  .card-content{
+      flex-grow: 1;
+  }
+```
+
+## 
 
 
 
