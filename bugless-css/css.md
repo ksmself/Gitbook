@@ -710,7 +710,42 @@ p{
 }
 ```
 
-## 
+## Background
+
+### Background를 사용해야 하는 이유 
+
+![&#xB514;&#xC790;&#xC778; &#xC2DC;&#xC548;.](../.gitbook/assets/550.png)
+
+위와 같은 카드를 제작할 때, 집 사진을 html img 태그로 마크업하지 않는 이유는 무엇일까? 
+
+* 사용자에 따라 사이즈가 다른 이미지를 업로드할 것이다. 어떤 사용자는 이미지 박스의 사이즈보다 가로는 훨씬 긴 이미지를, 세로는 훨씬 짧게 등, 사용자마다 올리는 _이미지의 사이즈가 천차만별_ 일 것이다. 
+* 그렇게 되면 이미지가 이미지 박스 안에 제대로 배치되게 하기 위해 아래와 같은 수고가 필요할 것이다. 
+
+```css
+
+```
+
+이미지 하나를 위해서 위와 같은 수고를 해야하기 때문에, html img 태그 대신 background-image를 사용하자는 것이다. 
+
+```css
+
+```
+
+위처럼 **논리적인 이유로 코드를 짜야한다**. 지금은 아는 선에서 코드를 작성하는 수준이지만, 더 나아가 **왜 그렇게 코드를 짰는지**, 저 방법 대신 이 방법을 사용했는지 논리적으로 설명할 수 있어야 할 것이다. 
+
+### Background 실습 
+
+![&#xD604;&#xC7AC; &#xC0C1;&#xD0DC;.](../.gitbook/assets/551.png)
+
+* 우선 box-sizing이랑 margin 조정 , \*{ box-sizing: border-box; margin: 0; }
+
+  body{ font-family: 'Poppins', sans-serif; }\*{ box-sizing: border-box; margin: 0; }
+
+  body{ font-family: 'Poppins', sans-serif; }폰트부터 embed 해야 한다. html 파일에 link를 첨부하고,  
+
+```css
+
+```
 
 
 
