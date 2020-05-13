@@ -722,13 +722,42 @@ p{
 * 그렇게 되면 이미지가 이미지 박스 안에 제대로 배치되게 하기 위해 아래와 같은 수고가 필요할 것이다. 
 
 ```css
+  .card-image{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 300px;
+      height: 200px;
+      background-color: #000;
+      /* 벗어나는 부분은 자르라는 의미에서 overflow: hidden을 주게 되면 이미지가 너무 
+      한 쪽으로 치우쳐서 나타나게 됨. 그래서, 이 위치를 또 조정해줘야 함 */
+      overflow: hidden;
+  }
 
+  .card-image.vertical img{
+      /* 이렇게만 하면 width는 300px이지만, height는 범위를 벗어나게 됨 */
+      width: 100%;
+      height: auto;
+  }
+
+  .card-image.horizontal img{
+      width: auto;
+      height: 100;
+  }
 ```
 
-이미지 하나를 위해서 위와 같은 수고를 해야하기 때문에, html img 태그 대신 background-image를 사용하자는 것이다. 
+그런데, 여기서 끝이 아니라 이미지의 비율이 어떻느냐에 따라 클래스가 vertical, horizontal로 자동으로 들어가야 하는데, 이건 서버가 해주거나 js가 때마다 처리를 해줘야한다는 것이다. 즉, 이미지 하나를 위해서 위와 같은 수고를 해야하기 때문에, html img 태그 대신 background-image를 사용하자는 것이다. 
 
 ```css
-
+  .card-image{
+      width: 300px;
+      height: 200px;
+      background-image: url('./assets/img-house.jpg');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      overflow: hidden;
+  }
 ```
 
 위처럼 **논리적인 이유로 코드를 짜야한다**. 지금은 아는 선에서 코드를 작성하는 수준이지만, 더 나아가 **왜 그렇게 코드를 짰는지**, 저 방법 대신 이 방법을 사용했는지 논리적으로 설명할 수 있어야 할 것이다. 
