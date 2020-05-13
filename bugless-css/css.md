@@ -910,6 +910,26 @@ p{
   }
 ```
 
+* 마지막으로 버튼도 이미지 넣고, 위치 조정하면 끝이다. 
+
+```css
+  .like-button{
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: none;
+      background-color: #FFF;
+      background-image: url(./assets/icon-favorite.svg);
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 24px 24px;
+      cursor: pointer;
+  }
+```
+
 ## 
 
 
