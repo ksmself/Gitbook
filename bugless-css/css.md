@@ -737,15 +737,19 @@ p{
 
 ![&#xD604;&#xC7AC; &#xC0C1;&#xD0DC;.](../.gitbook/assets/551.png)
 
-* 우선 box-sizing이랑 margin 조정 , \*{ box-sizing: border-box; margin: 0; }
-
-  body{ font-family: 'Poppins', sans-serif; }\*{ box-sizing: border-box; margin: 0; }
-
-  body{ font-family: 'Poppins', sans-serif; }폰트부터 embed 해야 한다. html 파일에 link를 첨부하고,  
+* 우선 box-sizing이랑 margin 조정 , 폰트부터 embed 해야 한다. html 파일에 link를 첨부하고,  css 파일에서 font-family를 body 아래 넣어준다. 
 
 ```css
+  *{
+      box-sizing: border-box;
+      margin: 0;
+  }
 
+  body{
+    font-family: 'Poppins', sans-serif;
+  }
 ```
 
+* 
 
 
