@@ -779,6 +779,76 @@ p{
   }
 ```
 
-* 
+* 그리고, card-image와 card-content를 가로로 배치하기 전에 card-content부터 정리를 해준다. 
+
+```css
+  .card-header{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 9px;
+  }
+
+  .plus-badge{
+      /* inline-block을 사용하면 의도치 않은 margin이 생기곤 한다. */
+      display: inline-block;
+      padding: 1px 8px;
+      margin-right: 4px; 
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.42857142857;
+      color: #FFF;
+      /* 대문자로 넣는 것도 스타일링적 요소이므로 css에서 처리 */
+      text-transform: uppercase;
+      background-color: #92174D;
+  }
+
+  .property-type span{
+      font-size: 16px;
+      line-height: 1.25;
+      color: #7D858F;
+  }
+
+  .property-rate{
+      font-size: 16px;
+      line-height: 1.25;
+  }
+
+  .property-rate strong{
+      font-weight: 400;
+      color: #151B26;
+  }
+
+  .property-rate span{
+      color: #7D858F;
+  }
+
+  .property-rate::before{
+      content: '';
+      /* 다른 요소에게 아무런 영향도 주지 않고 자신만 위치 조정을
+      하겠다는 뜻에서 relative 사용 */
+      position: relative;
+      top: 1.5px;
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      background-image: url('./assets/icon-star.svg');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: contain;
+  }
+
+  .card-title{
+      margin-bottom: 16px;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 1.6;
+      color: #151B26;
+  }
+```
+
+* sr-only !!!
+
 
 
