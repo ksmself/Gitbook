@@ -594,9 +594,13 @@ user의 action에 따라 스타일링의 변화를 주고 싶을 때 사용하�
 
 아래의 예시처럼 anchor에 마우스를 갖다댔을 때 background-color가 변하길 바랄때는 a:hover, anchor를 클릭했을 때 background-color가 변하길 바랄 때는 a:active를 사용해준다. 
 
-
-
 ![hover&#xC640; active&#xC758; &#xC0AC;&#xC6A9; &#xC608;&#xC2DC;](../.gitbook/assets/560.png)
+
+아래의 경우, input을 눌러 focusing이 되었을 때 border-color를 변하게 하고 싶으므로 input:focus를, 누르는 찰나에 border-color를 변하게 하고 싶을 때는 input:active를 사용한다. 
+
+![focus&#xC640; active&#xC758; &#xC0AC;&#xC6A9; &#xC608;&#xC2DC;](../.gitbook/assets/561.png)
+
+## 
 
 ### 
 
