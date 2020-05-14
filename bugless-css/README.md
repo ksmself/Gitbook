@@ -600,6 +600,40 @@ user의 action에 따라 스타일링의 변화를 주고 싶을 때 사용하�
 
 ![focus&#xC640; active&#xC758; &#xC0AC;&#xC6A9; &#xC608;&#xC2DC;](../.gitbook/assets/561.png)
 
+### CSS 선택자 올림픽 
+
+아래와 같이 같은 p태그에 대해 위의 태그는 blue를 아래 태그는 hotpink를 적용해달라고 한다. 이럴 때는 p태그에 어떤 color가 적용될까? 바로 아래에 있는 hotpink가 적용된다. 순위가 동등할 때는 **아래에 작성된 게 우선**된다.  
+
+```css
+p{
+  color: blue;
+}
+
+p{
+  color: hotpink;
+}
+```
+
+그렇다면 어떤 선택자들이 우선 적용될까? 먼저 알아야할 것은 올림픽에서 순위를 매길 때, 금메달 개수로 순위를 매기는 것처럼, 선택자 역시 더 많은 금메달이 있을수록 우선 적용된다. 선택자의 금, 은, 동메달은 아래와 같다. 
+
+![&#xC120;&#xD0DD;&#xC790;&#xC758; &#xAE08;, &#xC740;, &#xB3D9;&#xBA54;&#xB2EC;.](../.gitbook/assets/562.png)
+
+ID가 금메달, Class, Pseudo-class가 은메달, div나 p 같은 Type이 동메달이다. 
+
+* \#gnb.tab-nav라는 선택자는 ID 1개, Class 1개 &gt;&gt; 금 1, 은 1 
+* header.main-header는 class 1개, type 1개 &gt;&gt; 은 1, 동 1
+* \#gnb.tab-nav ul은 ID 1개, Class 1개, type 1개 &gt;&gt; 금 1, 은 1, 동 1
+* \#gnb.tab-nav ul:last-child는 ID 1개, Class 1개, Pseudo-class 1개, type 1개 &gt;&gt; 금 1, 은 2, 동 1 
+
+우선 순위를 잘 알아야 하는 이유는, css 스타일을 적용을 했는데 결과로 나타나지 않을 때, 우선 순위가 꼬여 나타나지 않는 것을 의심해봐야하기 때문이다. 
+
+#### Rule Breakers 
+
+우선순위가 존재하지만, 이 rule을 break하는 초 강력한 아이들이 있다. 아래의 두 가지를 사용하면 저들이 우선순위를 넘어선 0순위가 된다. 
+
+* Inline Style : html 파일에서 inline style을 하거나,
+* 0순위로 만들고 싶으면 요소 옆에 !important를 붙이면 된다. 
+
 ## 
 
 ### 
