@@ -588,6 +588,16 @@ transition은 css를 먹인 어떤 속성에 변화를 '스르륵' 주게 되지
 
 즉, 스타일링 하고 싶은 요소의 first-child냐 last-child냐 nth-child냐에 따라서 달리 해주면 된다. 
 
+### User Action Pseudo-classes
+
+user의 action에 따라 스타일링의 변화를 주고 싶을 때 사용하는 선택자이다. 
+
+아래의 예시처럼 anchor에 마우스를 갖다댔을 때 background-color가 변하길 바랄때는 a:hover, anchor를 클릭했을 때 background-color가 변하길 바랄 때는 a:active를 사용해준다. 
+
+
+
+![hover&#xC640; active&#xC758; &#xC0AC;&#xC6A9; &#xC608;&#xC2DC;](../.gitbook/assets/560.png)
+
 ### 
 
 ### 
