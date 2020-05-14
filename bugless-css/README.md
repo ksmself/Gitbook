@@ -578,6 +578,18 @@ transition은 css를 먹인 어떤 속성에 변화를 '스르륵' 주게 되지
 
 ![&#xC608;&#xC2DC;.](../.gitbook/assets/484.png)
 
+### Structural Pseudo-classes
+
+사용 예시를 바로 보자. 
+
+![first-child / last-child / nth-child](../.gitbook/assets/558.png)
+
+![&#xC9DD;&#xC218;/&#xD640;&#xC218;](../.gitbook/assets/557.png)
+
+즉, 스타일링 하고 싶은 요소의 first-child냐 last-child냐 nth-child냐에 따라서 달리 해주면 된다. 
+
+### 
+
 ### 
 
 
