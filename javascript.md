@@ -596,7 +596,9 @@ spaceship.favoriteIcecream; // Returns undefined
 
 ### Bracket Notation
 
-The second way to access a key's value is by using bracket notation, **\[ \]**. We **must use bracket notation** when accessing **keys that have numbers, spaces, or special characters** in them. Without bracket notation in these situations, our code would throw an error. 
+The second way to access a key's value is by using bracket notation, **\[ \]**. To use bracket notation to access an object's property, we pass in the property name**\(key\) as a string**. 
+
+We **must use bracket notation** when accessing **keys that have numbers, spaces, or special characters** in them. Without bracket notation in these situations, our code would throw an error. 
 
 ```javascript
 let spaceship = {
@@ -611,7 +613,7 @@ spaceship['numCrew'];   // Returns 5
 spaceship['!!!!!!!!!!!!!!!'];   // Returns undefined
 ```
 
-You can also use a variable inside the brackets to select the keys of an object. 
+With bracket notation you can also use a variable inside the brackets to select the keys of an object. This can be especially helpful when working with functions. If we tried to write our returnAnyProp\(\) function with dot notation\(**objectName.propName**\) the computer would look for **a key of 'propName' on our object** and not the value of the propName parameter. 
 
 ```javascript
 let returnAnyProp = (objectName, propName) => 
@@ -620,6 +622,8 @@ objectName[propName];
 returnAnyProp(spaceship, 'homePlanet'); 
 // Returns 'Earth'
 ```
+
+### 
 
 ### 
 
