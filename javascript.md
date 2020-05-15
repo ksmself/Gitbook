@@ -596,9 +596,7 @@ spaceship.favoriteIcecream; // Returns undefined
 
 ### Bracket Notation
 
-The second way to access a key's value is by using bracket notation, **\[ \]**. To use bracket notation to access an object's property, we pass in the property name**\(key\) as a string**. 
-
-We **must use bracket notation** when accessing **keys that have numbers, spaces, or special characters** in them. Without bracket notation in these situations, our code would throw an error. 
+The second way to access a key's value is by using bracket notation, **\[ \]**. We **must use bracket notation** when accessing **keys that have numbers, spaces, or special characters** in them. Without bracket notation in these situations, our code would throw an error. 
 
 ```javascript
 let spaceship = {
@@ -613,7 +611,7 @@ spaceship['numCrew'];   // Returns 5
 spaceship['!!!!!!!!!!!!!!!'];   // Returns undefined
 ```
 
-With bracket notation you can also use a variable inside the brackets to select the keys of an object. This can be especially helpful when working with functions. If we tried to write our returnAnyProp\(\) function with dot notation\(**objectName.propName**\) the computer would look for **a key of 'propName' on our object** and not the value of the propName parameter. 
+You can also use a variable inside the brackets to select the keys of an object. 
 
 ```javascript
 let returnAnyProp = (objectName, propName) => 
@@ -622,77 +620,6 @@ objectName[propName];
 returnAnyProp(spaceship, 'homePlanet'); 
 // Returns 'Earth'
 ```
-
-### Property Assignment 
-
-Objects are mutable meaning we can update them after we create them! We can use **dot notation**, or **bracket notation**, and the **assignment operator**, to add new key-value pairs to an object or change an existing property. 
-
-One of two things can happen with property assignment. 
-
-* If the **property already exists** on the object, whatever value it held before will be **replaced with the newly** assigned value. 
-* If there **was no property** with that name, a new **property will be added** to the object. 
-
-We can't reassign an object declared with **const**, we can still mutate it, meaning we can **add new properties and change the properties** that are there. 
-
-```javascript
-const spaceship = {type: 'shuttle'};
-spaceship = {type: 'alien'}; 
-// TypeError: Assignment to constant variable.
-spaceship.type = 'alien'; 
-// Changes the value of the type property
-spaceship.speed = 'Mach 5'; 
-// Creates a new key of 'speed' with a value of 'Mach 5'
-```
-
-You can **delete a property** from an object with the **delete** operator. 
-
-```javascript
-const spaceship = {
-  'Fuel Type': 'Turbo Fuel',
-  homePlanet: 'Earth',
-  mission: 'Explore the universe' 
-};
-
-delete spaceship.mission;  
-// Removes the mission property
-```
-
-### Methods 
-
-When the data stored on an object is a function we call that a method. A property is what an object has, while **a method is what an object does**. 
-
-Console is a global javascript object and .log\(\) is a method on that object. Math is also a global javascript object and .floor\(\) is a method on it. 
-
-We can include methods in our object literals by creating ordinary, comma-separated key-value pairs. The **key** serves as our **method's name**, while the **value** is an **anonymous function expression**. 
-
-```javascript
-const alienShip = {
-  invade: function () { 
-    console.log('Hello! We have come to dominate your planet. Instead of Earth, it shall be called New Xaculon.')
-  }
-};
-```
-
-With the new method syntax introduced in ES6 we can **omit the colon and the function keyword**. 
-
-```javascript
-const alienShip = {
-  invade () { 
-    console.log('Hello! We have come to dominate your planet. Instead of Earth, it shall be called New Xaculon.')
-  }
-};
-```
-
-Object methods are invoked by appending the **object's name with the dot operator followed by the method name and parentheses**. 
-
-```javascript
-alienShip.invade(); 
-// Prints 'Hello! We have come to dominate your planet. Instead of Earth, it shall be called New Xaculon.'
-```
-
-### 
-
-### 
 
 ### 
 
