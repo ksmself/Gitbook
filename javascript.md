@@ -735,7 +735,7 @@ spaceship.nanoelectronics['back-up'].battery;
 
 ### Pass By Reference 
 
-Objects are passed by reference. This means when **we pass a variable assigned to an object into a function** as an argument, the **computer interprets the parameter name as pointing to the space in memory holding that object**. As a result, **functions** which **change object properties** actually **mutate the object permanently**. \(even when the object is assigned to a const variable\)
+Objects are passed by reference. This means when we pass a variable assigned to an object into a function as an argument, the computer interprets the parameter name as pointing to the space in memory holding that object. As a result, **functions** which **change object properties** actually **mutate the object permanently**. \(even when the object is assigned to a const variable\)
 
 ```javascript
 const spaceship = {
@@ -785,44 +785,6 @@ spaceship = {
 * When we tried the same thing using a **function designed to reassign the object** passed into it, the **reassignment didn't stick**\(even though calling console.log\(\) on the object produced the expected result\). 
 * When we **passed spaceship into that function**, _obj became a reference to the memory location of the spaceship object_, **but not to the spaceship variable**. This is because the obj parameter of the tryReassignment\(\) function is a variable in its own right. The body of **tryReassignment\(\) has no knowledge of the spaceship variable** at all!
 * When we did the reassignment in the body of tryReassignment\(\), the obj variable came to refer to the memory location of the object {'identified' : false, 'transport type' : 'flying'}, while the spaceship variable was completely unchanged from its earlier value.  
-
-### Looping Through Objects 
-
-Loops are programming tools that repeat a block of code until a condition is met. Iterating through objects is with the for...in syntax. 
-
-```javascript
-let spaceship = {
-    crew: {
-    captain: { 
-        name: 'Lily', 
-        degree: 'Computer Engineering', 
-        cheerTeam() { console.log('You got this!') } 
-        },
-    'chief officer': { 
-        name: 'Dan', 
-        degree: 'Aerospace Engineering', 
-        agree() { console.log('I agree, captain!') } 
-        },
-    medic: { 
-        name: 'Clementine', 
-        degree: 'Physics', 
-        announce() { console.log(`Jets on!`) } },
-    translator: {
-        name: 'Shauna', 
-        degree: 'Conservation Science', 
-        powerFuel() { console.log('The tank is full!') } 
-        }
-    }
-}; 
-// for...in
-for (let crewMember in spaceship.crew) {
-  console.log(`${crewMember}: ${spaceship.crew[crewMember].name}`)
-};
-```
-
-In each iteration, the variable crewMember is set to one of spaeship.crew's keys, enabling us to log list of crew member's role and name. 
-
-### 
 
 ### 
 
