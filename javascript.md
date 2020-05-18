@@ -690,6 +690,140 @@ alienShip.invade();
 // Prints 'Hello! We have come to dominate your planet. Instead of Earth, it shall be called New Xaculon.'
 ```
 
+### Nested Objects 
+
+Objects are often nested which means an **object might have another object as a property** which in turn could have a property that's an array of even more objects. 
+
+```javascript
+const spaceship = {
+     telescope: {
+        yearBuilt: 2018,
+        model: '91031-XLT',
+        focalLength: 2032 
+     },
+    crew: {
+        captain: { 
+            name: 'Sandra', 
+            degree: 'Computer Engineering', 
+            encourageTeam() { console.log('We got this!') } 
+         }
+    },
+    engine: {
+        model: 'Nimbus2000'
+     },
+     nanoelectronics: {
+         computer: {
+            terabytes: 100,
+            monitors: 'HD'
+         },
+        'back-up': {
+           battery: 'Lithium',
+           terabytes: 50
+         }
+    }
+}; 
+```
+
+In our spaceship object, we want a crew object. This will contain all the crew members who do important work on the craft. Each of those **crew members** are **objects** themselves. They have **properties like name, and degree**, and they each have unique **methods** based on their roles. 
+
+We can chain operators to access nested properties. 
+
+```javascript
+spaceship.nanoelectronics['back-up'].battery; 
+// Returns 'Lithium'
+```
+
+### Pass By Reference 
+
+Objects are passed by reference. This means when **we pass a variable assigned to an object into a function** as an argument, the **computer interprets the parameter name as pointing to the space in memory holding that object**. As a result, **functions** which **change object properties** actually **mutate the object permanently**. \(even when the object is assigned to a const variable\)
+
+```javascript
+const spaceship = {
+  homePlanet : 'Earth',
+  color : 'silver'
+};
+
+let paintIt = obj => {
+  obj.color = 'glorious gold'
+};
+
+paintIt(spaceship);
+
+spaceship.color // Returns 'glorious gold'
+```
+
+Function paintIt\(\) permanently changed the color of our spaceship object. 
+
+However, reassignment of the spaceship variable wouldn't work in the same way. 
+
+```javascript
+let spaceship = {
+  homePlanet : 'Earth',
+  color : 'red'
+};
+let tryReassignment = obj => {
+  obj = {
+    identified : false, 
+    'transport type' : 'flying'
+  }
+  console.log(obj) 
+// Prints {'identified': false, 'transport type': 'flying'}
+
+};
+tryReassignment(spaceship) 
+// The attempt at reassignment does not work.
+spaceship 
+// Still returns {homePlanet : 'Earth', color : 'red'};
+
+spaceship = {
+  identified : false, 
+  'transport type': 'flying'
+}; // Regular reassignment still works.
+```
+
+* We declared this spaceship object with let. This allowed us to reassign it to a new object with identified and 'transport type' properties with no problems. 
+* When we tried the same thing using a **function designed to reassign the object** passed into it, the **reassignment didn't stick**\(even though calling console.log\(\) on the object produced the expected result\). 
+* When we **passed spaceship into that function**, _obj became a reference to the memory location of the spaceship object_, **but not to the spaceship variable**. This is because the obj parameter of the tryReassignment\(\) function is a variable in its own right. The body of **tryReassignment\(\) has no knowledge of the spaceship variable** at all!
+* When we did the reassignment in the body of tryReassignment\(\), the obj variable came to refer to the memory location of the object {'identified' : false, 'transport type' : 'flying'}, while the spaceship variable was completely unchanged from its earlier value.  
+
+### Looping Through Objects 
+
+Loops are programming tools that repeat a block of code until a condition is met. Iterating through objects is with the for...in syntax. 
+
+```javascript
+let spaceship = {
+    crew: {
+    captain: { 
+        name: 'Lily', 
+        degree: 'Computer Engineering', 
+        cheerTeam() { console.log('You got this!') } 
+        },
+    'chief officer': { 
+        name: 'Dan', 
+        degree: 'Aerospace Engineering', 
+        agree() { console.log('I agree, captain!') } 
+        },
+    medic: { 
+        name: 'Clementine', 
+        degree: 'Physics', 
+        announce() { console.log(`Jets on!`) } },
+    translator: {
+        name: 'Shauna', 
+        degree: 'Conservation Science', 
+        powerFuel() { console.log('The tank is full!') } 
+        }
+    }
+}; 
+// for...in
+for (let crewMember in spaceship.crew) {
+  console.log(`${crewMember}: ${spaceship.crew[crewMember].name}`)
+};
+```
+
+In each iteration, the variable crewMember is set to one of spaeship.crew's keys, enabling us to log list of crew member's role and name. 
+
+### 
+
 ### 
 
 ### 
