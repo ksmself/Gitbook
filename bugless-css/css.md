@@ -964,7 +964,7 @@ textarea{
 }
 ```
 
-* button 뒤에 가상요소를 만들어 transition을 적용한다.  가상요소에 content는 반드시 포함해야 kh
+* button 뒤에 가상요소를 만들어 transition을 적용한다.  가상요소에 content는 반드시 포함해야하고, 원래 가상요소는 inline이지만, position: absolute로 인해 block으로 바뀐다. 버튼의 transition은 주로 250ms를 많이 사용한다. 
 
 ```css
 .line-button::after{
@@ -982,6 +982,8 @@ textarea{
     width: 100%;
 }
 ```
+
+## 
 
 
 
