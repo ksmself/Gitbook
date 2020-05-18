@@ -930,7 +930,58 @@ p{
   }
 ```
 
-## 
+## Transition 
+
+![&#xB514;&#xC790;&#xC778; &#xC2DC;&#xC548;.](../.gitbook/assets/565.png)
+
+버튼 위에 마우스를 올렸을 때, 서서히 라인이 로딩되기를 바라는 상황이다. 
+
+* 기본적인 설정부터 한다. font-family를 body에 적용하면 버튼 안의 폰트에서 Lato가 적용되지 않는다. **폼 형식**의 경우는 **body에 폰트를 적용해도 반영되지 않으니 개별적으로 처리**해주어야 한다. 
+
+```css
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+button{
+    border: none;
+    background-color: #FFF;
+}
+
+button,
+input,
+textarea{
+    font-family: 'Lato', sans-serif;
+}
+
+.line-button{
+    padding: 18px 31px;
+    font-size: 16px;
+    line-height: 1.25;
+    color: #151B26;
+    cursor: pointer;
+}
+```
+
+* button 뒤에 가상요소를 만들어 transition을 적용한다.  가상요소에 content는 반드시 포함해야 kh
+
+```css
+.line-button::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #0066FF;
+    transition: width 250ms ease-in;
+}
+
+.line-button:hover::after{
+    width: 100%;
+}
+```
 
 
 
