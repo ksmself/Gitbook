@@ -932,7 +932,7 @@ p{
 
 ## Transition 
 
-![&#xB514;&#xC790;&#xC778; &#xC2DC;&#xC548;.](../.gitbook/assets/565.png)
+![&#xB514;&#xC790;&#xC778; &#xC2DC;&#xC548;.](../.gitbook/assets/565-.png)
 
 버튼 위에 마우스를 올렸을 때, 서서히 라인이 로딩되기를 바라는 상황이다. 
 
