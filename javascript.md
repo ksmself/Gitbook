@@ -735,7 +735,7 @@ spaceship.nanoelectronics['back-up'].battery;
 
 ### Pass By Reference 
 
-Objects are passed by reference. This means when we pass a variable assigned to an object into a function as an argument, the computer interprets the parameter name as pointing to the space in memory holding that object. As a result, **functions** which **change object properties** actually **mutate the object permanently**. \(even when the object is assigned to a const variable\)
+Objects are passed by reference. This means when **we pass a variable assigned to an object into a function** as an argument, the **computer interprets the parameter name as pointing to the space in memory holding that object**. As a result, **functions** which **change object properties** actually **mutate the object permanently**. \(even when the object is assigned to a const variable\)
 
 ```javascript
 const spaceship = {
@@ -785,6 +785,100 @@ spaceship = {
 * When we tried the same thing using a **function designed to reassign the object** passed into it, the **reassignment didn't stick**\(even though calling console.log\(\) on the object produced the expected result\). 
 * When we **passed spaceship into that function**, _obj became a reference to the memory location of the spaceship object_, **but not to the spaceship variable**. This is because the obj parameter of the tryReassignment\(\) function is a variable in its own right. The body of **tryReassignment\(\) has no knowledge of the spaceship variable** at all!
 * When we did the reassignment in the body of tryReassignment\(\), the obj variable came to refer to the memory location of the object {'identified' : false, 'transport type' : 'flying'}, while the spaceship variable was completely unchanged from its earlier value.  
+
+### Looping Through Objects 
+
+Loops are programming tools that repeat a block of code until a condition is met. Iterating through objects is with the for...in syntax. 
+
+```javascript
+let spaceship = {
+    crew: {
+    captain: { 
+        name: 'Lily', 
+        degree: 'Computer Engineering', 
+        cheerTeam() { console.log('You got this!') } 
+        },
+    'chief officer': { 
+        name: 'Dan', 
+        degree: 'Aerospace Engineering', 
+        agree() { console.log('I agree, captain!') } 
+        },
+    medic: { 
+        name: 'Clementine', 
+        degree: 'Physics', 
+        announce() { console.log(`Jets on!`) } },
+    translator: {
+        name: 'Shauna', 
+        degree: 'Conservation Science', 
+        powerFuel() { console.log('The tank is full!') } 
+        }
+    }
+}; 
+// for...in
+for (let crewMember in spaceship.crew) {
+  console.log(`${crewMember}: ${spaceship.crew[crewMember].name}`)
+};
+```
+
+In each iteration, the variable crewMember is set to one of spaeship.crew's keys, enabling us to log list of crew member's role and name. 
+
+## Advanced Objects 
+
+### The this Keyword 
+
+Objects are collections of related data and functionality. We store that functionality in methods on our objects. 
+
+```javascript
+const goat = {
+  dietType: 'herbivore',
+  makeSound() {
+    console.log('baaa');
+  }
+};
+
+goat.makeSound(); // Prints baaa
+```
+
+We can invoke the .makeSound\(\) method on goat. Evertything seems to be working fine. What if we wanted to add a new method to our **goat** object called **.diet\(\)** that prints the **goat**'s **dietType**? 
+
+```javascript
+const goat = {
+  dietType: 'herbivore',
+  makeSound() {
+    console.log('baaa');
+  },
+  diet() {
+    console.log(dietType);
+  }
+};
+goat.diet(); 
+// Output will be "ReferenceError: dietType is not defined"
+```
+
+Why is dietType not defined even though it's a property of goat? That's because inside the scope of the .diet\(\) method, we **don't automatically have access to other properties** of the goat **object**. 
+
+Here's where the **this** keyword comes to the rescue. If we change the .diet\(\) method to use the **this**, the .diet\(\) works! 
+
+```javascript
+const goat = {
+  dietType: 'herbivore',
+  makeSound() {
+    console.log('baaa');
+  },
+  diet() {
+    console.log(this.dietType);
+  }
+};
+
+goat.diet(); 
+// Output: herbivore
+```
+
+The **this** keyword references the calling object which provides access to the calling object's properties. Example above, the calling object is **goat** and by using **this** we're accessing the **goat** object itself, and then the **dietType** property of **goat** by using property dot notation. 
+
+### 
+
+### 
 
 ### 
 
