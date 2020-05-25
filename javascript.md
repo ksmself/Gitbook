@@ -596,7 +596,9 @@ spaceship.favoriteIcecream; // Returns undefined
 
 ### Bracket Notation
 
-The second way to access a key's value is by using bracket notation, **\[ \]**. We **must use bracket notation** when accessing **keys that have numbers, spaces, or special characters** in them. Without bracket notation in these situations, our code would throw an error. 
+The second way to access a key's value is by using bracket notation, **\[ \]**. To use bracket notation to access an object's property, we pass in the property name**\(key\) as a string**. 
+
+We **must use bracket notation** when accessing **keys that have numbers, spaces, or special characters** in them. Without bracket notation in these situations, our code would throw an error. 
 
 ```javascript
 let spaceship = {
@@ -611,7 +613,7 @@ spaceship['numCrew'];   // Returns 5
 spaceship['!!!!!!!!!!!!!!!'];   // Returns undefined
 ```
 
-You can also use a variable inside the brackets to select the keys of an object. 
+With bracket notation you can also use a variable inside the brackets to select the keys of an object. This can be especially helpful when working with functions. If we tried to write our returnAnyProp\(\) function with dot notation\(**objectName.propName**\) the computer would look for **a key of 'propName' on our object** and not the value of the propName parameter. 
 
 ```javascript
 let returnAnyProp = (objectName, propName) => 
@@ -620,6 +622,293 @@ objectName[propName];
 returnAnyProp(spaceship, 'homePlanet'); 
 // Returns 'Earth'
 ```
+
+### Property Assignment 
+
+Objects are mutable meaning we can update them after we create them! We can use **dot notation**, or **bracket notation**, and the **assignment operator**, to add new key-value pairs to an object or change an existing property. 
+
+One of two things can happen with property assignment. 
+
+* If the **property already exists** on the object, whatever value it held before will be **replaced with the newly** assigned value. 
+* If there **was no property** with that name, a new **property will be added** to the object. 
+
+We can't reassign an object declared with **const**, we can still mutate it, meaning we can **add new properties and change the properties** that are there. 
+
+```javascript
+const spaceship = {type: 'shuttle'};
+spaceship = {type: 'alien'}; 
+// TypeError: Assignment to constant variable.
+spaceship.type = 'alien'; 
+// Changes the value of the type property
+spaceship.speed = 'Mach 5'; 
+// Creates a new key of 'speed' with a value of 'Mach 5'
+```
+
+You can **delete a property** from an object with the **delete** operator. 
+
+```javascript
+const spaceship = {
+  'Fuel Type': 'Turbo Fuel',
+  homePlanet: 'Earth',
+  mission: 'Explore the universe' 
+};
+
+delete spaceship.mission;  
+// Removes the mission property
+```
+
+### Methods 
+
+When the data stored on an object is a function we call that a method. A property is what an object has, while **a method is what an object does**. 
+
+Console is a global javascript object and .log\(\) is a method on that object. Math is also a global javascript object and .floor\(\) is a method on it. 
+
+We can include methods in our object literals by creating ordinary, comma-separated key-value pairs. The **key** serves as our **method's name**, while the **value** is an **anonymous function expression**. 
+
+```javascript
+const alienShip = {
+  invade: function () { 
+    console.log('Hello! We have come to dominate your planet. Instead of Earth, it shall be called New Xaculon.')
+  }
+};
+```
+
+With the new method syntax introduced in ES6 we can **omit the colon and the function keyword**. 
+
+```javascript
+const alienShip = {
+  invade () { 
+    console.log('Hello! We have come to dominate your planet. Instead of Earth, it shall be called New Xaculon.')
+  }
+};
+```
+
+Object methods are invoked by appending the **object's name with the dot operator followed by the method name and parentheses**. 
+
+```javascript
+alienShip.invade(); 
+// Prints 'Hello! We have come to dominate your planet. Instead of Earth, it shall be called New Xaculon.'
+```
+
+### Nested Objects 
+
+Objects are often nested which means an **object might have another object as a property** which in turn could have a property that's an array of even more objects. 
+
+```javascript
+const spaceship = {
+     telescope: {
+        yearBuilt: 2018,
+        model: '91031-XLT',
+        focalLength: 2032 
+     },
+    crew: {
+        captain: { 
+            name: 'Sandra', 
+            degree: 'Computer Engineering', 
+            encourageTeam() { console.log('We got this!') } 
+         }
+    },
+    engine: {
+        model: 'Nimbus2000'
+     },
+     nanoelectronics: {
+         computer: {
+            terabytes: 100,
+            monitors: 'HD'
+         },
+        'back-up': {
+           battery: 'Lithium',
+           terabytes: 50
+         }
+    }
+}; 
+```
+
+In our spaceship object, we want a crew object. This will contain all the crew members who do important work on the craft. Each of those **crew members** are **objects** themselves. They have **properties like name, and degree**, and they each have unique **methods** based on their roles. 
+
+We can chain operators to access nested properties. 
+
+```javascript
+spaceship.nanoelectronics['back-up'].battery; 
+// Returns 'Lithium'
+```
+
+### Pass By Reference 
+
+Objects are passed by reference. This means when **we pass a variable assigned to an object into a function** as an argument, the **computer interprets the parameter name as pointing to the space in memory holding that object**. As a result, **functions** which **change object properties** actually **mutate the object permanently**. \(even when the object is assigned to a const variable\)
+
+```javascript
+const spaceship = {
+  homePlanet : 'Earth',
+  color : 'silver'
+};
+
+let paintIt = obj => {
+  obj.color = 'glorious gold'
+};
+
+paintIt(spaceship);
+
+spaceship.color // Returns 'glorious gold'
+```
+
+Function paintIt\(\) permanently changed the color of our spaceship object. 
+
+However, reassignment of the spaceship variable wouldn't work in the same way. 
+
+```javascript
+let spaceship = {
+  homePlanet : 'Earth',
+  color : 'red'
+};
+let tryReassignment = obj => {
+  obj = {
+    identified : false, 
+    'transport type' : 'flying'
+  }
+  console.log(obj) 
+// Prints {'identified': false, 'transport type': 'flying'}
+
+};
+tryReassignment(spaceship) 
+// The attempt at reassignment does not work.
+spaceship 
+// Still returns {homePlanet : 'Earth', color : 'red'};
+
+spaceship = {
+  identified : false, 
+  'transport type': 'flying'
+}; // Regular reassignment still works.
+```
+
+* We declared this spaceship object with let. This allowed us to reassign it to a new object with identified and 'transport type' properties with no problems. 
+* When we tried the same thing using a **function designed to reassign the object** passed into it, the **reassignment didn't stick**\(even though calling console.log\(\) on the object produced the expected result\). 
+* When we **passed spaceship into that function**, _obj became a reference to the memory location of the spaceship object_, **but not to the spaceship variable**. This is because the obj parameter of the tryReassignment\(\) function is a variable in its own right. The body of **tryReassignment\(\) has no knowledge of the spaceship variable** at all!
+* When we did the reassignment in the body of tryReassignment\(\), the obj variable came to refer to the memory location of the object {'identified' : false, 'transport type' : 'flying'}, while the spaceship variable was completely unchanged from its earlier value.  
+
+### Looping Through Objects 
+
+Loops are programming tools that repeat a block of code until a condition is met. Iterating through objects is with the for...in syntax. 
+
+```javascript
+let spaceship = {
+    crew: {
+    captain: { 
+        name: 'Lily', 
+        degree: 'Computer Engineering', 
+        cheerTeam() { console.log('You got this!') } 
+        },
+    'chief officer': { 
+        name: 'Dan', 
+        degree: 'Aerospace Engineering', 
+        agree() { console.log('I agree, captain!') } 
+        },
+    medic: { 
+        name: 'Clementine', 
+        degree: 'Physics', 
+        announce() { console.log(`Jets on!`) } },
+    translator: {
+        name: 'Shauna', 
+        degree: 'Conservation Science', 
+        powerFuel() { console.log('The tank is full!') } 
+        }
+    }
+}; 
+// for...in
+for (let crewMember in spaceship.crew) {
+  console.log(`${crewMember}: ${spaceship.crew[crewMember].name}`)
+};
+```
+
+In each iteration, the variable crewMember is set to one of spaeship.crew's keys, enabling us to log list of crew member's role and name. 
+
+## Advanced Objects 
+
+### The this Keyword 
+
+Objects are collections of related data and functionality. We store that functionality in methods on our objects. 
+
+```javascript
+const goat = {
+  dietType: 'herbivore',
+  makeSound() {
+    console.log('baaa');
+  }
+};
+
+goat.makeSound(); // Prints baaa
+```
+
+We can invoke the .makeSound\(\) method on goat. Evertything seems to be working fine. What if we wanted to add a new method to our **goat** object called **.diet\(\)** that prints the **goat**'s **dietType**? 
+
+```javascript
+const goat = {
+  dietType: 'herbivore',
+  makeSound() {
+    console.log('baaa');
+  },
+  diet() {
+    console.log(dietType);
+  }
+};
+goat.diet(); 
+// Output will be "ReferenceError: dietType is not defined"
+```
+
+Why is dietType not defined even though it's a property of goat? That's because inside the scope of the .diet\(\) method, we **don't automatically have access to other properties** of the goat **object**. 
+
+Here's where the **this** keyword comes to the rescue. If we change the .diet\(\) method to use the **this**, the .diet\(\) works! 
+
+```javascript
+const goat = {
+  dietType: 'herbivore',
+  makeSound() {
+    console.log('baaa');
+  },
+  diet() {
+    console.log(this.dietType);
+  }
+};
+
+goat.diet(); 
+// Output: herbivore
+```
+
+The **this** keyword references the calling object which provides access to the calling object's properties. Example above, the calling object is **goat** and by using **this** we're accessing the **goat** object itself, and then the **dietType** property of **goat** by using property dot notation. 
+
+### Arrow Functions and this 
+
+If we use the **this** keyword in a method then the value of **this** is the **calling object**. However, it becomes a bit more complicated when we start using arrow functions for methods.  
+
+```javascript
+const goat = {
+  dietType: 'herbivore',
+  makeSound() {
+    console.log('baaa');
+  },
+  diet: () => {
+    console.log(this.dietType);
+  }
+};
+
+goat.diet(); // Prints undefined
+```
+
+In the comment, you can see that **goat.diet\(\)** would log **undefined**. Notice that in the **.diet\(\)** is defined using an arrow function. 
+
+Arrow functions inherently bind, or tie, an already defined **this** value to the function itself that is NOT the calling object. In the code snippet above, the value of **this** is the **global object**, or an object that exists in the global scope, **which doesn't have a dietType property** and therefore returns undefined. 
+
+The key takeaway from the example above is to **avoid using arrow functions when using this in a method**! 
+
+### 
+
+### 
+
+### 
+
+### 
+
+### 
 
 ### 
 
