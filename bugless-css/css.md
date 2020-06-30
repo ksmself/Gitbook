@@ -930,6 +930,169 @@ p{
   }
 ```
 
+## Transition 
+
+![&#xB514;&#xC790;&#xC778; &#xC2DC;&#xC548;.](../.gitbook/assets/565-.png)
+
+버튼 위에 마우스를 올렸을 때, 서서히 라인이 로딩되기를 바라는 상황이다. 
+
+* 기본적인 설정부터 한다. font-family를 body에 적용하면 버튼 안의 폰트에서 Lato가 적용되지 않는다. **폼 형식**의 경우는 **body에 폰트를 적용해도 반영되지 않으니 개별적으로 처리**해주어야 한다. 
+
+```css
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+button{
+    border: none;
+    background-color: #FFF;
+}
+
+button,
+input,
+textarea{
+    font-family: 'Lato', sans-serif;
+}
+
+.line-button{
+    padding: 18px 31px;
+    font-size: 16px;
+    line-height: 1.25;
+    color: #151B26;
+    cursor: pointer;
+}
+```
+
+* button 뒤에 가상요소를 만들어 transition을 적용한다.  가상요소에 content는 반드시 포함해야하고, 원래 가상요소는 inline이지만, position: absolute로 인해 block으로 바뀐다. 버튼의 transition은 주로 250ms를 많이 사용한다. 
+
+```css
+.line-button::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #0066FF;
+    transition: width 250ms ease-in;
+}
+
+.line-button:hover::after{
+    width: 100%;
+}
+```
+
+## Animation
+
+![&#xB514;&#xC790;&#xC778; &#xC2DC;&#xC548;.](../.gitbook/assets/566-.png)
+
+Loading의 opacity animation도 필요하고, progress-bar-guage의 animation도 필요하다. 
+
+* 기본적인 틀부터 만들어주자. \(\* 아래 progress-bar-gauge의 width가 progress-bar를 넘어도 넘은 게 보이지 않도록 overflow: hidden;을 해주었다.\)
+
+```css
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body{
+    font-family: 'Muli', sans-serif;
+}
+
+.loading-title{
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.33333333333;
+}
+
+.progress-bar{
+    position: relative;
+    width: 300px;
+    height: 12px;
+    border-radius: 100px;
+    background-color: #E5EAEF;
+    overflow: hidden;
+}
+```
+
+* 게이지를 어떻게 만들면 좋을지 고민했는데, progress-bar에 absolute 적용해서 올려주면 되는 거였다! span이지만 position: absolute로 인해 block으로 변한다는 점 잊지 말자.  그리고 border-radius를 50%로 하면 아예 원형으로 바뀌기 때문에, 대략 100px 정도로 조절해주면 모서리부분만 둥글게 변한다. 
+
+```css
+.progress-bar-gauge{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 12px;
+    border-radius: 100px;
+    background-color: #13CE66;
+}
+```
+
+* 이제, loading-title에 animation을 줄 차례다. 투명도가 1에서 0으로 변하게 하고, 무한 반복하게 하며, 1 &gt; 0 &gt; 1...로 투명도가 변하게 하기 위해 direction을 alternate로 해준다. 
+
+```css
+.loading-title{
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.33333333333;
+    animation-name: flicker;
+    animation-duration: 1600ms;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+
+}
+
+@keyframes flicker{
+    from{
+        opacitiy: 1;
+    }
+
+    to{
+        opacity: 0;
+    }
+}
+```
+
+* 이제, loading-bar에 animation을 주자. width가 100%가 되었을 때는 다시 반복된다는 것을 보여주기 위해, opacity를 0으로 했다. 
+
+```css
+.progress-bar-gauge{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 12px;
+    border-radius: 100px;
+    background-color: #13CE66;
+    animation-name: loading-bar;
+    animation-duration: 1600ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+}
+
+@keyframes loading-bar{
+    0%{
+        width: 0;
+        opacity: 1;
+    }
+
+    90%{
+        width: 100%;
+        opacity: 1;
+    }
+
+    100%{
+        width: 100%;
+        opacity: 0;
+    }
+}
+```
+
 ## 
 
 
