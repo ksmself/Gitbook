@@ -4,45 +4,10 @@
 
 ### Programmers Lv 1. 완주하지 못한 선수 
 
-* filter: The **filter\(\)** method **creates a new array** with all elements that pass the test implemented by the provided function. 
-* indexOf: The **indexOf\(\)** method returns the first index at which a given element can be found in the array, or -1 if it is not present. 
-* splice: The **splice\(\)** method changes the contents of an array by removing or replacing existing elements and/or adding new elements in place. 
+* filter
+* indexOf
+* splice 
 * 위의 메소드를 사용하여 문제는 맞추었지만, 효율성 기준을 통과하지 못했다. 어떻게든 풀기만 하면 될 줄 알았는데\(그다지 복잡하게 풀었다고 생각하지도 않았다.\) '효율성' 때문에 다음으로 넘어가지 못하고 있다. 난감하다. 
-
-```javascript
-//filter Example 
-const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
-
-const result = words.filter(word => word.length > 6);
-
-console.log(result);
-// expected output: Array ["exuberant", "destruction", "present"]
-
-//indexOf Example 
-const beasts = ['ant', 'bison', 'camel', 'duck', 'bison'];
-
-console.log(beasts.indexOf('bison'));
-// expected output: 1
-
-// start from index 2
-console.log(beasts.indexOf('bison', 2));
-// expected output: 4
-
-console.log(beasts.indexOf('giraffe'));
-// expected output: -1
-
-//splice Example 
-const months = ['Jan', 'March', 'April', 'June'];
-months.splice(1, 0, 'Feb');
-// inserts at index 1
-console.log(months);
-// expected output: Array ["Jan", "Feb", "March", "April", "June"]
-
-months.splice(4, 1, 'May');
-// replaces 1 element at index 4
-console.log(months);
-// expected output: Array ["Jan", "Feb", "March", "April", "May"]
-```
 
 
 
