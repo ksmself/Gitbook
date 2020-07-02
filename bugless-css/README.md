@@ -552,6 +552,45 @@ transition은 css를 먹인 어떤 속성에 변화를 '스르륵' 주게 되지
 
 ![animation &#xC0AC;&#xC6A9; &#xC608;&#xC2DC;.](../.gitbook/assets/478.png)
 
+## Etc.
+
+### Box Shadow 
+
+border의 경우 속성들을 꼭 순서대로 배치할 필요가 없었지만, **Box Shadow**는 꼭, **x**, **y**, **blur**, **spread**, **color** 순으로 속성 표시를 해야한다. x, y는 얼마나 x, y 쪽으로 치우쳤는지를 보여주며, blur는 흐린 정도, spread는 퍼진 정도, color는 색상을 나타낸다. 
+
+![box-shadow.](../.gitbook/assets/658-.png)
+
+위의 예는 box-shadow가 x쪽으로 하나도 치우치지 않음을 나타내고\(0일때는 px을 붙이지 않는다\), y쪽으로 10px, 16px만큼 blur하며, spread는 0, color는 **투명도를 나타내기 위해 rgba를 사용하고, 투명도가 35%일때는 0.35로** 나타냄. 
+
+![Neumorphism.](../.gitbook/assets/659-.png)
+
+위는 요즘 유행하는 **Neumorphism**이다. 플랫한데 살짝 빛도 주고, box-shadow도 주는 그런 요소인데, 활용하기 위해서는 **neumorphism box shadow**를 검색하여 해당 사이트에 들어가 원하는대로 조절하여 코드를 복사하기만 하면 된다. 
+
+### Opacity 
+
+투명도를 나타내는 속성. 0이면 완전 투명, 1이면 완전 불투명. 
+
+### Overflow 
+
+width와 height를 가질 수 있는 요소들이 있을 때, 그 안에 있는 content가 요소를 넘어버릴 때, **overflow**라고 한다. overflow가 가질 수 있는 속성은 **visible, hidden, auto, scroll**이 있으며, **기본 값은 visible**이다. 
+
+* visible: overflow 되어도 그냥 보이게 하는 것. 
+* auto, scroll: overflow 되는 내용은 scroll 할 수 있도록 함. 
+* hidden: overflow 되는 내용은 아예 안 보이게 함. 
+* overflow-x \| overflow-y: 가로 세로 각각 특성을 달리할 수 있음. 이를테면 overflow-x: scroll; overflow-y: hidden;이라고 설정하게 되면 가로로는 scroll할 수 있지만 세로로는 scroll할 수 없게 됨. 
+
+### Transform 
+
+말 그래도 변형. 주로 사용하는 것은 **translate, scale, rotate**가 있음. 
+
+* translate: **translate\(x, y\)**라고 쓰며 x축으로 얼마, y축으로 얼마 이동할 것인지를 나타냄. 놀라운 점은 **translate을 시켜도 그 요소의 원래 위치를 모두가 기억**하고 있다는 점이다. 그래서 **다른 주변에 있는 요소들한테 절대 영향을 주지 않는다**는 것이다. 그리고 translate할 때, 보통 이동 단위를 px로 잡는데, %로 잡을 수도 있다. translate\(100%, 50%\)은 x축을 기준으로 width의 100%만큼, y축을 기준으로 height의 50%만큼 이동한다는 뜻이다. 또, translateX, translateY처럼 x만, y만 이동하게 할 수도 있다. 
+* scale: **scale\(N\)**라고 쓰며, N에는 숫자가 들어가게 된다. 또, **scale\(x, y\)**처럼 두 개의 값을 넣을 수도 있다. width 값에 x만큼의 비율로, height 값에 y만큼의 비율로 사이즈가 조정된다. 
+* rotate: 어떤 요소의 각을 돌릴 때 사용. **rotate\(Ndeg\)**로 표현하며, deg를 빼먹으면 안된다. roate 역시도 rotate 되었다고 해서 주변 요소에 영향을 끼치지 않는다. 
+
+### Visibility 
+
+어떤 요소를 보일지 말지를 결정. **visible과 hidden**이 있음. 중요한가 싶을 수 있지만 꼭 알고 넘어가야할 부분이 있음. 어떤 요소의 **visible에 hidden 값**을 주게 되면, opacity:0을 주었을 때와 같은 일이 일어난다. 즉, 보여지는 **화면 상에서 사라지지만 요소는 여전히 존재하고 있는 것**이다. 하지만 d**isplay:none은 요소도 사라진다**. 이것이 주의해야 할 **visible:hidden과 display:none**의 특성이다. 
+
 ## Selectors
 
 ### Type, Class & ID Selector
