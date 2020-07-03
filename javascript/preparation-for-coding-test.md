@@ -65,7 +65,62 @@ console.log(months);
 * 나누기 연산을 한 후, parseInt를 이용해야 정수로 변환됨 
 * slice: The **slice\(\)** method **returns** a shallow copy of a portion of **an array** into a new array object selected from **start to end\(end not included\)** where start and end represent the index of items in that array. The original array will not be modified. 
 
-## 
+## 20.07.03
+
+### 부스트캠프 자가진단테스트 
+
+배열을 처음부터 탐색하면서 중복횟수를 count하는 함수 작성. 
+
+* 객체 Set: 데이터 타입 중 하나. 중복되는 값을 가지지 않는 리스트. 값의 순서가 존재하지 않음. 
+* 객체 Map: 키-값 쌍을 저장. 각 쌍의 삽입 순서도 기억. 
+* Map.prototype.set\(\): set\(\) 메서드는 Map 객체에서 주어진 키를 가진 요소를 추가하고, 이미 있다면 대체. 
+* myMap.set\(key, value\); 에서 key는 Map에 추가하거나 변경할 요소의 키, value는 Map에 추가하거나 변경할 요소의 값 
+* Map.prototype.get\(\): get\(\) 메서드는 Map 객체에서 지정한 요소를 회수. 
+
+```javascript
+//풀이방법 1 
+function countOf(arr, value){
+ var count = 0;
+ arr.forEach(element => {
+  if(element == value) count++; 
+ }); 
+ return count; 
+}
+
+function solution(arr){
+ var answer = [];
+ var set = new Set([]); 
+ arr.forEach(element => {
+  if(set.has(element)) return; 
+  set.add(element); 
+  count = countOf(arr, element); 
+  if(count > 1) answer.push(count); 
+ }); 
+ if(answer.length == 0) answer.push(-1); 
+ return answer;
+}
+
+//풀이방법 2 
+function solution(arr){
+ var answer = [];
+ var map = new Map(); 
+ arr.forEach(element => {
+  if(map.has(element)){
+   map.set(element, map.get(element) + 1); 
+  }
+  else{
+   map.set(element, 1);
+  }
+ });
+ map.forEach( value => {
+  if(value > 1){
+   answer.push(value);
+  }
+ });
+ if(answer.length == 0) answer.push(-1); 
+ return answer; 
+}
+```
 
 
 
