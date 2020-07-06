@@ -1093,7 +1093,49 @@ body{
 }
 ```
 
-## 
+## Page Layout 
+
+### Grid System
+
+프론트엔드 개발자는 디자이너가 준 시안을 바탕으로 코드를 구현하는데, 이때 디자이너들이 중구난방으로 막 디자인하는 것이 아니라 'Grid System'을 바탕으로 디자인하게 된다. 
+
+![Grid System.](../.gitbook/assets/661-.png)
+
+총 3가지 개념을 알아야하는데, 바로 container, column, gutter이다. 
+
+* **container**는 grid system이 적용되는 모든 영역을 뜻한다. 
+* **column**은 이 container를 몇 개로 나누느냐를 나타내는데 보통 12 column을 많이 사용한다. 12는 2로도, 3, 4, 6으로도 나누어지기 때문이다. column 개수가 정해지면, width를 막 정하는 게 아니라, column 2개, 3개 등의 방식으로 정하게 된다. 
+* gutter는 아이템 사이의 여백을 의미한다. 
+
+### Bootstrap 
+
+**Grid System을 css로 쉽게 구현**할 수 있도록 도와주는 **css framework**! 심지어 **반응형**까지 대응! 
+
+**사용법 :** Bootstrap 홈페이지 접속 후 Introduction 부분의 css만 복사해 html에 붙여넣어주면 된다. 
+
+bootstrap을 제대로 사용하려면 아래의 **rule**을 꼭 지켜주어야 한다.  container 안에는 꼭 row가 와야 하고, row는 한 줄을 의미한다. 그 안에 col class를 넣어주고, 1개짜리 col이라면 col-1, 3개짜리 col이라면 col-3이라고 클래스명을 지어야 한다. 그리고 그 안에 원하는 요소를 넣어준다. 예를 들어, program이라는 class를 넣고 싶다면, container &gt; row &gt; col-x 안에 넣어줘야 한다. 
+
+\*row는 한 줄을 의미한다 했는데, 만약 row 안에 col-1과 col-12를 넣게 되면 한 줄이 넘기 때문에, col-12는 자동으로 다음 줄로 넘어가게 된다. 
+
+![Don&apos;t forget this rule! ](../.gitbook/assets/662-.png)
+
+다음으로는 반응형에 적용 가능한 '신기한' 기술이 있다. 576px 이전에는 12개짜리 col, 768px 이전에는 6개짜리 col, 992px 이전에는 4개짜리 col과 같은 식으로 자동으로 처리되게 할 수 있다. 아래의 이미지를 참고해서 원하는대로 활용하면 된다. 
+
+```css
+<div class="container">
+      <div class="row">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <p>
+            Column 
+          </p>
+        </div>
+      </div>
+</div>
+```
+
+![width&#xC5D0; &#xB530;&#xB77C; &#xBC14;&#xB00C;&#xB294; col](../.gitbook/assets/664-.png)
+
+### 
 
 
 
