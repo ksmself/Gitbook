@@ -122,5 +122,29 @@ function solution(arr){
 }
 ```
 
+## 20.07.06
 
+### Programmers Lv 1. 핸드폰 번호 가리기 
+
+* 길이가 4 이상 20 이하인 핸드폰 번호가 주어지면, 마지막 4자리를 제외한 나머지 숫자를 전부 \*으로 가린 문자열을 리턴하는 함수 작성. 
+* \*으로 가릴 문자의 개수를 repeated라는 변수에 담음. 그리고 '\*'.repeat\(repeated\)를 통해 그 개수만큼 \*을 반복함 
+* 필요한만큼 \*을 반복한 후, phone\_number.substr\(phone\_number.length-4, 4\)와 합침. substr의 첫번째 인자에는 substring을 시작할 인덱스를 넣어주고,  그 다음 인자에는 잘라낼 개수를 넣어준다. 
+
+### Programmers Lv 2. 위장 
+
+* \[\[yellow\_hat, headgear\], \[blue\_sunglasses, eyewear\], \[green\_turban, headgear\]\] 와 같이 옷이 주어졌을 때, 서로 다른 옷의 조합의 수를 리턴하는 함수 작성.
+* 레벨 2가 처음이라 그런지, object 활용을 많이 안 해봐서 그랬는지 어느 정도 그림은 그려졌는데, 디테일에서 잘 구현되지 않아 아쉬웠다. 
+* 우선, 같은 옷의 종류끼리 분류하기 위해 Object를 사용했다. obj에 이미 cloth\[1\]이 있으면, 즉, obj\[cloth\[1\]\]이 1보다 크거나 같으면, obj\[cloth\[1\]\] += 1;을 해주고, 아니면 obj\[cloth\[1\]\] = 1으로 설정했다. 
+* 이제 분류를 마쳤기 때문에, value 값을 빼와 계산하는 작업만 해주면 되었다. n은 key를 나타낸다. 
+
+```javascript
+for(var n in obj){
+        answer *= (obj[n] + 1);
+    }
+answer -= 1; 
+```
+
+## 
+
+### 
 
