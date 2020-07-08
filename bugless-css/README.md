@@ -625,7 +625,7 @@ width와 height를 가질 수 있는 요소들이 있을 때, 그 안에 있는 
 
 ![&#xC9DD;&#xC218;/&#xD640;&#xC218;](../.gitbook/assets/557.png)
 
-즉, 스타일링 하고 싶은 요소의 first-child냐 last-child냐 nth-child냐에 따라서 달리 해주면 된다. 
+즉, 스타일링 하고 싶은 요소의 first-child냐 last-child냐 nth-child냐에 따라서 달리 해주면 된다.  중요한 점은, 예를 들어 li:nth-child\(3\)이라고 하면, li의 **부모 요소**인 ol의 3번째 **자식에 적용**하라는 의미이다. 
 
 ### User Action Pseudo-classes
 
