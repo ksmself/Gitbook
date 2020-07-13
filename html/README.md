@@ -62,7 +62,7 @@ description: 김버그의 버그 없는 HTML 강의 듣고 정리
 * dl: description list
 * dt: description term, key 값에 해당, dt 안에 아래의 '학습'과 같은 definition이 들어감.
 * dd: description data, value 값에 해당 
-* dl의 자식요소는 오직 div, dt, dd만 가능하다. 
+* dl의 자식요소는 오직 **div, dt, dd**만 가능하다. 
 
 ```markup
 <dl class="">
