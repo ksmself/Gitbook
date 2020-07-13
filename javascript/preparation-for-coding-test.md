@@ -175,5 +175,23 @@ console.log(arr1);
 //[]
 ```
 
+## 20.07.13
+
+### LeetCode Easy runningSum 
+
+* \[1, 1, 1, 1, 1\]이 주어지면, \[1, 2, 3, 4, 5\]를 리턴하고, \[1, 2, 3, 4, 5\]가 주어지면, \[1, 3, 6, 10, 15\]를 리턴하는, 즉, 배열이 주어졌을 때, 각 인덱스 별 누적값의 배열을 리턴하는 함수 
+* reduce를 잘 활용하면 아주 간단하게 짤 수 있는 문제였다. 
+
+```javascript
+var runningSum = function(nums){
+ var now = [nums[0]]; 
+ nums.reduce((prev, curr) => {
+  now.push(prev + curr);
+  return prev + curr;
+ });
+ return now;
+};
+```
+
 ### 
 
