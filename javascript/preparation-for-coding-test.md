@@ -193,5 +193,28 @@ var runningSum = function(nums){
 };
 ```
 
+## 20.07.14
+
+### LeetCode Easy Number of Good Pairs 
+
+* array가 주어졌을 때, 그 중 good pair의 수를 리턴하는 함수이며, good pair란, nums\[i\] == nums\[j\]이며    i &lt; j 일때, \(i, j\)를 good pair라 한다. 
+*  **forEach**를 사용해 array를 처음부터 끝까지 돌면서, 이의 **parameter를 currentvalue, currentvalue's index, array**로 하였다. 현재 value 다음의 원소로만 구성된 splitedArray를 만들었으며, 이 중에 current value와 같은 값이 있으면 good pair의 수를 증가시켰다. 
+
+```javascript
+var numIdenticalPairs = function(nums) {
+    var good = 0; 
+    var splitedArr = []; 
+    nums.forEach((num, idx, arr) => {
+        splitedArr = arr.slice(idx+1, arr.length);
+        splitedArr.filter(split => {
+            if(split == num){
+                good++; 
+            }
+        });
+    });
+    return good; 
+};
+```
+
 ### 
 
