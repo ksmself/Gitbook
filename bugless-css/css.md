@@ -1135,6 +1135,82 @@ bootstrap을 제대로 사용하려면 아래의 **rule**을 꼭 지켜주어야
 
 ![width&#xC5D0; &#xB530;&#xB77C; &#xBC14;&#xB00C;&#xB294; col](../.gitbook/assets/664-.png)
 
+### 작업 환경 세팅 
+
+본격적으로 마크업 하기 전, 특수적인 사항, 자주 쓰이지만 마음에 들지 않는 스타일이 기본적으로 적용되는 경우, 반복적으로 쓰이는 스타일에 대해 먼저 작업을 해주는 과정! 
+
+* 그리드 시스템은 Bootstrap에서 제공하는 그리드 시스템을 기본적으로 적용하나, maximum container 사이즈를 960px로 제한! \(\*처음에는 !important 없이 적용했더니, max-width가 변경되지 않았다. 그렇지만 꼭 max-width를 960px로 제한해야 했기에 !important를 붙였고, 잘 적용되었다\) 
+
+```css
+/* Custom Grid System - Fix container width */
+@media screen and (min-width: 1200px){
+    .container{
+        max-width: 960px !important;
+    } 
+}
+```
+
+* button, list 요소, a, textarea, input처럼 자주 쓰이지만 소위 스타일은 구린 아이들도 미리 처리해주는 게 좋다. **a의 color를 inherit**으로 해주었는데, 이는 상속, 즉, 부모의 color를 적용하겠다는 뜻이다. **button, textarea, input** 등은 이미 body에서 font-family를 지정해주었지만, 적용되지 않는 경우가 많아 이렇게 다시 한 번 더 **font-family**에 대해 적어주어야 한다. **font-size**도 작은 경우가 많아 좀 크게 해준다. 그리고 이들은 **focus나 active** 되었을 때, 필요없는 box-shadow 등이 생기는데, **box-shadow와 outline은 none**으로 해준다. **list** 요소들도 **list-style-type은 none**으로 해주고, **padding-left, margin-left**는 0으로 해준다. 
+
+```css
+/* Reset CSS */
+a{
+    color: inherit; 
+    text-decoration: none;
+}
+
+button,
+textarea,
+input{
+    font-family: 'DM Sans', sans-serif; 
+    font-size: 20px;
+}
+
+button:focus,
+button:active,
+textarea:focus,
+textarea:active,
+input:focus,
+input:active{
+    box-shadow: none; 
+    outline: none; 
+}
+
+ul,
+ol,
+li{
+    padding-left: 0;
+    margin-left: 0;
+    list-style-type: none;
+}
+```
+
+* 반복적으로 스타일링해야 할 요소는 미리 처리해준다. 
+
+```css
+p{
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    color: #2B292D;
+}
+
+h1{
+    color: #2B292D;
+}
+
+/* >= 768px ( Desktop ) */
+@media screen and (min-width: 768px){
+    /* Reset CSS */
+    p{
+        font-size: 22px;
+        line-height: 1.454545454545455;
+    }
+}
+```
+
+### Landing Section 
+
 ### 
 
 
