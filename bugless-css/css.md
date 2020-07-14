@@ -1211,6 +1211,64 @@ h1{
 
 ### Landing Section 
 
+* landing 안의 content들을 세로로 정렬하기 위해 **flex-direction을 column**으로 해주었다. 또, mobile에서는 뷰포트의 100%를 차지한다는 의미에서, **height를 100vh**로 설정하였다. 또, landing 안의 모든 content들이 중앙에 배치되므로, **text-align: center**를 사용하였다.  데스크탑에서는, height가 content의 높이에 여백이 살짝 있는 정도이므로 **height를 auto**로 바꿔주고, padding을 주었다. 
+
+```css
+.landing{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    background-color: #FDDED8;
+}
+
+/* Desktop */
+.landing{
+        height: auto;
+        padding: 120px 0;
+    }
+```
+
+* **fill-button**에 padding을 주지 않고, **width와 height**를 준 이유는 padding의 크기가 좌우 다르게 설정되어 padding을 주기가 애매했지만, 모든 button들의 width와 height는 같았기 때문에 width와 height를 주기로 했고, 이가 제대로 적용되지 않아 display를 확인해보니 inline이었다. 어차피 안의 content 들을 가로, 세로 중앙 정렬을 해야 해서 **display**를 **inline-flex**로 주었다. 또, **버튼에 hover** 했을 때 투명하게 바뀌도록 했고, **스르륵 변화**를 주기 위해 **transition**을 사용했다. 
+
+```css
+.fill-button{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 140px;
+    height: 48px; 
+    border-radius: 2px;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.6;
+    letter-spacing: -0.05em;
+    color: #fff;
+    background-color: #3040C4;
+    transition: opacity 300ms ease-in-out;
+}
+
+.fill-button:hover{
+    opacity: 0.5;
+}
+```
+
+* **landing의** button-group에만 해당되는 것\(**.landing .button-group이라고 명시적으로 표현**\): landing의 button들이 가로 중앙 정렬되도록 했고, 첫번째 버튼에만 margin-right을 주기 위해 **first-child**를 사용했다. 
+
+```css
+.landing .button-group{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.landing .button-group .fill-button:first-child{
+    margin-right: 8px;
+}
+```
+
 ### 
 
 
