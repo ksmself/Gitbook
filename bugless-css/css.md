@@ -1319,6 +1319,19 @@ h1{
 
 ### Program Image 
 
+* 이미지를 가운데 배치하기 위해 margin: auto를 사용했다. display가 flex였다면, 다른 방법을 활용했겠지만, diplay를 block으로 했기 때문에 아래와 같은 방법을 사용했다. 
+
+```css
+.program-card img{
+    display: block;
+    width: auto; 
+    height: 195px; 
+    margin: 0 auto 16px;
+}
+```
+
+### 
+
 ### 
 
 
