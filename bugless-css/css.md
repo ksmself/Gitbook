@@ -1330,6 +1330,21 @@ h1{
 }
 ```
 
+### Curriculum
+
+Program 파트에서 이미 만들어 둔 section 클래스를 이용해서 아주 편하게 스타일링이 가능했다. \(둘은 공통적인 스타일을 갖고 있었기에 가능\) 
+
+* 데스크탑 버전에서는 row가 2개 등장했고, 이에 따라 row를 2개로 만들었다. 이제 레이아웃을 어떻게 볼지 감이 잡혔다. 
+* 첫번째 row의 마지막 요소인 anchor 아래에 margin이 있었다. anchor에 margin을 줄 수도 있었지만, row와 row 사이를 띄우기 위한 margin이라고 보고, 아래와 같이 코드를 작성했다. 
+
+```css
+.curriculum .row:first-child{
+    margin-bottom: 48px;
+}
+```
+
+### Banner 
+
 ### 
 
 ### 
