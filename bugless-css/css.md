@@ -1343,7 +1343,18 @@ Program 파트에서 이미 만들어 둔 section 클래스를 이용해서 아�
 }
 ```
 
-### Banner 
+### Subscription 
+
+* 데스크탑의 input-group에서 input은 모바일에서 이미 width가 100%를 차지하기로 되어 있었고, fill-button은 width가 160px로 변경되었다. 이때, button의 width가 찌그러져 나타나있었다. 왜냐하면 input의 width가 100%라는 건, 부모인 input-group만큼 width를 차지하라는 뜻이므로, input-group에 이미 flex가 적용되어 있어, button이 flex-shrink된 것이다. 그래서 button의 flex-shrink를 0으로 해주었다. 
+
+```css
+.subscription .input-group .fill-button{
+        width: 160px;
+        height: 56px;
+        margin-bottom: 0;
+        flex-shrink: 0;
+}
+```
 
 ### 
 
