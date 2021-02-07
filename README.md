@@ -4,7 +4,7 @@ description: Today I Learned
 
 # Introduction
 
-* blog: [http://codewithme.tistory.com/](http://codewithme.tistory.com/)
+* blog: https://velog.io/@ksmself
 
 ## 2019.12
 
@@ -18,7 +18,7 @@ description: Today I Learned
 * Do it! 안드로이드 앱 프로그래밍 튜토리얼 듣고 ~~앱개발~~
 * 미운 웹 백조 만들기\(HTML/CSS\) 튜토리얼 듣고 복습
 
-
+...and so on
 
 
 
